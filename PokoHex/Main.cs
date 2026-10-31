@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -58,7 +59,7 @@ public partial class Main : Form
             for (int i = 0; i < save.Common.Inventory.Length; i++)
             {
                 var item = save.Common.Inventory[i];
-                DGV_Items.Rows.Add(i + 1, GetItemName(item.ItemId), item.Count);
+                DGV_Items.Rows.Add(i + 1, ItemSprite.GetItemSprite(item.ItemId)!, GetItemName(item.ItemId), item.Count);
             }
             TC_Editor.Enabled = true;
             Menu_Export.Enabled = true;
@@ -93,7 +94,7 @@ public partial class Main : Form
             if (SAV != null)
             {
                 for (int i = 0; i < SAV.Common.Inventory.Length; i++)
-                    DGV_Items.Rows[i].Cells[1].Value = GetItemName(SAV.Common.Inventory[i].ItemId);
+                    DGV_Items.Rows[i].Cells[2].Value = GetItemName(SAV.Common.Inventory[i].ItemId);
             }
             CB_Item.SelectedValue = itemId;
             NUD_Count.Value = count;
@@ -164,8 +165,9 @@ public partial class Main : Form
             return;
         var item = SAV.Common.Inventory[SelectedSlot];
         var row = DGV_Items.Rows[SelectedSlot];
-        row.Cells[1].Value = GetItemName(item.ItemId);
-        row.Cells[2].Value = item.Count;
+        row.Cells[1].Value = ItemSprite.GetItemSprite(item.ItemId);
+        row.Cells[2].Value = GetItemName(item.ItemId);
+        row.Cells[3].Value = item.Count;
         UpdateStatus();
     }
 
@@ -198,6 +200,21 @@ public partial class Main : Form
             NUD_Count.Value = 1;
     }
 
+    private void CB_Item_DrawItem(object sender, DrawItemEventArgs e)
+    {
+        e.DrawBackground();
+        if (e.Index < 0 || CB_Item.Items[e.Index] is not ItemInfo item)
+            return;
+        var size = e.Bounds.Height - 4;
+        var image = ItemSprite.GetItemSprite(item.Value);
+        if (image != null)
+            e.Graphics.DrawImage(image, new Rectangle(e.Bounds.Left + 2, e.Bounds.Top + 2, size, size));
+        var bounds = new Rectangle(e.Bounds.Left + size + 6, e.Bounds.Top, e.Bounds.Width - size - 6, e.Bounds.Height);
+        TextRenderer.DrawText(e.Graphics, item.Display, e.Font ?? CB_Item.Font, bounds, e.ForeColor,
+            TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.NoPrefix | TextFormatFlags.EndEllipsis);
+        e.DrawFocusRectangle();
+    }
+
     private void Menu_Export_Click(object sender, EventArgs e)
     {
         if (SAV == null)
@@ -226,7 +243,7 @@ public partial class Main : Form
 
     private void UpdateStatus()
     {
-        L_Status.Text = SAV == null ? "Open a save folder to begin." : $"{SAV.Common.Inventory.Count(z => !z.IsEmpty)} / {SAV.Common.Inventory.Length} item slots are occupied. You can only export to a new, empty folder to keep your old saves safe!";
+        L_Status.Text = SAV == null ? "Open a save folder to begin." : $"Loaded: {SAV.Common.PlayerName}.";
     }
 
     private bool ConfirmDiscard() => !HasChanges || MessageBox.Show(this, "Discard changes to the opened save?", "PokoHex", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;

@@ -10,6 +10,7 @@ artifacts/
 
 ## Personal data and extracted content
 *.bin
+!PokoHex.Core/Resources/byte/item_menuicon.bin
 *.raw
 *.nsp
 *.nca

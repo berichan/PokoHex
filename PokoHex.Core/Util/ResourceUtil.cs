@@ -1,6 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using System.Resources;
+using System.Runtime.InteropServices;
+using static System.Buffers.Binary.BinaryPrimitives;
 
 namespace PokoHex.Core;
 
@@ -8,6 +11,24 @@ public static class ResourceUtil
 {
     private static readonly Assembly ThisAssembly = typeof(ResourceUtil).Assembly;
     private static readonly string[] ResourceNames = ThisAssembly.GetManifestResourceNames();
+
+    public static byte[] GetBinaryResource(string name)
+    {
+        using var stream = ThisAssembly.GetManifestResourceStream($"PokoHex.Core.Resources.byte.{name}")
+                           ?? throw new MissingManifestResourceException($"Resource not found: {name}");
+        var result = new byte[stream.Length];
+        stream.ReadExactly(result);
+        return result;
+    }
+
+    public static ushort[] GetBinaryResourceAsUshort(string name)
+    {
+        ReadOnlySpan<byte> data = GetBinaryResource(name);
+        var result = MemoryMarshal.Cast<byte, ushort>(data).ToArray();
+        if (!BitConverter.IsLittleEndian)
+            ReverseEndianness(result, result);
+        return result;
+    }
 
     public static string[] GetStringList(string name, string language) => GetStringList($"text_{name}_{language}");
 
