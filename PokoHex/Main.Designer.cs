@@ -34,6 +34,9 @@ partial class Main
         var nameHint = new Label();
         TB_Name = new TextBox();
         DGV_Items = new DataGridView();
+        CB_Inventory = new ComboBox();
+        var inventoryPanel = new Panel();
+        var inventoryLabel = new Label();
         var split = new SplitContainer();
         L_Slot = new Label();
         L_Catalog = new Label();
@@ -96,6 +99,19 @@ partial class Main
         DGV_Items.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Amount", FillWeight = 20, SortMode = DataGridViewColumnSortMode.NotSortable });
         DGV_Items.CurrentCellChanged += DGV_Items_CurrentCellChanged;
         split.Panel1.Controls.Add(DGV_Items);
+        inventoryPanel.Dock = DockStyle.Top;
+        inventoryPanel.Height = 36;
+        inventoryLabel.AutoSize = true;
+        inventoryLabel.Location = new Point(0, 8);
+        inventoryLabel.Text = "Inventory:";
+        CB_Inventory.Name = "CB_Inventory";
+        CB_Inventory.Location = new Point(80, 4);
+        CB_Inventory.Size = new Size(180, 23);
+        CB_Inventory.DropDownStyle = ComboBoxStyle.DropDownList;
+        CB_Inventory.Items.AddRange(["Main inventory", "Secondary bar"]);
+        CB_Inventory.SelectedIndexChanged += CB_Inventory_SelectedIndexChanged;
+        inventoryPanel.Controls.AddRange([inventoryLabel, CB_Inventory]);
+        split.Panel1.Controls.Add(inventoryPanel);
         L_Slot.AutoSize = true;
         L_Slot.Location = new Point(16, 16);
         L_Slot.Text = "Slot";
@@ -162,6 +178,7 @@ partial class Main
     private TabControl TC_Editor = null!;
     private TextBox TB_Name = null!;
     private DataGridView DGV_Items = null!;
+    private ComboBox CB_Inventory = null!;
     private ComboBox CB_Item = null!;
     private NumericUpDown NUD_Count = null!;
     private Label L_Slot = null!;

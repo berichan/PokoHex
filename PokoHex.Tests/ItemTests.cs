@@ -17,7 +17,7 @@ public static class ItemTests
             var strings = GameInfo.GetStrings(language);
             Assert.Equal(4600, ResourceUtil.GetStringList("item", language).Length);
             Assert.Equal(4600, strings.itemlist.Length);
-            Assert.Equal(2892, strings.ItemDataSource.Length);
+            Assert.Equal(3586, strings.ItemDataSource.Length);
             Assert.Equal(ids, strings.ItemDataSource.Select(z => z.Value).ToArray());
             Assert.Contains(strings.ItemDataSource, z => z.Value == 404 && z.Text.Length != 0);
             Assert.Contains(strings.ItemDataSource, z => z.Value == 1419 && z.Text.Length != 0);

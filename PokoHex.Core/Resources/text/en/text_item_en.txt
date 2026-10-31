@@ -399,7 +399,7 @@ mushroom hamburger steak
 
 
 party platter
-house partition
+house partition (big)
 dry tomato plant
 dry bean plant
 stone
@@ -420,150 +420,154 @@ carved yellow rock
 carved red rock
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+star wall decoration
+Jirachi lamp
+star mat
+cloud table
+starry-sky bed
+star-shaped dresser
+star closet
+moon clock
+telescope
+cloud cannon
+wish note
+shining wish note
+Prism Scale
+shiny pearl
+grubby pearl
+Prism Scale
+buried pearl
+seabed flowers
+small coral
+colorful corals
+tall coral
+swim ring
+big swim ring
+sand bed
+floating lantern
+beach volleyball set
+cooler
+lampion
+decorative cloth
+ornate door
+ornate window
+flat scale roof
+sloped scale roof
+scale hipped roof
+scale roof valley
+scale awning
+marine sofa
+marine table
+marine chair
+marine dresser
+marine chest
+marine closet
+ornate bed
+ornate chair
+ornate table
+ornate stand
+ornate partition
+ornate decorative shelf
+scale roof decoration
+Pokémon Center rebuilding kit
+Basin Pokémon Center kit
+clock tower kit
+seabed flowers
+seabed flowers
+seabed flowers
+seabed flowers
+small coral
+small coral
+tall coral
+seabed flower seeds
+seabed flower seeds
+seabed flower seeds
+seabed flower seeds
+seabed flower seeds
+
+
+
+
+
+
+
+
+
+farm soil
+watermelon sprout
+blooming watermelon plant
+ripe watermelon plant
+seabed tall grass
+seafloor algae
+star-spotted rock
+glossy tiling
+damaged glossy tiling
+chimney rocks
+lush seaweed
+twisty waterweed
+sandpile
+worn treasure chest
+watermelon sprout
+blooming watermelon plant
+ripe watermelon plant
+sea grape stalk
+sea grape stalk
+ocean temple kit
+Sharpedo submarine
+submarine kit
+bubble machine
+watermelon seeds
+sea grapes
+watermelon
+watermelon slice
+pearl streetlight
+lampion
+appley blender
+cooking utensils
+Dipplin mixing bowl
+kitchen scale
+blender
+toolbox
+sleek steps
+floating logs
+pumpkin candy
+watermelon smoothie
+apple pie
+glass pane
+glass pane (horizontal)
+window pane (horizontal)
+Pikachu sofa
+pearl streetlight
+Starmie doll
+seashell seat
+sparkling jewelry
+big treasure chest
+sand toys
+seabed shoots
+white driftwood
+sea moss
+mossy ocean boulder
+carved blue rock
+pumpkin lantern
+pumpkin lantern tower
+Trevenant streetlight
+ghost smoke projector
+
+candy bucket
+huge table
+Cofagrigus locker
+fun balloons
+eerie statue
+harvest basket
+pointed wooden fencing
+seashell fencing
+flat wavy roof
+sloped wavy roof
 leaf
+wavy hipped roof
+wavy roof valley
+fancy wavy roof decoration
+wavy roof decoration
 
 
 
@@ -588,53 +592,53 @@ leaf
 
 
 
+supermarket sign
+gift shop sign
+restaurant sign
+café sign
+wall-mounted tools
+arched fencing
+music box
+windup Inkay
+portal pod
+netting
+hanging sign
+wireless power-transmitter post
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+wireless power-transmitter switch post
+ocean door
+Primarina statue
+Gyarados fountain
+twisty pillar (upper)
+twisty pillar (middle)
+twisty pillar (lower)
+pathway light (line)
 vending machine
-
-
-
-
-
-
-
-
-
+pathway light (corner)
+pathway light (single)
+interior door
+submarine door
+hatch
+submarine window
+Cursola light
+Chimecho wind chime
+Wig-Wug rug
 recycling bin
-
-
-
-
-
-
-
-
-
+ocean pals rug
+bike poster
+security poster
+battle poster
+surprise poster
+Thunder Wave poster
+beach poster
+fighting poster
+safari poster
 sandstone
+sunset poster
+wild poster
+raging sea poster
+roaring flame poster
 
 
 
@@ -645,123 +649,119 @@ sandstone
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+chain lamp
+wall plant
+shop shelf
+shop fridge
+cushion bed
+wavy-pattern planter
+teaware set
+decorative plates
+bottled ship
+harp
+dangling streetlight
+Swampert squad rug
+wooden beam
+wooden support
+iron support
+window pane (sloped)
+glass pane (sloped)
+shop display case
+decorative shop shelf
+Running Shoes
+servers
+wall clock
+stone sign
+slim information board
+arrow sign (left)
+book stack
+iron frame
+standing frame
 wooden fencing
+Basin Pokémon Center
+Dewgong clock tower
+cycle shop sign
+
+arrow sign (right)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+vibrant glossy tiling
+gradient wall (upper)
+gradient wall (lower)
+colorful fish-scale tiling
+stately flooring
+stately wall (upper/lower)
+stately wall (middle)
+lacquered wall
 wooden path
+ornate wall
+metal wall
+mossy ocean soil
+buoyant block
+rectangle tiling
+digital wall
+stone-accent wall
+
+
+blue rock
+blue cave rock
+two-tone wall
+Syrupy Apple
+Syrupy Apple seeds
+Syrupy Apple tree
+small Syrupy Apple tree
+small Syrupy Apple tree
+Syrupy Apple tree sapling
+Syrupy Apple tree sapling
+Syrupy Apple tree stump
+imperial cottage
+imperial house
 
 
 
+buoyant block
+wish note
+large lost sunken relic
+stylish wall
+antique wall
+light antique wall
+Pokémon Center wall
+stylish brick wall
+wooden pillar
+stone pillar
+pop art wall
+confectionery wall
+guest-room wall
 
 
 
+cushy wall
+stately wall
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-elegant flower
-elegant flower
-elegant flower
-elegant flower
+gradient wall
+ornate wall
+glossy tiling
+vibrant glossy tiling
+colorful fish-scale tiling
+stately flooring
+rectangle tiling
+digital wall
+Habitat Hint #1
+Habitat Hint #1
+Habitat Hint #1
+Habitat Hint #1
+elegant flowers
+elegant flowers
+elegant flowers
+elegant flowers
 skyland flowers
 skyland flowers
 skyland flowers
 skyland flowers
-robust flower
-robust flower
-robust flower
-robust flower
+robust flowers
+robust flowers
+robust flowers
+robust flowers
 workbench
 skyland flowers
 seashore flowers
@@ -772,12 +772,12 @@ mountain flowers
 mountain flowers
 mountain flowers
 mountain flowers
-robust flower
-beautiful flower
-elegant flower
+robust flowers
+beautiful flowers
+elegant flowers
 wildflowers
 stylish hedge
-
+Habitat Hint #1
 Chesto tree
 Pecha tree
 Rawst tree
@@ -788,11 +788,11 @@ stylish hedge
 stylish hedge
 stylish hedge
 wildflowers
-beautiful flower
-beautiful flower
-beautiful flower
-beautiful flower
-
+beautiful flowers
+beautiful flowers
+beautiful flowers
+beautiful flowers
+Habitat Hint #1
 
 seawater
 dry tomato plant
@@ -819,6 +819,35 @@ small wheat plant
 ripe wheat
 glowing mushrooms
 
+sea grape smoothie
+Leppa smoothie
+red-hot smoothie
+refreshing soda smoothie
+coffee parfait smoothie
+watermelon bread
+popping soup
+popping salad
+explosive hamburger steak
+overlapping waves print
+squiggly print
+chic anchor print
+colorful anchor print
+clustered corals print
+colorful corals print
+dynamic Ditto print
+fanned-out Ditto print
+aqua cottage kit
+laboratory kit
+supermarket kit
+imperial cottage kit
+imperial house kit
+house partition (medium)
+house partition (small)
+house partition (medium)
+house partition (small)
+portal pod
+dynamic Ditto print
+dynamic Ditto print
 
 
 
@@ -826,43 +855,14 @@ glowing mushrooms
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+seashell fencing
+marine table
+marine chair
+marine dresser
+marine chest
+marine closet
+glossy tiling
+vibrant glossy tiling
 
 
 
@@ -924,31 +924,31 @@ dry stylish hedge
 dry stylish hedge
 dry stylish hedge
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+colorful fish-scale tiling
+rectangle tiling
+metal wall
+digital wall
+two-tone wall
+gradient wall (upper)
+gradient wall (lower)
+stately flooring
+stately wall (upper/lower)
+stately wall (middle)
+lacquered wall
+ornate wall
+stone-accent wall
+ornate bed
+ornate chair
+ornate table
+ornate stand
+ornate partition
+ornate decorative shelf
+pointed wooden fencing
+arched fencing
+wooden support
+iron support
+wooden beam
+netting
 polka-dot print
 vertical-stripe print
 horizontal-stripe print
@@ -968,35 +968,35 @@ leaf print
 flower print
 star print
 curry print
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Ditto transform print
+decorative cloth
+iron frame
+twisty pillar (upper)
+twisty pillar (middle)
+twisty pillar (lower)
+pathway light (line)
+pathway light (corner)
+pathway light (single)
+floating logs
+sleek steps
+ocean door
+interior door
+ornate door
+submarine door
+hatch
+submarine window
+ornate window
+window pane (horizontal)
+glass pane
 barren seashell soil
 barren striped soil
 barren pure-white soil
 dry seashore grass
 dry alpine grass
 dry sky-high grass
-
-
-
+glass pane (horizontal)
+window pane (sloped)
+glass pane (sloped)
 
 
 ordinary soil
@@ -1407,7 +1407,7 @@ wooden steps
 brick roof decoration
 flat brick roof
 dormered brick roof
-pitched brick roof
+sloped brick roof
 planter
 
 
@@ -1484,17 +1484,17 @@ small log
 upright log
 
 
-
-
-
+temple recipe set
+pathway light recipe set
+scale roof recipe set
 wooden siding (panel)
 wooden siding (corner)
-
-
+wavy roof recipe set
+glass recipe set
 wall-mounted flowers
+twisty pillar recipe set
 
-
-
+stylish wallpaper recipe set
 
 
 
@@ -1675,7 +1675,7 @@ moonlight dance statue
 inflatable boat
 laptop
 gaming PC
-
+safe
 CD rack
 Auspicious Armor
 Malicious Armor
@@ -1743,7 +1743,7 @@ notepad
 letter
 tablet
 cell phone
-
+relocation kit (reconstruct)
 
 beach sand
 coarse rock
@@ -1762,8 +1762,8 @@ boo-in-the-box
 Wobbuffet wobbler
 arched-tiling fragments
 big drum
-
-
+metronome
+party ball
 
 tires
 blank canvas
@@ -2001,48 +2001,48 @@ grubby papers
 grubby tablet
 grubby cell phone
 
-
+flat wavy roof
 Slowpoke rug
 Charizard rug
-
-
-
-
-
+sloped wavy roof
+wavy hipped roof
+wavy roof valley
+fancy wavy roof decoration
+wavy roof decoration
 small square rug
-
+flat scale roof
 large square rug
 small narrow rug
 large narrow rug
 small round rug
 large round rug
 oblong rug
+sloped scale roof
+scale hipped roof
+scale roof valley
+scale awning
+scale roof decoration
 
-
-
-
-
-
-
-
-
-
-
-
+blender
+wireless power-transmitter post
+wireless power-transmitter switch post
+big treasure chest
+dangling streetlight
+chain lamp
 spotted cliff rock
-
-
-
+wall clock
+standing frame
+hanging sign
 fresh carrot
-
-
-
-
-
-
-
-
-
+stone sign
+slim information board
+arrow sign (right)
+arrow sign (right)
+shop shelf
+shop fridge
+shop display case
+decorative shop shelf
+wavy-pattern planter
 storage box
 garden chair
 garden bench
@@ -2107,7 +2107,7 @@ wall light
 Poké Ball doormat
 pulley
 wire
-
+sand toys
 
 
 metal fragments
@@ -2125,218 +2125,218 @@ bruised berry
 Rare Candy
 book
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+metronome
+harp
+music box
+cushion bed
+sparkling jewelry
+bottled ship
+toolbox
+wall-mounted tools
+servers
+teaware set
+decorative plates
+book stack
+battle poster
+surprise poster
+Thunder Wave poster
+beach poster
+fighting poster
+safari poster
+sunset poster
+wild poster
+raging sea poster
+roaring flame poster
+bubble machine
+
+
+
+
+
+sandpile
+seashell seat
+gradient wall recipe set
+bike poster
+security poster
+Comfy Living (Vol. 11)
+Comfort Café Now Open!
+Cerulean City Press Release
+Request to Residents
+Taylor’s diary
+New Products in Stock!
+Get Gems at Cerulean Jewelers!
+Found: Wimpod
+Bike Catalog
+Subsea Power Grid in Development
+New Summer Menu Ideas
+Kanto Monthly (February Issue)
+Sevii Islands Bulletin
+Comfy Living (Vol. 30)
+Pokémon Fitness Monthly (Sept.)
+All Smiles Update
+Hearthome Journal
+Pocket World Weekly #76
+Dowsing Digest
+PokéWeek (Issue 46)
+New Product Announcement
+The Pokéblock Party Returns!
+This Week in Lilycove City
+PokéWeek (Issue 37)
+Selection of Pokémon Scare Tactics
+treasure map #1
+treasure map #2
+treasure map #3
+treasure map #4
+treasure map #5
+treasure map #6
+Pool Open to the Public
+Post from October 25, 2:00 p.m.
+Survey Notes (Team Member A)
+Survey Notes #1 (Team Member B)
+Survey Notes #2 (Team Member B)
+Galaxy Monthly (Survey Results)
+
+
+Jirachi’s gift
+Shellder’s gift
+Cloyster’s gift
+Horsea’s gift
+Seadra’s gift
+Staryu’s gift
+Starmie’s gift
+Totodile’s gift
+Croconaw’s gift
+Feraligatr’s gift
+Chinchou’s gift
+Lanturn’s gift
+Corsola’s gift
+Kingdra’s gift
+Mudkip’s gift
+Marshtomp’s gift
+Swampert’s gift
+Carvanha’s gift
+Sharpedo’s gift
+Barboach’s gift
+Whiscash’s gift
+Corphish’s gift
+Crawdaunt’s gift
+Feebas’s gift
+Milotic’s gift
+Phione’s gift
+Manaphy’s gift
+Pumpkaboo’s gift
+Gourgeist’s gift
+Popplio’s gift
+Brionne’s gift
+Primarina’s gift
+Mareanie’s gift
+Toxapex’s gift
+Dhelmise’s gift
+Applin’s gift
+Flapple’s gift
+Appletun’s gift
+Dipplin’s gift
+Hydrapple’s gift
+Frillish’s gift
+Frillish’s gift
+Jellicent’s gift
+Jellicent’s gift
+Wiglett’s gift
+Wugtrio’s gift
+Alomomola’s gift
+Inkay’s gift
+Malamar’s gift
+Luvdisc’s gift
+Stunfisk’s gift
+Veluza’s gift
+Chewtle’s gift
+Drednaw’s gift
+Buizel’s gift
+Floatzel’s gift
+Finneon’s gift
+Lumineon’s gift
+Bruxish’s gift
+Wimpod’s gift
+Golisopod’s gift
+Pincurchin’s gift
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+♪ The Sea
+♪ Violet City
+♪ Dive
+♪ Canalave City (Night)
+♪ Undella Town (Summer)
+♪ Lumiose City
+♪ Po Town
+♪ Stow-on-Side
+♪ Cascarrafa
+♪ Hotel Z
+
+
+Ditto transform print
+stylish wall
+antique wall
+light antique wall
+Pokémon Center wall
+stylish brick wall
+wooden pillar
+stone pillar
+pop art wall
+confectionery wall
+guest-room wall
+
+
+
+cushy wall
+stately wall
+
+gradient wall
+ornate wall
+glossy tiling
+vibrant glossy tiling
+colorful fish-scale tiling
+stately flooring
+rectangle tiling
+digital wall
+overlapping waves print
+squiggly print
+chic anchor print
+colorful anchor print
+clustered corals print
+colorful corals print
+fanned-out Ditto print
+Ditto transform print
+overlapping waves print
+squiggly print
+chic anchor print
+colorful anchor print
+clustered corals print
+colorful corals print
+fanned-out Ditto print
+decorative Poké Ball
+decorative Great Ball
+decorative Heal Ball
+decorative Quick Ball
+decorative Dive Ball
+decorative Net Ball
+decorative Lure Ball
+carved blue rock
 
 Leppa Berry
 
@@ -2449,7 +2449,7 @@ carved light-brown rock
 carved yellow rock
 carved red rock
 carved white rock
-house partition
+house partition (big)
 
 
 
@@ -2578,21 +2578,21 @@ healthy hedge
 healthy hedge
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+decorative Poké Ball
+decorative Great Ball
+decorative Heal Ball
+decorative Quick Ball
+decorative Dive Ball
+decorative Net Ball
+decorative Lure Ball
+overlapping waves print
+squiggly print
+chic anchor print
+colorful anchor print
+clustered corals print
+colorful corals print
+dynamic Ditto print
+fanned-out Ditto print
 
 
 
@@ -2740,7 +2740,7 @@ leaf print
 flower print
 star print
 curry print
-
+Ditto transform print
 
 
 
@@ -3328,7 +3328,7 @@ arrow sign
 Ditto rug
 town streetlight
 punching bag
-pitched brick roof
+sloped brick roof
 storage box
 Ditto flag
 planter
@@ -3469,7 +3469,7 @@ brick roof valley
 corrugated metal
 window pane
 microscope
-
+safe
 
 CD rack
 cool electric guitar
@@ -3490,7 +3490,7 @@ bell
 big drum
 
 alarm clock
-
+party ball
 blank canvas
 punching game
 
@@ -4498,103 +4498,103 @@ jump rope trophy
 jump rope trophy
 jump rope trophy
 jump rope trophy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy
+hide-and-sneak trophy

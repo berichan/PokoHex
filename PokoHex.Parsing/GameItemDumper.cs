@@ -9,7 +9,6 @@ namespace PokoHex.Parsing;
 
 public static class GameItemDumper
 {
-    private const int ItemTable = 853;
     private static readonly IReadOnlyDictionary<string, int> ItemNames = new Dictionary<string, int>
     {
         {"en", 4454},
@@ -49,19 +48,25 @@ public static class GameItemDumper
             throw new ArgumentException("This language is not supported.", nameof(language));
         path = GetArchiveFolder(path);
         using var archive = new GameArchive(path);
-        var items = archive.Read(ItemTable);
-        var names = archive.Read(nameTable);
-        if (items.Length < 64 || names.Length < 64 || ReadInt32LittleEndian(items.AsSpan(4)) != 2 || ReadInt32LittleEndian(names.AsSpan(4)) != 2)
+        var (itemTable, nameShift, version, stride, nameIndexOffset) = archive.EntryCount switch
+        {
+            11783 => (853, 0, 2, 64, 28),
+            12298 => (983, 192, 3, 68, 34),
+            _ => throw new InvalidDataException("The game archive version is not supported."),
+        };
+        var items = archive.Read(itemTable);
+        var names = archive.Read(nameTable + nameShift);
+        if (items.Length < 64 || names.Length < 64 || ReadInt32LittleEndian(items.AsSpan(4)) != version || ReadInt32LittleEndian(names.AsSpan(4)) != 2)
             throw new InvalidDataException("The item tables are not supported.");
         var count = ReadInt32LittleEndian(items);
         var nameCount = ReadInt32LittleEndian(names);
-        if (count != 4600 || items.Length != 64 + (count * 64) || nameCount != 3001 || names.Length < 64 + (nameCount * 32))
+        if (count != 4600 || items.Length != 64 + (count * stride) || nameCount != 3001 || names.Length < 64 + (nameCount * 32))
             throw new InvalidDataException("The item table version is not supported.");
 
         var result = new List<ItemInfo> { new(0, "(Empty)") };
         for (ushort i = 1; i < count; i++)
         {
-            var nameIndex = ReadUInt16LittleEndian(items.AsSpan(64 + (i * 64) + 28));
+            var nameIndex = ReadUInt16LittleEndian(items.AsSpan(64 + (i * stride) + nameIndexOffset));
             if (nameIndex == 0 || nameIndex >= nameCount)
                 continue;
             var field = 64 + (nameIndex * 32);

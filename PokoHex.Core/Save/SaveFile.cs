@@ -74,10 +74,10 @@ public sealed class SaveFile
 
     public static SaveFile Read(byte[] data)
     {
-        var layout = SaveLayout.Version70;
-        if (data.Length < layout.HeaderSize || ReadUInt32LittleEndian(data) != Magic)
+        if (data.Length < 0x130 || ReadUInt32LittleEndian(data) != Magic)
             throw new InvalidDataException("This is not a supported common save file.");
-        if (ReadUInt32LittleEndian(data.AsSpan(4)) != layout.Version || ReadUInt32LittleEndian(data.AsSpan(8)) != 0x40001)
+        var layout = SaveLayout.GetLayout(ReadUInt32LittleEndian(data.AsSpan(4)));
+        if (ReadUInt32LittleEndian(data.AsSpan(8)) != 0x40001)
             throw new InvalidDataException("This save version is not supported.");
         var length = ReadInt32LittleEndian(data.AsSpan(0x10));
         if (length <= layout.HeaderSize || length > data.Length)

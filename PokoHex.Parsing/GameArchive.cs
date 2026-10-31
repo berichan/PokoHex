@@ -9,6 +9,7 @@ public sealed class GameArchive : IDisposable
 {
     private readonly byte[] Index;
     private readonly FileStream Data;
+    public int EntryCount => Index.Length / 32;
 
     public GameArchive(string folder)
     {

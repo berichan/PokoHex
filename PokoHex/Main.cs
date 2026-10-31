@@ -13,10 +13,12 @@ public partial class Main : Form
     private ItemInfo[] Items = GameInfo.Strings.ItemDataSource;
     private bool Loading;
     private int SelectedSlot;
+    private int InventoryStart;
 
     public Main()
     {
         InitializeComponent();
+        CB_Inventory.SelectedIndex = 0;
         Menu_Language.SelectedIndex = GameLanguage.GetLanguageIndex(GameInfo.CurrentLanguage);
         foreach (var arg in Environment.GetCommandLineArgs().AsSpan(1))
         {
@@ -55,22 +57,18 @@ public partial class Main : Form
             SAV = save;
             Loading = true;
             TB_Name.Text = save.Common.PlayerName;
-            DGV_Items.Rows.Clear();
-            for (int i = 0; i < save.Common.Inventory.Length; i++)
-            {
-                var item = save.Common.Inventory[i];
-                DGV_Items.Rows.Add(i + 1, ItemSprite.GetItemSprite(item.ItemId)!, GetItemName(item.ItemId), item.Count);
-            }
+            CB_Inventory.SelectedIndex = 0;
+            InventoryStart = 0;
             TC_Editor.Enabled = true;
             Menu_Export.Enabled = true;
             SelectedSlot = 0;
             Loading = false;
             BindItems();
-            LoadSlot();
+            LoadInventory();
             Text = $"PokoHex / {Path.GetFileName(save.Folder)}";
             UpdateStatus();
         }
-        catch (Exception ex) when (ex is IOException or ArgumentException or InvalidOperationException)
+        catch (Exception ex) when (ex is IOException or InvalidDataException or ArgumentException or InvalidOperationException)
         {
             ShowError(ex.Message);
         }
@@ -78,6 +76,46 @@ public partial class Main : Form
     }
 
     private string GetItemName(ushort id) => Items.FirstOrDefault(z => z.Value == id)?.Text ?? (id == 0 ? "(Empty)" : $"Item {id:D4}");
+
+    private void LoadInventory()
+    {
+        if (SAV == null)
+            return;
+        Loading = true;
+        try
+        {
+            DGV_Items.Rows.Clear();
+            var count = InventoryStart == 0 ? SaveLayout.MainInventoryCount : SAV.Common.Inventory.Length - InventoryStart;
+            for (int i = 0; i < count; i++)
+            {
+                var item = SAV.Common.Inventory[InventoryStart + i];
+                DGV_Items.Rows.Add(i + 1, ItemSprite.GetItemSprite(item.ItemId)!, GetItemName(item.ItemId), item.Count);
+            }
+            SelectedSlot = InventoryStart;
+            DGV_Items.CurrentCell = DGV_Items.Rows[0].Cells[2];
+        }
+        finally { Loading = false; }
+        LoadSlot();
+    }
+
+    private void CB_Inventory_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (Loading || SAV == null || CB_Inventory.SelectedIndex < 0)
+            return;
+        try
+        {
+            SaveSlot();
+            InventoryStart = CB_Inventory.SelectedIndex == 0 ? 0 : SaveLayout.MainInventoryCount;
+            LoadInventory();
+        }
+        catch (ArgumentException ex)
+        {
+            Loading = true;
+            CB_Inventory.SelectedIndex = InventoryStart == 0 ? 0 : 1;
+            Loading = false;
+            ShowError(ex.Message);
+        }
+    }
 
     private void Menu_Language_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -93,8 +131,8 @@ public partial class Main : Form
         {
             if (SAV != null)
             {
-                for (int i = 0; i < SAV.Common.Inventory.Length; i++)
-                    DGV_Items.Rows[i].Cells[2].Value = GetItemName(SAV.Common.Inventory[i].ItemId);
+                for (int i = 0; i < DGV_Items.Rows.Count; i++)
+                    DGV_Items.Rows[i].Cells[2].Value = GetItemName(SAV.Common.Inventory[InventoryStart + i].ItemId);
             }
             CB_Item.SelectedValue = itemId;
             NUD_Count.Value = count;
@@ -131,7 +169,7 @@ public partial class Main : Form
         try
         {
             SaveSlot();
-            SelectedSlot = DGV_Items.CurrentRow.Index;
+            SelectedSlot = InventoryStart + DGV_Items.CurrentRow.Index;
             LoadSlot();
         }
         catch (ArgumentException ex) { ShowError(ex.Message); }
@@ -145,7 +183,9 @@ public partial class Main : Form
         var item = SAV.Common.Inventory[SelectedSlot];
         CB_Item.SelectedValue = item.ItemId;
         NUD_Count.Value = item.Count;
-        L_Slot.Text = $"Slot {SelectedSlot + 1} of {SAV.Common.Inventory.Length}";
+        L_Slot.Text = SelectedSlot < SaveLayout.MainInventoryCount
+            ? $"Slot {SelectedSlot + 1} of {SaveLayout.MainInventoryCount}"
+            : $"Secondary bar slot {SelectedSlot + 1 - SaveLayout.MainInventoryCount} of {SAV.Common.Inventory.Length - SaveLayout.MainInventoryCount}";
         Loading = false;
     }
 
@@ -155,6 +195,8 @@ public partial class Main : Form
             return;
         if (CB_Item.Text != item.Display)
             throw new ArgumentException("Select an item from the list.");
+        if (!HasSlotChanges)
+            return;
         SAV.Common.Inventory[SelectedSlot].Set(item.Value, (int)NUD_Count.Value);
         RefreshSlot();
     }
@@ -164,7 +206,7 @@ public partial class Main : Form
         if (SAV == null)
             return;
         var item = SAV.Common.Inventory[SelectedSlot];
-        var row = DGV_Items.Rows[SelectedSlot];
+        var row = DGV_Items.Rows[SelectedSlot - InventoryStart];
         row.Cells[1].Value = ItemSprite.GetItemSprite(item.ItemId);
         row.Cells[2].Value = GetItemName(item.ItemId);
         row.Cells[3].Value = item.Count;
@@ -235,7 +277,7 @@ public partial class Main : Form
             L_Status.Text = $"Exported to {dialog.SelectedPath}";
             MessageBox.Show(this, "The edited save was exported and verified.", "PokoHex", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        catch (Exception ex) when (ex is IOException or ArgumentException or InvalidOperationException)
+        catch (Exception ex) when (ex is IOException or InvalidDataException or ArgumentException or InvalidOperationException)
         {
             ShowError(ex.Message);
         }
