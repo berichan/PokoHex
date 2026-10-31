@@ -226,7 +226,7 @@ public partial class Main : Form
 
     private void UpdateStatus()
     {
-        L_Status.Text = SAV == null ? "Open a save folder to begin." : $"{SAV.Common.Inventory.Count(z => !z.IsEmpty)} / {SAV.Common.Inventory.Length} slots occupied. Export writes a new copy.";
+        L_Status.Text = SAV == null ? "Open a save folder to begin." : $"{SAV.Common.Inventory.Count(z => !z.IsEmpty)} / {SAV.Common.Inventory.Length} item slots are occupied. You can only export to a new, empty folder to keep your old saves safe!";
     }
 
     private bool ConfirmDiscard() => !HasChanges || MessageBox.Show(this, "Discard changes to the opened save?", "PokoHex", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
