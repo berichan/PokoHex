@@ -1,0 +1,164 @@
+﻿using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace PokoHex;
+
+partial class Main
+{
+    private IContainer components = null!;
+
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing)
+            components?.Dispose();
+        base.Dispose(disposing);
+    }
+
+    private void InitializeComponent()
+    {
+        components = new Container();
+        var menu = new MenuStrip();
+        var file = new ToolStripMenuItem("&File");
+        var language = new ToolStripLabel("Language:");
+        Menu_Language = new ToolStripComboBox();
+        var open = new ToolStripMenuItem("&Open save folder...", null, Menu_Open_Click, Keys.Control | Keys.O);
+        Menu_Export = new ToolStripMenuItem("&Export save copy...", null, Menu_Export_Click, Keys.Control | Keys.S);
+        var exit = new ToolStripMenuItem("E&xit", null, Menu_Exit_Click);
+        var status = new StatusStrip();
+        L_Status = new ToolStripStatusLabel();
+        TC_Editor = new TabControl();
+        var player = new TabPage("Player");
+        var items = new TabPage("Items");
+        var name = new Label();
+        var nameHint = new Label();
+        TB_Name = new TextBox();
+        DGV_Items = new DataGridView();
+        var split = new SplitContainer();
+        L_Slot = new Label();
+        L_Catalog = new Label();
+        CB_Item = new ComboBox();
+        NUD_Count = new NumericUpDown();
+        B_Set = new Button();
+        var clear = new Button();
+        var amount = new Label();
+        var itemLabel = new Label();
+        var hint = new Label();
+        SuspendLayout();
+        menu.Items.Add(file);
+        menu.Items.Add(language);
+        menu.Items.Add(Menu_Language);
+        Menu_Language.Name = "Menu_Language";
+        Menu_Language.DropDownStyle = ComboBoxStyle.DropDownList;
+        Menu_Language.Items.AddRange(["English", "日本語", "Deutsch", "Español", "Français", "Italiano", "한국어", "简体中文", "繁體中文"]);
+        Menu_Language.Size = new Size(130, 23);
+        Menu_Language.SelectedIndexChanged += Menu_Language_SelectedIndexChanged;
+        file.DropDownItems.AddRange([open, Menu_Export, new ToolStripSeparator(), exit]);
+        Menu_Export.Enabled = false;
+        status.Items.Add(L_Status);
+        L_Status.Text = "Open a save folder to begin.";
+        TC_Editor.Dock = DockStyle.Fill;
+        TC_Editor.Enabled = false;
+        TC_Editor.TabPages.AddRange([player, items]);
+        player.Padding = new Padding(12);
+        name.AutoSize = true;
+        name.Location = new Point(22, 28);
+        name.Text = "Player name:";
+        TB_Name.Location = new Point(126, 24);
+        TB_Name.Size = new Size(244, 23);
+        TB_Name.MaxLength = 24;
+        nameHint.AutoSize = true;
+        nameHint.Location = new Point(126, 60);
+        nameHint.Text = "Up to 24 UTF-8 bytes.";
+        player.Controls.AddRange([name, TB_Name, nameHint]);
+        items.Padding = new Padding(8);
+        split.Dock = DockStyle.Fill;
+        split.Size = new Size(920, 500);
+        split.SplitterDistance = 520;
+        split.Panel1MinSize = 300;
+        split.Panel2MinSize = 310;
+        split.FixedPanel = FixedPanel.Panel2;
+        DGV_Items.Dock = DockStyle.Fill;
+        DGV_Items.AllowUserToAddRows = false;
+        DGV_Items.AllowUserToDeleteRows = false;
+        DGV_Items.AllowUserToResizeRows = false;
+        DGV_Items.ReadOnly = true;
+        DGV_Items.MultiSelect = false;
+        DGV_Items.RowHeadersVisible = false;
+        DGV_Items.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        DGV_Items.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        DGV_Items.BackgroundColor = SystemColors.Window;
+        DGV_Items.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Slot", FillWeight = 15, SortMode = DataGridViewColumnSortMode.NotSortable });
+        DGV_Items.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Item", FillWeight = 65, SortMode = DataGridViewColumnSortMode.NotSortable });
+        DGV_Items.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Amount", FillWeight = 20, SortMode = DataGridViewColumnSortMode.NotSortable });
+        DGV_Items.CurrentCellChanged += DGV_Items_CurrentCellChanged;
+        split.Panel1.Controls.Add(DGV_Items);
+        L_Slot.AutoSize = true;
+        L_Slot.Location = new Point(16, 16);
+        L_Slot.Text = "Slot";
+        itemLabel.AutoSize = true;
+        itemLabel.Text = "Item:";
+        itemLabel.Location = new Point(16, 55);
+        CB_Item.Location = new Point(16, 78);
+        CB_Item.Size = new Size(352, 23);
+        CB_Item.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        CB_Item.DropDownStyle = ComboBoxStyle.DropDownList;
+        CB_Item.AutoCompleteSource = AutoCompleteSource.ListItems;
+        CB_Item.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+        CB_Item.DropDownWidth = 440;
+        CB_Item.SelectedIndexChanged += CB_Item_SelectedIndexChanged;
+        amount.AutoSize = true;
+        amount.Text = "Amount:";
+        amount.Location = new Point(16, 119);
+        NUD_Count.Location = new Point(94, 116);
+        NUD_Count.Maximum = 255;
+        NUD_Count.Size = new Size(90, 23);
+        B_Set.Text = "Set";
+        B_Set.Location = new Point(16, 158);
+        B_Set.Size = new Size(100, 30);
+        B_Set.Enabled = false;
+        B_Set.Click += B_Set_Click;
+        clear.Text = "Clear";
+        clear.Location = new Point(126, 158);
+        clear.Size = new Size(100, 30);
+        clear.Click += B_Clear_Click;
+        L_Catalog.Location = new Point(16, 218);
+        L_Catalog.Size = new Size(352, 42);
+        L_Catalog.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        L_Catalog.Text = "Item catalog";
+        hint.Location = new Point(16, 280);
+        hint.Size = new Size(352, 100);
+        hint.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        hint.Text = "Type an item name to search.\r\n\r\nSet applies the selected item and amount.\r\nZero clears the slot.\r\n\r\nExport saves your changes to a new folder.";
+        split.Panel2.Controls.AddRange([L_Slot, itemLabel, CB_Item, amount, NUD_Count, B_Set, clear, L_Catalog, hint]);
+        items.Controls.Add(split);
+        Controls.Add(TC_Editor);
+        Controls.Add(status);
+        Controls.Add(menu);
+        MainMenuStrip = menu;
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(960, 580);
+        MinimumSize = new Size(800, 480);
+        StartPosition = FormStartPosition.CenterScreen;
+        Text = "PokoHex";
+        AllowDrop = true;
+        DragEnter += Main_DragEnter;
+        DragDrop += Main_DragDrop;
+        FormClosing += Main_FormClosing;
+        ResumeLayout(false);
+        PerformLayout();
+    }
+
+    private ToolStripMenuItem Menu_Export = null!;
+    private ToolStripComboBox Menu_Language = null!;
+    private ToolStripStatusLabel L_Status = null!;
+    private TabControl TC_Editor = null!;
+    private TextBox TB_Name = null!;
+    private DataGridView DGV_Items = null!;
+    private ComboBox CB_Item = null!;
+    private NumericUpDown NUD_Count = null!;
+    private Label L_Slot = null!;
+    private Label L_Catalog = null!;
+    private Button B_Set = null!;
+}

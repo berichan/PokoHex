@@ -1,0 +1,6 @@
+﻿<Solution>
+  <Project Path="PokoHex/PokoHex.csproj" />
+  <Project Path="PokoHex.Core/PokoHex.Core.csproj" />
+  <Project Path="PokoHex.Parsing/PokoHex.Parsing.csproj" />
+  <Project Path="PokoHex.Tests/PokoHex.Tests.csproj" />
+</Solution>

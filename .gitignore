@@ -1,0 +1,23 @@
+## Build and IDE output
+**/bin/
+**/obj/
+.vs/
+.idea/
+*.user
+*.suo
+TestResults/
+artifacts/
+
+## Personal data and extracted content
+*.bin
+*.raw
+*.nsp
+*.nca
+*.xci
+*.fdata
+*.rdb
+*.rdx
+*.idx
+*.zip
+*.bak
+*.log
