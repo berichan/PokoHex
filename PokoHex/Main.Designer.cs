@@ -30,6 +30,8 @@ partial class Main
         TC_Editor = new TabControl();
         var player = new TabPage("Player");
         var items = new TabPage("Items");
+        var villagers = new TabPage("Villagers");
+        Editor_Villagers = new VillagerEditor { Dock = DockStyle.Fill };
         var name = new Label();
         var nameHint = new Label();
         TB_Name = new TextBox();
@@ -62,7 +64,8 @@ partial class Main
         L_Status.Text = "Open a save folder to begin.";
         TC_Editor.Dock = DockStyle.Fill;
         TC_Editor.Enabled = false;
-        TC_Editor.TabPages.AddRange([player, items]);
+        TC_Editor.TabPages.AddRange([player, items, villagers]);
+        villagers.Controls.Add(Editor_Villagers);
         player.Padding = new Padding(12);
         name.AutoSize = true;
         name.Location = new Point(22, 28);
@@ -184,4 +187,5 @@ partial class Main
     private Label L_Slot = null!;
     private Label L_Catalog = null!;
     private Button B_Set = null!;
+    private VillagerEditor Editor_Villagers = null!;
 }

@@ -6,7 +6,7 @@ public sealed class SaveLayout
 {
     public const int MainInventoryCount = 120;
     public static readonly SaveLayout Version70 = new(0x02000046, 0x3EF3DC, 0x3ECF92, 0x3ED7C1); // 1.0.4
-    public static readonly SaveLayout Version381 = new(0x0200017D, 0x470CED, 0x46E0E5, 0x46ECEA); // 2.0.1
+    public static readonly SaveLayout Version381 = new(0x0200017D, 0x470CED, 0x46E0E5, 0x46ECEA, 1050, 0x79824); // 2.0.1
 
     public uint Version { get; }
     public int DataSize { get; }
@@ -17,12 +17,17 @@ public sealed class SaveLayout
     public int InventoryOffset { get; }
     public int InventoryCount => 130;
 
-    private SaveLayout(uint version, int dataSize, int playerNameOffset, int inventoryOffset)
+    public int VillagerCount { get; }
+    public int VillagerHomeOffset { get; }
+
+    private SaveLayout(uint version, int dataSize, int playerNameOffset, int inventoryOffset, int villagerCount = 0, int villagerHomeOffset = 0)
     {
         Version = version;
         DataSize = dataSize;
         PlayerNameOffset = playerNameOffset;
         InventoryOffset = inventoryOffset;
+        VillagerCount = villagerCount;
+        VillagerHomeOffset = villagerHomeOffset;
     }
 
     internal static SaveLayout GetLayout(uint version) => version switch

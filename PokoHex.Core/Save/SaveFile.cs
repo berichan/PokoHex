@@ -16,6 +16,7 @@ public sealed class SaveFile
     public byte[] Data { get; }
     public SaveLayout Layout { get; }
     public Item[] Inventory { get; }
+    public Villager[] Villagers { get; }
     public bool IsEdited => !Data.AsSpan().SequenceEqual(OriginalData);
 
     private SaveFile(byte[] original, byte[] data, SaveLayout layout)
@@ -26,6 +27,9 @@ public sealed class SaveFile
         Layout = layout;
         Inventory = Enumerable.Range(0, layout.InventoryCount)
             .Select(i => new Item(Data.AsMemory(layout.InventoryOffset + (i * Item.SIZE), Item.SIZE))).ToArray();
+        Villagers = Enumerable.Range(0, layout.VillagerCount)
+            .Select(i => new Villager(i, Data.AsMemory(i * Villager.SIZE, Villager.SIZE),
+                Data.AsMemory(layout.VillagerHomeOffset + (i * VillagerHome.SIZE), VillagerHome.SIZE))).ToArray();
     }
 
     public string PlayerName
@@ -103,6 +107,7 @@ public sealed class SaveFile
         using (var zlib = new ZLibStream(compressed, CompressionLevel.SmallestSize, true))
             zlib.Write(Data);
         var length = checked(Layout.HeaderSize + (int)compressed.Length);
+        // Keep the original file capacity when compression shrinks. The header already records the active length
         var result = new byte[Math.Max(length, Original.Length)];
         Original.AsSpan(0, Layout.HeaderSize).CopyTo(result);
         compressed.GetBuffer().AsSpan(0, (int)compressed.Length).CopyTo(result.AsSpan(Layout.HeaderSize));

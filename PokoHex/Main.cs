@@ -27,7 +27,7 @@ public partial class Main : Form
         }
     }
 
-    private bool HasChanges => SAV != null && (SAV.IsEdited || TB_Name.Text != SAV.Common.PlayerName || HasSlotChanges);
+    private bool HasChanges => SAV != null && (SAV.IsEdited || TB_Name.Text != SAV.Common.PlayerName || HasSlotChanges || Editor_Villagers.HasChanges);
 
     private bool HasSlotChanges
     {
@@ -65,6 +65,7 @@ public partial class Main : Form
             Loading = false;
             BindItems();
             LoadInventory();
+            Editor_Villagers.LoadSave(save.Common);
             Text = $"PokoHex / {Path.GetFileName(save.Folder)}";
             UpdateStatus();
         }
@@ -124,6 +125,7 @@ public partial class Main : Form
         var itemId = (CB_Item.SelectedItem as ItemInfo)?.Value ?? 0;
         var count = NUD_Count.Value;
         GameInfo.SetLanguage2Char(Menu_Language.SelectedIndex);
+        Editor_Villagers.RefreshLanguage();
         Items = GameInfo.Strings.ItemDataSource;
         BindItems();
         Loading = true;
@@ -265,6 +267,7 @@ public partial class Main : Form
         {
             ValidateChildren();
             SaveSlot();
+            Editor_Villagers.SaveChanges();
             if (TB_Name.Text != SAV.Common.PlayerName)
                 SAV.Common.PlayerName = TB_Name.Text;
             using var dialog = new FolderBrowserDialog { Description = "Select a new, empty folder for the edited save", UseDescriptionForTitle = true };
@@ -272,6 +275,7 @@ public partial class Main : Form
                 return;
             SAV.Export(dialog.SelectedPath);
             SAV = SaveFolder.Read(dialog.SelectedPath);
+            Editor_Villagers.LoadSave(SAV.Common);
             Text = $"PokoHex / {Path.GetFileName(SAV.Folder)}";
             LoadSlot();
             L_Status.Text = $"Exported to {dialog.SelectedPath}";
