@@ -9,6 +9,10 @@ Edits savedata dumped from the Nintendo Switch 2.
 
 * Bring your own save file data; this program does not dump it from your console.
 
+## Builds
+
+Download `PokoHex-win-x64.zip` from the [Releases](https://github.com/berichan/PokoHex/releases), extract it, and run `PokoHex.exe`.
+
 ## Other
 
 Based on the style of [NHSE](https://github.com/kwsch/NHSE)
