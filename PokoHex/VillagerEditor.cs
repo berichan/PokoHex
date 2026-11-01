@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using PokoHex.Core;
@@ -34,7 +35,7 @@ public partial class VillagerEditor : UserControl
         CB_Area.Items.Clear();
         Areas = [-1, .. save.Villagers.Where(z => !z.IsEmpty).Select(z => (int)z.Home.StageId).Distinct().Order()];
         foreach (var area in Areas)
-            CB_Area.Items.Add(area < 0 ? "All areas" : GetAreaName(area));
+            CB_Area.Items.Add(GetAreaDisplayName(area));
         CB_Area.SelectedIndex = 0;
         TB_Search.Enabled = CB_Area.Enabled = save.Villagers.Length != 0;
         Loading = false;
@@ -46,18 +47,29 @@ public partial class VillagerEditor : UserControl
         SaveChanges();
         Loading = true;
         TB_Search.Clear();
+        var selectedArea = CB_Area.SelectedIndex;
+        for (int i = 0; i < Areas.Length; i++)
+            CB_Area.Items[i] = GetAreaDisplayName(Areas[i]);
+        CB_Area.SelectedIndex = selectedArea;
         Loading = false;
         LoadVillagers();
     }
 
-    private static string GetAreaName(int area) => area switch
+    private static string GetAreaName(int area)
     {
-        0 => "No home",
-        1 => "Withered Wasteland",
-        2 => "Bleak Beach",
-        3 => "Rocky Ridges",
-        _ => $"Area {area}",
-    };
+        if (area == 0)
+            return "No home";
+        var names = GameInfo.Strings.arealist;
+        return (uint)area < names.Length && names[area].Length != 0 ? names[area] : $"Area {area}";
+    }
+
+    private string GetAreaDisplayName(int area)
+    {
+        if (area < 0)
+            return "All areas";
+        var name = GetAreaName(area);
+        return Areas.Count(z => z >= 0 && GetAreaName(z) == name) > 1 ? $"{name} ({area})" : name;
+    }
 
     private static string GetVillagerName(int index)
     {
@@ -96,6 +108,7 @@ public partial class VillagerEditor : UserControl
         if (SAV == null || SelectedVillager < 0)
         {
             GB_Details.Text = "Villager";
+            PB_Villager.Image = null;
             L_Home.Text = L_Gifts.Text = L_Index.Text = string.Empty;
             Loading = true;
             NUD_Friendship.Value = 0;
@@ -106,6 +119,7 @@ public partial class VillagerEditor : UserControl
         Loading = true;
         var villager = SAV.Villagers[SelectedVillager];
         GB_Details.Text = GetVillagerName(SelectedVillager);
+        PB_Villager.Image = VillagerSprite.GetVillagerSprite(SelectedVillager);
         L_Index.Text = $"Resident ID: {SelectedVillager:D4}";
         NUD_Friendship.Maximum = Math.Max(Villager.FriendshipTierMaximum, (int)villager.Friendship);
         NUD_Friendship.Value = villager.Friendship;
@@ -142,6 +156,21 @@ public partial class VillagerEditor : UserControl
             return;
         SaveChanges();
         LoadVillagers();
+    }
+
+    private void LB_Villagers_DrawItem(object sender, DrawItemEventArgs e)
+    {
+        e.DrawBackground();
+        if (e.Index < 0 || LB_Villagers.Items[e.Index] is not VillagerInfo villager)
+            return;
+        var size = e.Bounds.Height - 4;
+        var image = VillagerSprite.GetVillagerSprite(villager.Value);
+        if (image != null)
+            e.Graphics.DrawImage(image, new Rectangle(e.Bounds.Left + 2, e.Bounds.Top + 2, size, size));
+        var bounds = new Rectangle(e.Bounds.Left + size + 6, e.Bounds.Top, e.Bounds.Width - size - 6, e.Bounds.Height);
+        TextRenderer.DrawText(e.Graphics, villager.Display, e.Font ?? LB_Villagers.Font, bounds, e.ForeColor,
+            TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.NoPrefix | TextFormatFlags.EndEllipsis);
+        e.DrawFocusRectangle();
     }
 
     private void B_Set_Click(object sender, EventArgs e)

@@ -42,5 +42,26 @@
     <EmbeddedResource Include="Resources\text\ko\text_villager_ko.txt" />
     <EmbeddedResource Include="Resources\text\zhs\text_villager_zhs.txt" />
     <EmbeddedResource Include="Resources\text\zht\text_villager_zht.txt" />
+
+    <None Remove="Resources\byte\villager_portrait.bin" />
+    <None Remove="Resources\text\en\text_area_en.txt" />
+    <None Remove="Resources\text\jp\text_area_jp.txt" />
+    <None Remove="Resources\text\de\text_area_de.txt" />
+    <None Remove="Resources\text\es\text_area_es.txt" />
+    <None Remove="Resources\text\fr\text_area_fr.txt" />
+    <None Remove="Resources\text\it\text_area_it.txt" />
+    <None Remove="Resources\text\ko\text_area_ko.txt" />
+    <None Remove="Resources\text\zhs\text_area_zhs.txt" />
+    <None Remove="Resources\text\zht\text_area_zht.txt" />
+    <EmbeddedResource Include="Resources\byte\villager_portrait.bin" />
+    <EmbeddedResource Include="Resources\text\en\text_area_en.txt" />
+    <EmbeddedResource Include="Resources\text\jp\text_area_jp.txt" />
+    <EmbeddedResource Include="Resources\text\de\text_area_de.txt" />
+    <EmbeddedResource Include="Resources\text\es\text_area_es.txt" />
+    <EmbeddedResource Include="Resources\text\fr\text_area_fr.txt" />
+    <EmbeddedResource Include="Resources\text\it\text_area_it.txt" />
+    <EmbeddedResource Include="Resources\text\ko\text_area_ko.txt" />
+    <EmbeddedResource Include="Resources\text\zhs\text_area_zhs.txt" />
+    <EmbeddedResource Include="Resources\text\zht\text_area_zht.txt" />
   </ItemGroup>
 </Project>

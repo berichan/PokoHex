@@ -6,12 +6,14 @@ public sealed class GameStrings
 {
     public readonly string[] itemlist;
     public readonly string[] villagerlist;
+    public readonly string[] arealist;
     public readonly ItemInfo[] ItemDataSource;
 
     public GameStrings(string language)
     {
         itemlist = GameLanguage.GetStrings("item", language);
         villagerlist = GameLanguage.GetStrings("villager", language);
+        arealist = GameLanguage.GetStrings("area", language);
         var items = new List<ItemInfo>();
         for (int i = 0; i < itemlist.Length; i++)
         {

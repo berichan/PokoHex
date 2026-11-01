@@ -4963,4 +4963,1138 @@
   <data name="item_3750" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuIcon\item_3750.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="villager_0001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0003" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0003.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0004" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0004.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0005" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0005.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0006" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0006.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0007" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0007.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0008" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0008.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0009" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0009.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0010" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0010.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0012" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0012.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0013" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0013.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0014" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0014.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0015" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0015.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0016" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0016.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0017" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0017.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0018" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0018.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0019" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0019.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0020" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0020.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0021" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0021.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0022" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0022.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0023" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0023.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0024" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0024.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0025" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0025.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0026" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0026.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0027" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0027.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0028" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0028.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0029" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0029.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0030" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0030.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0031" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0031.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0032" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0032.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0033" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0033.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0034" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0034.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0035" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0035.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0036" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0036.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0037" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0037.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0038" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0038.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0039" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0039.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0040" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0040.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0041" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0041.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0042" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0042.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0043" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0043.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0044" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0044.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0045" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0045.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0046" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0046.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0047" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0047.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0048" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0048.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0049" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0049.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0050" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0050.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0051" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0051.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0052" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0052.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0053" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0053.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0054" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0054.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0055" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0055.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0056" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0056.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0057" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0057.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0058" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0058.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0059" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0059.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0060" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0060.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0061" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0061.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0062" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0062.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0063" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0063.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0064" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0064.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0065" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0065.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0066" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0066.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0067" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0067.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0068" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0068.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0069" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0069.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0070" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0070.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0071" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0071.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0072" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0072.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0073" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0073.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0074" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0074.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0075" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0075.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0076" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0076.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0077" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0077.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0078" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0078.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0079" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0079.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0080" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0080.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0081" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0081.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0082" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0082.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0083" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0083.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0084" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0084.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0085" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0085.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0086" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0086.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0087" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0087.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0088" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0088.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0089" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0089.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0090" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0090.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0091" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0091.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0092" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0092.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0093" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0093.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0094" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0094.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0095" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0095.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0096" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0096.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0097" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0097.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0098" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0098.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0099" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0099.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0101" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0101.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0102" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0102.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0103" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0103.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0104" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0104.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0105" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0105.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0106" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0106.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0107" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0107.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0108" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0108.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0109" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0109.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0110" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0110.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0111" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0111.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0112" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0112.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0113" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0113.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0114" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0114.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0115" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0115.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0116" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0116.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0117" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0117.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0118" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0118.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0119" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0119.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0120" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0120.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0121" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0121.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0122" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0122.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0123" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0123.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0124" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0124.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0125" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0125.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0126" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0126.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0127" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0127.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0129" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0129.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0130" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0130.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0131" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0131.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0132" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0132.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0133" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0133.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0134" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0134.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0135" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0135.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0136" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0136.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0137" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0137.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0138" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0138.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0139" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0139.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0140" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0140.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0141" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0141.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0142" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0142.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0143" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0143.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0144" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0144.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0145" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0145.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0146" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0146.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0147" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0147.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0148" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0148.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0149" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0149.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0150" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0151" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0151.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0152" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0152.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0153" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0153.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0154" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0154.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0155" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0155.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0156" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0156.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0157" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0157.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0158" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0158.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0159" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0159.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0160" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0160.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0162" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0162.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0163" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0163.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0164" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0164.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0165" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0165.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0166" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0166.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0167" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0167.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0168" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0168.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0169" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0169.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0170" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0170.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0171" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0171.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0172" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0172.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0173" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0173.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0174" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0174.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0175" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0175.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0176" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0176.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0177" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0177.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0178" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0178.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0179" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0179.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0180" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0180.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0181" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0181.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0182" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0182.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0183" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0183.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0184" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0184.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0185" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0185.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0186" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0186.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0187" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0187.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0188" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0188.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0189" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0189.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0190" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0190.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0191" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0191.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0192" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0192.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0193" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0193.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0194" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0194.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0195" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0195.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0196" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0196.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0197" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0197.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0198" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0198.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0199" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0199.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0200.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0201" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0201.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0202" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0202.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0203" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0203.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0204" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0204.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0205" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0205.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0206" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0206.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0207" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0207.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0208" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0208.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0209" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0209.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0210" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0210.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0211" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0211.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0212" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0212.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0213" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0213.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0214" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0214.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0215" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0215.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0216" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0216.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0217" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0217.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0218" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0218.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0219" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0219.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0220" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0220.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0221" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0221.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0222" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0222.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0223" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0223.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0224" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0224.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0225" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0225.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0226" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0226.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0227" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0227.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0228" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0228.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0229" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0229.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0230" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0230.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0231" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0231.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0232" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0232.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0233" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0233.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0234" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0234.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0235" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0235.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0236" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0236.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0237" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0237.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0238" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0238.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0239" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0239.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0240.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0241" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0241.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0242" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0242.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0243" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0243.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0244" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0244.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0245" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0245.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0246" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0246.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0247" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0247.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0248" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0248.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0249" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0249.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0250" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0250.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0251" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0251.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0252" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0252.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0253" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0253.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0254" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0254.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0255" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0255.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0257" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0257.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0258" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0258.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0259" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0259.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0260" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0260.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0261" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0261.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0262" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0262.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0263" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0263.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0264" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0264.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0265" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0265.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0266" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0266.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0267" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0267.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0268" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0268.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0269" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0269.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0270" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0270.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0271" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0271.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0272" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0272.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0273" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0273.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0274" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0274.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0275" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0275.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0276" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0276.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0277" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0277.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0278" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0278.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0279" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0279.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0280" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0281" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0281.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0282" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0282.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0283" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0283.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0284" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0284.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0285" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0285.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0286" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0286.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0287" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0287.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0288" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0288.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0289" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0289.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0290" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0290.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0291" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0291.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0292" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0292.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0293" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0293.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0294" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0294.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0295" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0295.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0296" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0296.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0297" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0297.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0298" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0298.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0299" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0299.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0300" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0301" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0301.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0302" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0302.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0303" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0303.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0304" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0304.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0305" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0305.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0306" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0306.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0307" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0307.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0308" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0308.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0309" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0309.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0310" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0310.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0311" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0311.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0312" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0312.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0313" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0313.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0314" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0314.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0315" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0315.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0316" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0316.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0317" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0317.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0318" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0318.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0319" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0319.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0320" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0320.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0322" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0322.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0323" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0323.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0324" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0324.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0325" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0325.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0326" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0326.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0327" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0327.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0328" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0328.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0329" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0329.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0330" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0330.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0331" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0331.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0332" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0332.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0333" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0333.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0334" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0334.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0335" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0335.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0336" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0336.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0337" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0337.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0338" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0338.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0339" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0339.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0340" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0340.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0341" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0341.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0342" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0342.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0343" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0343.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0344" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0344.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0345" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0345.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0346" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0346.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0347" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0347.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0348" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0348.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0349" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0349.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0350" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0350.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0351" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0351.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0352" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0352.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0353" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0353.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0354" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0354.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0355" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0355.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0356" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0356.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0357" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0357.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0358" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0358.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0359" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0359.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0360" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0360.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0361" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0361.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0362" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0362.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0363" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0363.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0364" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0364.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0365" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0365.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0366" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0366.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0367" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0367.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0368" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0368.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0369" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0369.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0370" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0370.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0371" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0371.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0372" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0372.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0373" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0373.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0374" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0374.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0375" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0375.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0376" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0376.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0377" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0377.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="villager_0378" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Villager\villager_0378.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
