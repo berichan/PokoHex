@@ -12,6 +12,7 @@ artifacts/
 *.bin
 !PokoHex.Core/Resources/byte/item_menuicon.bin
 !PokoHex.Core/Resources/byte/villager_portrait.bin
+!PokoHex.Core/Resources/byte/map_parts.bin
 *.raw
 *.nsp
 *.nca

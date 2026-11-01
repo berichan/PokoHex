@@ -10,13 +10,30 @@ public sealed class SaveFolder
     public string Folder { get; }
     public SaveFile Common { get; }
     private readonly Dictionary<string, byte[]> Files;
-    public bool IsEdited => Common.IsEdited;
+    private readonly Dictionary<int, StageSave> Stages = [];
+    public int[] StageIds { get; }
+    public bool IsEdited => Common.IsEdited || Stages.Values.Any(z => z.IsEdited);
 
     private SaveFolder(string folder, Dictionary<string, byte[]> files)
     {
         Folder = folder;
         Files = files;
         Common = SaveFile.Read(files[Path.Combine("G00", "CMNDAT.BIN")]);
+        StageIds = files.Keys.Where(z => Path.GetDirectoryName(z)!.Equals("G00", StringComparison.OrdinalIgnoreCase))
+            .Select(Path.GetFileName).Where(z => z!.Length == 12 && z.StartsWith("STGDAT", StringComparison.OrdinalIgnoreCase) &&
+                z.EndsWith(".BIN", StringComparison.OrdinalIgnoreCase) && int.TryParse(z.AsSpan(6, 2), out _))
+            .Select(z => int.Parse(z!.AsSpan(6, 2))).Order().ToArray();
+    }
+
+    public StageSave GetStage(int area)
+    {
+        if (Stages.TryGetValue(area, out var stage))
+            return stage;
+        if (!StageIds.Contains(area))
+            throw new ArgumentException("The selected area is not present in this save.");
+        stage = StageSave.Read(Files[Path.Combine("G00", $"STGDAT{area:D2}.BIN")]);
+        Stages.Add(area, stage);
+        return stage;
     }
 
     public static SaveFolder Read(string path)
@@ -54,12 +71,25 @@ public sealed class SaveFolder
         if (!check.Data.AsSpan().SequenceEqual(Common.Data))
             throw new InvalidDataException("The edited save could not be verified.");
 
+        var edited = new Dictionary<string, byte[]>(StringComparer.OrdinalIgnoreCase)
+        {
+            [Path.Combine("G00", "CMNDAT.BIN")] = common,
+        };
+        foreach (var (area, stage) in Stages.Where(z => z.Value.IsEdited))
+        {
+            var data = stage.Write();
+            var verified = StageSave.Read(data);
+            if (!verified.Data.Span.SequenceEqual(stage.Data.Span))
+                throw new InvalidDataException("The edited map could not be verified.");
+            edited.Add(Path.Combine("G00", $"STGDAT{area:D2}.BIN"), data);
+        }
+
         Directory.CreateDirectory(destination);
         foreach (var (relative, original) in Files)
         {
             var target = Path.Combine(destination, relative);
             Directory.CreateDirectory(Path.GetDirectoryName(target)!);
-            File.WriteAllBytes(target, relative.Equals(Path.Combine("G00", "CMNDAT.BIN"), StringComparison.OrdinalIgnoreCase) ? common : original);
+            File.WriteAllBytes(target, edited.TryGetValue(relative, out var data) ? data : original);
         }
     }
 }

@@ -10,6 +10,45 @@ namespace PokoHex.Tests;
 public static class DumpTests
 {
     [Fact]
+    public static void ReadMapParts()
+    {
+        var path = Environment.GetEnvironmentVariable("POKOHEX_GAME_PATH");
+        Assert.SkipUnless(Directory.Exists(path), "Set POKOHEX_GAME_PATH to the update game dump.");
+        var parts = GameMapDumper.GetPartList(path!);
+        Assert.Equal(ResourceUtil.GetBinaryResource("map_parts.bin"), parts);
+        Assert.Equal(1357, MapPartInfo.Get(1498).ItemId);
+        Assert.Equal(2, MapPartInfo.Get(1498).Width);
+        Assert.Equal(1628, MapPartInfo.Get(3197).ItemId);
+    }
+
+    [Fact]
+    public static void DumpMapResources()
+    {
+        var path = Environment.GetEnvironmentVariable("POKOHEX_GAME_PATH");
+        var destination = Environment.GetEnvironmentVariable("POKOHEX_RESOURCE_PATH");
+        Assert.SkipUnless(Directory.Exists(path), "Set POKOHEX_GAME_PATH to the update game dump.");
+        Assert.SkipUnless(!string.IsNullOrWhiteSpace(destination), "Set POKOHEX_RESOURCE_PATH to the resource output folder.");
+        GameMapDumper.UpdateDumps(path!, destination!);
+        Assert.Equal(GameMapDumper.GetPartList(path!), File.ReadAllBytes(Path.Combine(destination!, "byte", "map_parts.bin")));
+    }
+
+    [Fact]
+    public static void ReadStageSave()
+    {
+        var path = Environment.GetEnvironmentVariable("POKOHEX_SAVE_PATH");
+        Assert.SkipUnless(Directory.Exists(path), "Set POKOHEX_SAVE_PATH to a save folder.");
+        var save = SaveFolder.Read(path!);
+        var file = Path.Combine(save.Folder, "G00", "STGDAT01.BIN");
+        Assert.SkipUnless(File.Exists(file), "The save has no first area.");
+        var data = File.ReadAllBytes(file);
+        var stage = save.GetStage(1);
+        Assert.NotEmpty(stage.Parts);
+        Assert.NotEmpty(stage.Chunks);
+        Assert.Equal(data, stage.Write());
+        Assert.Equal(data, File.ReadAllBytes(file));
+    }
+
+    [Fact]
     public static void ReadItemTables()
     {
         var path = Environment.GetEnvironmentVariable("POKOHEX_GAME_PATH");

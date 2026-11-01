@@ -31,7 +31,9 @@ partial class Main
         var player = new TabPage("Player");
         var items = new TabPage("Items");
         var villagers = new TabPage("Villagers");
+        var map = new TabPage("Map");
         Editor_Villagers = new VillagerEditor { Dock = DockStyle.Fill };
+        Editor_Map = new MapEditor { Dock = DockStyle.Fill };
         var name = new Label();
         var nameHint = new Label();
         TB_Name = new TextBox();
@@ -64,8 +66,9 @@ partial class Main
         L_Status.Text = "Open a save folder to begin.";
         TC_Editor.Dock = DockStyle.Fill;
         TC_Editor.Enabled = false;
-        TC_Editor.TabPages.AddRange([player, items, villagers]);
+        TC_Editor.TabPages.AddRange([player, items, villagers, map]);
         villagers.Controls.Add(Editor_Villagers);
+        map.Controls.Add(Editor_Map);
         player.Padding = new Padding(12);
         name.AutoSize = true;
         name.Location = new Point(22, 28);
@@ -163,7 +166,7 @@ partial class Main
         MainMenuStrip = menu;
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(960, 580);
+        ClientSize = new Size(1120, 760);
         MinimumSize = new Size(800, 480);
         StartPosition = FormStartPosition.CenterScreen;
         Text = "PokoHex";
@@ -188,4 +191,5 @@ partial class Main
     private Label L_Catalog = null!;
     private Button B_Set = null!;
     private VillagerEditor Editor_Villagers = null!;
+    private MapEditor Editor_Map = null!;
 }
