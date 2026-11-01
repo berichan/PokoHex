@@ -1,0 +1,8 @@
+@if (Source != null)
+{
+    <img class="sprite" src="@Source" alt="" loading="lazy" decoding="async" />
+}
+
+@code {
+    [Parameter] public string? Source { get; set; }
+}

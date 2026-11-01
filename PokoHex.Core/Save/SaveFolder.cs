@@ -56,6 +56,23 @@ public sealed class SaveFolder
         return new SaveFolder(path, files);
     }
 
+    public static SaveFolder ReadFiles(IEnumerable<KeyValuePair<string, byte[]>> source)
+    {
+        var files = new Dictionary<string, byte[]>(StringComparer.OrdinalIgnoreCase);
+        foreach (var (name, data) in source)
+        {
+            var parts = name.Replace('\\', '/').Split('/');
+            if (parts.Any(z => z.Length == 0 || z is "." or ".." || z.Contains(':') || z.Any(char.IsControl)))
+                throw new InvalidDataException("The save contains an invalid file path.");
+            if (!files.TryAdd(Path.Combine(parts), (byte[])data.Clone()))
+                throw new InvalidDataException("The save contains duplicate file paths.");
+        }
+        if (!files.ContainsKey(Path.Combine("G00", "CMNDAT.BIN")) ||
+            !files.Keys.Any(z => z.StartsWith("S00" + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase)))
+            throw new InvalidDataException("Select the save folder containing G00 and S00.");
+        return new SaveFolder(string.Empty, files);
+    }
+
     public void Export(string destination)
     {
         destination = Path.GetFullPath(destination).TrimEnd(Path.DirectorySeparatorChar);
@@ -66,6 +83,18 @@ public sealed class SaveFolder
         if (File.Exists(destination) || (Directory.Exists(destination) && Directory.EnumerateFileSystemEntries(destination).Any()))
             throw new IOException("The export folder must be empty.");
 
+        var files = ExportFiles();
+        Directory.CreateDirectory(destination);
+        foreach (var (relative, data) in files)
+        {
+            var target = Path.Combine(destination, relative);
+            Directory.CreateDirectory(Path.GetDirectoryName(target)!);
+            File.WriteAllBytes(target, data);
+        }
+    }
+
+    public Dictionary<string, byte[]> ExportFiles()
+    {
         var common = Common.Write();
         var check = SaveFile.Read(common);
         if (!check.Data.AsSpan().SequenceEqual(Common.Data))
@@ -84,12 +113,9 @@ public sealed class SaveFolder
             edited.Add(Path.Combine("G00", $"STGDAT{area:D2}.BIN"), data);
         }
 
-        Directory.CreateDirectory(destination);
+        var result = new Dictionary<string, byte[]>(StringComparer.OrdinalIgnoreCase);
         foreach (var (relative, original) in Files)
-        {
-            var target = Path.Combine(destination, relative);
-            Directory.CreateDirectory(Path.GetDirectoryName(target)!);
-            File.WriteAllBytes(target, edited.TryGetValue(relative, out var data) ? data : original);
-        }
+            result.Add(relative, edited.TryGetValue(relative, out var data) ? data : (byte[])original.Clone());
+        return result;
     }
 }

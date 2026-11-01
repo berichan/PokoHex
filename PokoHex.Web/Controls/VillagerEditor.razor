@@ -1,0 +1,55 @@
+@if (SAV.Villagers.Length == 0)
+{
+    <p class="empty-state">Villager editing is not available for this save version.</p>
+}
+else
+{
+    <div class="split villager-editor">
+        <div class="list-pane">
+            <div class="filterbar">
+                <input type="search" aria-label="Search villagers" placeholder="Search name or resident ID" value="@Search" @oninput="TB_Search_Changed" />
+                <select aria-label="Villager home area" value="@Area" @onchange="CB_Area_Changed">
+                    <option value="-1">All areas</option>
+                    @foreach (var area in Areas)
+                    {
+                        <option value="@area">@SpriteUtil.GetAreaName(area)</option>
+                    }
+                </select>
+            </div>
+            <div class="resident-list" role="listbox" aria-label="Villagers">
+                @foreach (var villager in Entries)
+                {
+                    <button class="resident-row @(SelectedVillager == villager.Index ? "selected" : "")" role="option" aria-selected="@(SelectedVillager == villager.Index)" @onclick="() => SelectVillager(villager.Index)">
+                        <Sprite Source="@SpriteUtil.GetVillager(villager.Index)" /><span>@SpriteUtil.GetVillagerName(villager.Index) <small>(@villager.Index.ToString("D4"))</small></span>
+                    </button>
+                }
+                @if (Entries.Length == 0)
+                {
+                    <p class="empty-state">No matching villagers.</p>
+                }
+            </div>
+            <div class="list-status">@Entries.Length of @SAV.Villagers.Count(z => !z.IsEmpty) villagers</div>
+        </div>
+        <fieldset class="details" disabled="@(SelectedVillager < 0)"><legend>@(Selected == null ? "Villager" : SpriteUtil.GetVillagerName(SelectedVillager))</legend>
+            @if (Selected is { } resident)
+            {
+                <div class="portrait"><Sprite Source="@SpriteUtil.GetVillager(SelectedVillager)" /></div>
+                <p>Resident ID: @SelectedVillager.ToString("D4")</p>
+                <label for="friendship">Friendship points:</label><input id="friendship" type="number" min="0" max="@FriendshipMaximum" @bind="Friendship" @bind:event="oninput" @bind:after="NotifyChanged" />
+                <label class="check"><input type="checkbox" @bind="NameConversation" @bind:after="NotifyChanged" />Name conversation finished</label>
+                <div class="buttons"><button class="primary" @onclick="B_Set_Click">Set</button></div>
+                <dl><dt>Thank points</dt><dd>@resident.ThankPoints</dd><dt>Present level received</dt><dd>@resident.ReceivedPresentLevel</dd><dt>Waiting for a present</dt><dd>@(resident.WaitingForPresent ? "Yes" : "No")</dd></dl>
+                <h3>Home</h3>
+                @if (resident.Home.Type == 0)
+                {
+                    <p>No home assigned.</p>
+                }
+                else
+                {
+                    <p>@SpriteUtil.GetAreaName(resident.Home.StageId)<br />Home ID: @resident.Home.UniqueId<br />Last home block: @resident.Home.BlockX, @resident.Home.BlockY, @resident.Home.BlockZ</p>
+                }
+                <p class="muted">The conversation flag alone does not confirm how a villager will address you in dialogue.</p>
+            }
+        </fieldset>
+    </div>
+}

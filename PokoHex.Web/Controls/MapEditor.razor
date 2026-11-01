@@ -1,0 +1,99 @@
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@inject Microsoft.JSInterop.IJSRuntime JS
+
+<div class="map-editor">
+    <div class="filterbar map-toolbar">
+        <label>Area:<select value="@Area" @onchange="CB_Area_Changed" disabled="@Loading">
+            @foreach (var area in SAV.StageIds)
+            {
+                <option value="@area">@SpriteUtil.GetAreaName(area)</option>
+            }
+        </select></label>
+        <label>Region:<select @bind="Chunk" disabled="@(Stage == null || Loading)">
+            @foreach (var chunk in Stage?.Chunks ?? [])
+            {
+                <option value="@chunk">X @((chunk & 63) * 32) / Z @((chunk >> 6) * 32)</option>
+            }
+        </select></label>
+        <label>Height:<input type="number" min="0" max="127" @bind="Height" @bind:event="oninput" @bind:after="NotifyChanged" /></label>
+        <label class="check"><input type="checkbox" @bind="AllHeights" @bind:after="NotifyChanged" />All heights</label>
+        <button @onclick="B_Undo_Click" disabled="@(Stage?.CanUndo != true)">Undo</button>
+        <button @onclick="B_Redo_Click" disabled="@(Stage?.CanRedo != true)">Redo</button>
+    </div>
+    @if (Loading)
+    {
+        <p class="empty-state" role="status">Loading area…</p>
+    }
+    else if (Stage == null)
+    {
+        <p class="empty-state">@LoadError</p>
+    }
+    else
+    {
+        <div class="map-body">
+            <div class="map-view">
+                <svg @ref="PB_Map" viewBox="0 0 512 512" class="map" role="img" aria-label="32 by 32 map region. Click to select an object; right-click to position the selected furniture." @onmousedown="PB_Map_MouseDown" @oncontextmenu:preventDefault>
+                    <defs><pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M 16 0 L 0 0 0 16" fill="none" stroke="#d2d2d2" stroke-width="1" /></pattern></defs>
+                    <rect width="512" height="512" fill="white" />
+                    <path d="@GetGroundPath()" fill="#e1e5de" />
+                    <rect width="512" height="512" fill="url(#grid)" />
+                    @foreach (var part in VisibleParts)
+                    {
+                        var bounds = GetVisibleBounds(part);
+                        var rect = GetRectangle(bounds);
+                        var size = Math.Min(36, Math.Min(rect.Width, rect.Height));
+                        <g><title>@PartText(part)</title><rect x="@rect.X" y="@rect.Z" width="@rect.Width" height="@rect.Height" fill="@(part.Info.CanEdit ? "#b0c4de99" : "#d3d3d399")" stroke="#888" />
+                            @if (SpriteUtil.GetItem(part.Info.ItemId) is { } image)
+                            {
+                                <image href="@image" x="@(rect.X + (rect.Width - size) / 2)" y="@(rect.Z + (rect.Height - size) / 2)" width="@size" height="@size" />
+                            }
+                        </g>
+                    }
+                    @if (SelectedPart is { } selected)
+                    {
+                        var rect = GetRectangle(GetVisibleBounds(selected));
+                        <rect x="@rect.X" y="@rect.Z" width="@rect.Width" height="@rect.Height" class="selected-footprint" />
+                        @if (HasChanges && PendingBounds is { } bounds)
+                        {
+                            var preview = GetRectangle(bounds);
+                            <rect x="@preview.X" y="@preview.Z" width="@preview.Width" height="@preview.Height" class="pending-footprint" stroke="@(EditError == null ? "#228b22" : "#b22222")" />
+                        }
+                    }
+                </svg>
+                <p class="map-caption">X @OriginX–@(OriginX + 31) / Z @OriginZ–@(OriginZ + 31). Click to select; right-click to position.</p>
+                <p class="muted">Blue: selected. Green/red: pending footprint.</p>
+            </div>
+            <div class="map-sidebar">
+                <input type="search" aria-label="Search placed objects" placeholder="Search name, coordinates or #index" value="@Search" @oninput="TB_Search_Changed" />
+                <div class="part-list" role="listbox" aria-label="Placed objects">
+                    <Virtualize Items="Entries" Context="part" ItemSize="38">
+                        <button class="part-row @(SelectedPart == part ? "selected" : "")" role="option" aria-selected="@(SelectedPart == part)" @onclick="() => SelectPart(part)"><Sprite Source="@SpriteUtil.GetItem(part.Info.ItemId)" /><span>@PartText(part)</span></button>
+                    </Virtualize>
+                </div>
+                <small class="muted">@Entries.Length matches / @Stage.Parts.Length placed objects</small>
+                @if (SelectedPart is { } detailPart)
+                {
+                    <fieldset class="map-details"><legend>Selected object</legend>
+                        <div class="item-preview"><Sprite Source="@SpriteUtil.GetItem(MapPartInfo.Get(Variation).ItemId)" /><strong>@SpriteUtil.GetItemName(MapPartInfo.Get(Variation).ItemId)</strong></div>
+                        <label for="map-item">Replacement:</label>
+                        <select id="map-item" @bind="Variation" disabled="@(!detailPart.Info.CanEdit)">
+                            @foreach (var choice in Choices)
+                            {
+                                <option value="@choice.Value">@SpriteUtil.GetItemName(choice.ItemId) (@choice.Value.ToString("D4"))</option>
+                            }
+                        </select>
+                        <div class="coordinates">
+                            <label>X:<input type="number" min="0" max="2047" @bind="X" @bind:event="oninput" @bind:after="NotifyChanged" disabled="@(!detailPart.Info.CanEdit)" /></label>
+                            <label>Y:<input type="number" min="0" max="127" @bind="Y" @bind:event="oninput" @bind:after="NotifyChanged" disabled="@(!detailPart.Info.CanEdit)" /></label>
+                            <label>Z:<input type="number" min="0" max="2047" @bind="Z" @bind:event="oninput" @bind:after="NotifyChanged" disabled="@(!detailPart.Info.CanEdit)" /></label>
+                        </div>
+                        <label>Direction:<select @bind="Direction" disabled="@(!detailPart.Info.CanEdit)"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></label>
+                        <p>Item @MapPartInfo.Get(Variation).ItemId.ToString("D4") / Part @Variation.ToString("D4")<br />Size: @PendingBounds?.Width X, @PendingBounds?.Height Y, @PendingBounds?.Depth Z</p>
+                        <p class="muted" role="status">@(EditError ?? (HasChanges ? "Press Set to place." : "Choose coordinates or right-click a map cell."))</p>
+                        <div class="buttons"><button class="primary" @onclick="B_Set_Click" disabled="@(EditError != null || !HasChanges)">Set</button></div>
+                    </fieldset>
+                }
+            </div>
+        </div>
+    }
+</div>

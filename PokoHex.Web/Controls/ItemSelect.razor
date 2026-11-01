@@ -1,0 +1,35 @@
+<div class="item-select">
+    <div class="item-preview"><Sprite Source="@SpriteUtil.GetItem(Selected?.Value ?? 0)" /><span>@Selected?.Display</span></div>
+    <label>Search items:<input type="search" @bind="Search" @bind:event="oninput" placeholder="Name or item ID" /></label>
+    <div class="item-choices" role="listbox" aria-label="Items">
+        @foreach (var item in Filtered)
+        {
+            <button type="button" class="item-choice @(item.Value == Value ? "selected" : "")" role="option" aria-selected="@(item.Value == Value)" @onclick="() => ValueChanged.InvokeAsync(item.Value)">
+                <Sprite Source="@SpriteUtil.GetItem(item.Value)" /><span>@item.Display</span>
+            </button>
+        }
+        @if (Filtered.Length == 0)
+        {
+            <p class="muted">No matching items.</p>
+        }
+    </div>
+    <small class="muted">Showing up to 80 matches. Search to narrow the list.</small>
+</div>
+
+@code {
+    [Parameter, EditorRequired] public ItemInfo[] Choices { get; set; } = [];
+    [Parameter] public ushort Value { get; set; }
+    [Parameter] public EventCallback<ushort> ValueChanged { get; set; }
+    [Parameter] public int Language { get; set; }
+    private int PreviousLanguage = -1;
+    private string Search = string.Empty;
+    private ItemInfo? Selected => Choices.FirstOrDefault(z => z.Value == Value);
+    private ItemInfo[] Filtered => Choices.Where(z => z.Display.Contains(Search, StringComparison.CurrentCultureIgnoreCase)).Take(80).ToArray();
+
+    protected override void OnParametersSet()
+    {
+        if (PreviousLanguage != Language)
+            Search = string.Empty;
+        PreviousLanguage = Language;
+    }
+}

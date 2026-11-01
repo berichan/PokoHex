@@ -1,0 +1,29 @@
+<div class="split inventory-editor">
+    <div class="list-pane">
+        <div class="filterbar"><label for="inventory-bank">Inventory:</label>
+            <select id="inventory-bank" value="@InventoryStart" @onchange="CB_Inventory_Changed">
+                <option value="0">Main inventory</option><option value="120">Secondary bar</option>
+            </select>
+        </div>
+        <div class="table-scroll">
+            <table class="inventory"><thead><tr><th>Slot</th><th></th><th>Item</th><th>Count</th></tr></thead><tbody>
+                @for (int i = 0; i < InventoryCount; i++)
+                {
+                    var slot = InventoryStart + i;
+                    var item = SAV.Inventory[slot];
+                    <tr class="@(SelectedSlot == slot ? "selected" : "")" aria-selected="@(SelectedSlot == slot)">
+                        <td>@(i + 1)</td><td><Sprite Source="@SpriteUtil.GetItem(item.ItemId)" /></td>
+                        <td><button class="row-button" @onclick="() => SelectSlot(slot)">@SpriteUtil.GetItemName(item.ItemId)</button></td><td>@item.Count</td>
+                    </tr>
+                }
+            </tbody></table>
+        </div>
+    </div>
+    <fieldset class="details"><legend>Selected slot</legend>
+        <p>@(InventoryStart == 0 ? "Slot" : "Secondary bar slot") @(SelectedSlot - InventoryStart + 1) of @InventoryCount</p>
+        <ItemSelect Choices="Choices" Value="ItemId" ValueChanged="CB_Item_Changed" Language="Language" />
+        <label for="item-count">Count:</label><input id="item-count" type="number" min="0" max="255" @bind="Count" @bind:event="oninput" @bind:after="NotifyChanged" />
+        <div class="buttons"><button class="primary" @onclick="B_Set_Click">Set</button><button @onclick="B_Clear_Click">Clear</button></div>
+        <p class="muted">@((GameInfo.Strings.ItemDataSource.Length - 1).ToString("N0")) items are available.</p>
+    </fieldset>
+</div>

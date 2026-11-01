@@ -1,0 +1,106 @@
+name: Web build and Pages deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: Deploy to GitHub Pages
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pokohex-web-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      DOTNET_NOLOGO: 'true'
+      DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v6
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore
+        run: |
+          dotnet restore PokoHex.Web/PokoHex.Web.csproj
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          dotnet restore PokoHex.Tests/PokoHex.Tests.csproj
+
+      - name: Test
+        run: >-
+          dotnet test PokoHex.Tests/PokoHex.Tests.csproj
+          --configuration Release
+          --no-restore
+          --verbosity normal
+
+      - name: Build static site
+        run: >-
+          dotnet publish PokoHex.Web/PokoHex.Web.csproj
+          --configuration Release
+          --no-restore
+          --output artifacts/web
+          -p:DebugType=None
+          -p:DebugSymbols=false
+
+      - name: Verify static site
+        run: |
+          $site = 'artifacts/web/wwwroot'
+          $required = @(
+              'index.html',
+              'app.css',
+              'editor.js',
+              'drop.js',
+              '.nojekyll',
+              '_framework/blazor.webassembly.js',
+              'images/items/item_0565.png',
+              'images/villagers/villager_0001.png'
+          )
+          foreach ($file in $required) {
+              if (-not (Test-Path -LiteralPath (Join-Path $site $file) -PathType Leaf)) {
+                  throw "The static site is missing $file."
+              }
+          }
+          Copy-Item -LiteralPath LICENSE.txt -Destination (Join-Path $site 'LICENSE.txt')
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: artifacts/web/wwwroot
+          retention-days: 7
+
+  deploy:
+    if: ${{ inputs.deploy }}
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

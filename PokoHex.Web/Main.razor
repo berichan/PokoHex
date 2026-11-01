@@ -1,0 +1,67 @@
+﻿@inject Microsoft.JSInterop.IJSRuntime JS
+
+<PageTitle>PokoHex@(SAV == null ? "" : $" / {SaveName}")</PageTitle>
+<main @ref="EditorWindow" class="application" aria-busy="@Busy">
+    <header class="titlebar"><strong>PokoHex</strong><span>Save Editor</span><span class="edition">Web</span></header>
+    <div class="menubar">
+        <label class="file-button" aria-disabled="@Busy">Open save folder…
+            <InputFile id="open-folder" OnChange="OpenFolder" webkitdirectory="" multiple disabled="@Busy" />
+        </label>
+        <label class="file-button" aria-disabled="@Busy">Open ZIP…
+            <InputFile id="open-zip" OnChange="OpenZip" accept=".zip" disabled="@Busy" />
+        </label>
+        <button @onclick="Menu_Export_Click" disabled="@(SAV == null || Busy)">Export save copy…</button>
+        <label class="language">Language:
+            <select aria-label="Catalog language" value="@Language" @onchange="Menu_Language_Changed" disabled="@Busy">
+                @for (int i = 0; i < GameLanguage.LanguageCount; i++)
+                {
+                    <option value="@i">@LanguageNames[i]</option>
+                }
+            </select>
+        </label>
+    </div>
+    @if (Error.Length != 0)
+    {
+        <div class="error" role="alert"><span>@Error</span><button @onclick="() => Error = string.Empty" aria-label="Dismiss error">×</button></div>
+    }
+    <nav class="tabs" aria-label="Editor tabs">
+        @foreach (var tab in Tabs)
+        {
+            <button class="@(SelectedTab == tab ? "active" : "")" aria-current="@(SelectedTab == tab ? "page" : null)" disabled="@Busy" @onclick="() => SelectTab(tab)">@tab</button>
+        }
+    </nav>
+    <section class="workspace" inert="@(Busy ? string.Empty : null)">
+        @if (SAV == null)
+        {
+            <div class="welcome">
+                <h1>PokoHex Save Editor</h1>
+                <p>Open or drag in the save folder containing <strong>G00</strong> and <strong>S00</strong>, or a ZIP of that folder.</p>
+                <p class="muted">Everything happens locally. Your save files stay in your browser. Export downloads a ZIP; your original files are never overwritten but keep backups!</p>
+            </div>
+        }
+        else
+        {
+            <div @key="SAV" class="editors" @onchange="Controls_Changed" @onclick="Controls_Changed" @onmousedown="Controls_Changed">
+                <section hidden="@(SelectedTab != "Player")" class="player-editor">
+                    <fieldset><legend>Player</legend>
+                        <label for="player-name">Name:</label>
+                        <input id="player-name" @bind="PlayerName" @bind:event="oninput" />
+                        <p class="muted">Up to 24 UTF-8 bytes. Matching name entries are updated together.</p>
+                    </fieldset>
+                </section>
+                <section hidden="@(SelectedTab != "Items")"><InventoryEditor @ref="Editor_Items" SAV="SAV.Common" Language="Language" Error="ShowError" Changed="Controls_Changed" /></section>
+                <section hidden="@(SelectedTab != "Villagers")"><VillagerEditor @ref="Editor_Villagers" SAV="SAV.Common" Language="Language" Error="ShowError" Changed="Controls_Changed" /></section>
+                @if (MapOpened)
+                {
+                    <section hidden="@(SelectedTab != "Map")"><MapEditor @ref="Editor_Map" SAV="SAV" Language="Language" Error="ShowError" Changed="Controls_Changed" /></section>
+                }
+            </div>
+        }
+    </section>
+    <footer class="statusbar" role="status"><span>@Status</span><span>@(SAV == null ? "Local save editing" : HasChanges ? "Unsaved changes" : "No pending changes")</span></footer>
+    <div class="drop-target" aria-hidden="true"><span>Drop a save folder or ZIP to open it.</span></div>
+    @if (Busy)
+    {
+        <div class="busy" role="status">@Status</div>
+    }
+</main>
