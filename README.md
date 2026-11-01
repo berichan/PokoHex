@@ -11,7 +11,9 @@ Edits savedata dumped from the Nintendo Switch 2.
 
 ## Builds
 
-Download `PokoHex-win-x64.zip` from the [Releases](https://github.com/berichan/PokoHex/releases), extract it, and run `PokoHex.exe`.
+[Windows] Download `PokoHex-win-x64.zip` from the [Releases](https://github.com/berichan/PokoHex/releases), extract it, and run `PokoHex.exe`.
+
+[All Platforms] Works in your browser in this repository's GitHub Pages: [https://berichan.github.io/PokoHex/](https://berichan.github.io/PokoHex/)
 
 ## Other
 
