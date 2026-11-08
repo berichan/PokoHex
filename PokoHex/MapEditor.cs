@@ -244,10 +244,14 @@ public partial class MapEditor : UserControl
         return $"{int.Parse($"{minX:d2}{minZ:d2}{width:d2}{depth:d2}"):X8}{firstRow:X4}{lastRow:X4}";
     }
 
+
     private bool CheckInterior(ushort chunk)
     {
+#if(DEBUG)
+        Interior = false;
+#else
         Interior = GetInteriorBoundaries(chunk).Count > 0;
-
+#endif
         interior.Visible = Interior;
         CB_Interior.Visible = Interior;
         btnJumpToInteriors.Visible = CB_Interior.Items.Count > 0;
@@ -266,12 +270,13 @@ public partial class MapEditor : UserControl
     private readonly Dictionary<string, string> InteriorTypes = new Dictionary<string, string>
     {
         { "001E8F90F000F000", "Area Gate"},
-        { "001EDDAC0000F000", "Pokécenter" },
+        { "001EDDAC0000F000", "Poké Center" },
         { "0099FACE000000F0", "%0Hut" },
         { "007B29C2000003C0", "%0Den" },
-        { "003DAEB800003C00", "%0Cottage" },
+        { "003DAEB800003C00", "%0Cottage / Poké Mart" },
         { "00005ABC00003C00", "%0House (F1)" },
         { "00005ABC03C00000", "%0House (F2)" },
+        { "008A6B3A000003F0", "Tent / Poké Ball House" }
     };
 
     private string AreaHouseName =>
