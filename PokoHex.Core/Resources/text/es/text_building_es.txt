@@ -1,0 +1,61 @@
+
+Centro Pokémon de la estepa
+Centro Pokémon de la bahía
+Centro Pokémon de los riscos
+Centro Pokémon de las islas
+Centro Pokémon de la cuenca
+choza de hojas
+casita de hojas
+casa de hojas
+casoplón de hojas
+choza de arena
+casita de arena
+casa de arena
+casoplón de arena
+choza de piedra
+casita de piedra
+casa de piedra
+casoplón de piedra
+choza urbana
+casita urbana
+casa urbana
+casoplón urbano
+tienda de campaña
+casita Poké Ball
+Tienda Pokémon
+terminal de carga
+generador eólico
+generador hidráulico
+generador térmico
+fuente de Pikachu
+mural misterioso
+rascacielos isleño P1
+rascacielos isleño P2
+rascacielos isleño P3
+Altar Ascuas
+Central de Energía
+Montículos Espuma
+curri de fiesta
+estatua baile lunar
+casa señorial
+casoplón señorial
+submarino Sharpedo
+templo marino
+torre del reloj Dewgong
+parque del bienestar
+casa rosa
+cafetería bohemia
+casa ocre
+escenario para conciertos
+casa gris
+oficina pequeña
+casa amarilla
+cabaña
+plaza con fuente
+casita ocre
+casita gris
+casita rosa
+casita amarilla
+casa celeste
+centro de investigación
+supermercado

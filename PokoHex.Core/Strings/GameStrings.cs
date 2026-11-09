@@ -9,6 +9,7 @@ public sealed class GameStrings
     public readonly string[] arealist;
     public readonly string[] skilllist;
     public readonly string[] reactionlist;
+    public readonly string[] buildinglist;
     //public readonly string[] uselist;
     public readonly ItemInfo[] ItemDataSource;
     public readonly AbilityInfo[] SkillDataSource;
@@ -21,6 +22,7 @@ public sealed class GameStrings
         arealist = GameLanguage.GetStrings("area", language);
         skilllist = GameLanguage.GetStrings("skill", language);
         reactionlist = GameLanguage.GetStrings("reaction", language);
+        buildinglist = GameLanguage.GetStrings("building", language);
         var skills = new List<AbilityInfo>();
         var reactions = new List<AbilityInfo>();
         for (int i = 0; i < skilllist.Length; i++)

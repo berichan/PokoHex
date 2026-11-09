@@ -1,0 +1,61 @@
+
+Welkwüstia-Pokémon-Center
+Trübküstia-Pokémon-Center
+Kargbergia-Pokémon-Center
+Glitzerwolkia-Pokémon-Center
+Blubbmeeria-Pokémon-Center
+Blätterbau
+Blätterhütte
+Blätterhäuschen
+Blätterhaus
+Sandbau
+Sandhütte
+Sandhäuschen
+Sandhaus
+Steinbau
+Steinhütte
+Steinhäuschen
+Steinhaus
+Großstadtbau
+Großstadthütte
+Großstadthäuschen
+Großstadthaus
+Zelt
+Pokéball-Gebäude
+Pokémon-Supermarkt
+Ladestation
+Windkraftgenerator
+Wasserkraftgenerator
+Wärmekraftgenerator
+Pikachu-Zierbrunnen
+Rätselhaftes Wandbild
+Glitzerwolkiagebäude (1S)
+Glitzerwolkiagebäude (2S)
+Glitzerwolkiagebäude (3S)
+Tempel der Glut
+Kraftwerk der Stille
+Eishöhle des Seeschaums
+Partycurry
+Mondtanzstatue
+Hoheitshäuschen
+Hoheitshaus
+Tohaido-Tauchboot
+Tempel des Meeres
+Jugong-Turmuhr
+Entspannungspark
+Rosahäuschen
+Schönblick-Café
+Orangehäuschen
+Konzertbühne
+Grauhäuschen
+Minibüro
+Gelbhäuschen
+Blockhaus
+Springbrunnenplatz
+Orangehütte
+Grauhütte
+Rosahütte
+Gelbhütte
+Hellblauhäuschen
+Labor
+Supermarkt

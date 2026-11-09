@@ -1,0 +1,61 @@
+
+Wasteland Pokémon Center
+Beach Pokémon Center
+Ridge Pokémon Center
+Skyland Pokémon Center
+Basin Pokémon Center
+leaf den
+leaf hut
+leaf cottage
+leaf house
+sand den
+sand hut
+sand cottage
+sand house
+stone den
+stone hut
+stone cottage
+stone house
+city den
+city hut
+city cottage
+city house
+tent
+Poké Ball house
+Poké Mart
+charging station
+windmill
+waterwheel
+furnace
+Pikachu fountain
+mysterious mural
+skyland building 2F
+skyland building 3F
+skyland building 4F
+Altar of Flame
+Abandoned Power Plant
+Freezing Chambers
+party curry
+moonlight dance statue
+imperial cottage
+imperial house
+Sharpedo submarine
+ocean temple
+Dewgong clock tower
+relaxing park
+pink cottage
+stylish café
+orange cottage
+concert stage
+gray cottage
+small office
+yellow cottage
+log cabin
+fountain plaza
+orange hut
+gray hut
+pink hut
+yellow hut
+aqua cottage
+research lab
+supermarket

@@ -42,6 +42,7 @@ public partial class MapEditor : UserControl
         Loading = false;
         Interior = false;
         LoadArea();
+        InitBuildings();
     }
 
     private static string GetAreaName(int area)
@@ -54,6 +55,13 @@ public partial class MapEditor : UserControl
     {
         var names = GameInfo.Strings.itemlist;
         return item != 0 && item < names.Length && names[item].Length != 0 ? names[item] : $"Item {item:D4}";
+    }
+
+    private static string GetBuildingName(ushort building)
+    {
+        var CapitalizeTitle = (string title) => string.Join(" ", title.Split(' ').Select(w => w.Length > 2 ? char.ToUpper(w[0]) + w[1..] : w));
+        var names = GameInfo.Strings.buildinglist;
+        return building != 0 && building < names.Length && names[building].Length != 0 ? CapitalizeTitle(names[building]) : $"Building {building}";
     }
 
     private void BindAreas()
@@ -87,6 +95,7 @@ public partial class MapEditor : UserControl
         NUD_Y.Value = y;
         NUD_Z.Value = z;
         CB_Direction.SelectedIndex = direction;
+        LoadInteriors((CB_Chunk.SelectedItem as ItemInfo)?.Value ?? 0);
         Loading = false;
         UpdatePreview();
     }
@@ -110,7 +119,7 @@ public partial class MapEditor : UserControl
                     if (x == 1952 && z == 1952)
                     {
                         LoadInteriors((ushort)chunk);
-                }
+                    }
                 }
                 CB_Chunk.DisplayMember = nameof(ItemInfo.Text);
                 CB_Chunk.SelectedIndex = 0;
@@ -267,62 +276,52 @@ public partial class MapEditor : UserControl
 
         public override string ToString() => Text;
     }
-    private readonly Dictionary<string, string> InteriorTypes = new Dictionary<string, string>
-    {
-        { "001E8F90F000F000", "Area Gate"},
-        { "001EDDAC0000F000", "Poké Center" },
-        { "0099FACE000000F0", "%0Hut" },
-        { "007B29C2000003C0", "%0Den" },
-        { "003DAEB800003C00", "%0Cottage / Poké Mart" },
-        { "00005ABC00003C00", "%0House (F1)" },
-        { "00005ABC03C00000", "%0House (F2)" },
-        { "008A6B3A000003F0", "Tent / Poké Ball House" }
-    };
 
-    private string AreaHouseName =>
-        SelectedArea switch
-        {
-            0 => "Leaf ",
-            1 => "Beach ",
-            2 => "Stone ",
-            3 => "City ",
-            _ => ""
-        };
+    private readonly Dictionary<string, string> InteriorTypes = new Dictionary<string, string>();
+
+    private void InitBuildings()
+    {
+        var area = Math.Max(SelectedArea, 0);
+        InteriorTypes.Clear();
+        InteriorTypes["001E8F90F000F000"] = "Area Gate";
+        InteriorTypes["001EDDAC0000F000"] = GetBuildingName((ushort)(area + 1));                                            // Pokemon Center
+        InteriorTypes["0099FACE000000F0"] = GetBuildingName((ushort)(area * 4 + 6));                                        // Den
+        InteriorTypes["007B29C2000003C0"] = GetBuildingName((ushort)(area * 4 + 7));                                        // Hut
+        InteriorTypes["003DAEB800003C00"] = GetBuildingName((ushort)(area * 4 + 8)) + " / " + GetBuildingName(24);          // Cottage / Poke Mart
+        InteriorTypes["00005ABC00003C00"] = GetBuildingName((ushort)(area * 4 + 9)) + " (1F)";                              // House (1F)
+        InteriorTypes["00005ABC03C00000"] = GetBuildingName((ushort)(area * 4 + 9)) + " (2F)";                              // House (2F)
+        InteriorTypes["008A6B3A000003F0"] = GetBuildingName(22) + " / " + GetBuildingName(23);                              // Poke Ball House / Poke mart
+    }
 
     private void LoadInteriors(ushort chunk)
     {
+        if (chunk == 0)
+            return;
+        InitBuildings();
         CB_Interior.Items.Clear();
 
         var boundaries = GetInteriorBoundaries(chunk);
+        var buildings = Stage.GetBuildingsForChunk(chunk);
 
         for (int i = 0; i + 1 < boundaries.Count; i += 2)
         {
             var (floor, signature) = boundaries[i];
             int ceiling = boundaries[i + 1].Floor;
+            var building = buildings.First(x => x.Floor == floor);
 
             if (ceiling <= floor)
                 continue;
 
-            if (!InteriorTypes.TryGetValue(signature, out string? name))
-            {
-                name = floor switch
-                {
-                    4 => "Gate 1",
-                    16 => "Gate 2",
-                    28 => "Gate 3",
-                    40 => "Gate 4",
-                    52 => "Pokémon Center",
-                    _ => $"Unknown interior {InteriorTypes.Count + 1}"
-                };
-
-                InteriorTypes[signature] = name;
-            }
+            string name;
+            if (!InteriorTypes.TryGetValue((signature), out name))
+                name = $"Unknown interior {InteriorTypes.Count + 1}";
+            //name += " (" + building.Type + ")";
 
             CB_Interior.Items.Add(new InteriorInfo
             {
                 Floor = (ushort)floor,
                 Ceiling = (ushort)ceiling,
-                Text = $"{name.Replace("%0", AreaHouseName)} (Y {floor}–{ceiling})"
+                Text = $"{name} (Y {floor}–{ceiling})"
             });
         }
 
@@ -834,7 +833,7 @@ public partial class MapEditor : UserControl
         {
             var boundaries = GetInteriorBoundaries((ushort)chunk)
                 .Where((c, i) => i % 2 != 1)
-                .Select(s => (s.Floor, InteriorTypes[s.Signature].Replace("%0", AreaHouseName))).ToList();
+                .Select(s => (s.Floor, InteriorTypes[s.Signature])).ToList();
             if (boundaries.Count == 0)
                 break;
 
@@ -865,6 +864,6 @@ public partial class MapEditor : UserControl
             return;
         View_Changed(sender, e);
         if (CheckInterior((ushort)Chunk))
-          LoadInteriors((ushort)Chunk);
+            LoadInteriors((ushort)Chunk);
     }
 }

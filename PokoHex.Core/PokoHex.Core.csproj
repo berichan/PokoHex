@@ -101,5 +101,24 @@
     <EmbeddedResource Include="Resources\text\ko\text_area_ko.txt" />
     <EmbeddedResource Include="Resources\text\zhs\text_area_zhs.txt" />
     <EmbeddedResource Include="Resources\text\zht\text_area_zht.txt" />
+
+    <None Remove="Resources\text\en\text_building_en.txt" />
+    <None Remove="Resources\text\jp\text_building_jp.txt" />
+    <None Remove="Resources\text\de\text_building_de.txt" />
+    <None Remove="Resources\text\es\text_building_es.txt" />
+    <None Remove="Resources\text\fr\text_building_fr.txt" />
+    <None Remove="Resources\text\it\text_building_it.txt" />
+    <None Remove="Resources\text\ko\text_building_ko.txt" />
+    <None Remove="Resources\text\zhs\text_building_zhs.txt" />
+    <None Remove="Resources\text\zht\text_building_zht.txt" />
+    <EmbeddedResource Include="Resources\text\en\text_building_en.txt" />
+    <EmbeddedResource Include="Resources\text\jp\text_building_jp.txt" />
+    <EmbeddedResource Include="Resources\text\de\text_building_de.txt" />
+    <EmbeddedResource Include="Resources\text\es\text_building_es.txt" />
+    <EmbeddedResource Include="Resources\text\fr\text_building_fr.txt" />
+    <EmbeddedResource Include="Resources\text\it\text_building_it.txt" />
+    <EmbeddedResource Include="Resources\text\ko\text_building_ko.txt" />
+    <EmbeddedResource Include="Resources\text\zhs\text_building_zhs.txt" />
+    <EmbeddedResource Include="Resources\text\zht\text_building_zht.txt" />
   </ItemGroup>
 </Project>

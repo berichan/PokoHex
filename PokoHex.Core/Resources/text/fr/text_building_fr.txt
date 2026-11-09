@@ -1,0 +1,61 @@
+
+Centre Pokémon de la plaine
+Centre Pokémon du rivage
+Centre Pokémon des collines
+Centre Pokémon de Flotîles
+Centre Pokémon des fonds marins
+abri feuille
+cabane feuille
+maison feuille
+grande maison feuille
+abri sable
+cabane sable
+maison sable
+grande maison sable
+abri pierre
+cabane pierre
+maison pierre
+grande maison pierre
+abri citadin
+cabane citadine
+maison citadine
+grande maison citadine
+tente
+maison Poké Ball
+Boutique Pokémon
+point de charge
+aérogénérateur
+hydrogénérateur
+pyrogénérateur
+fontaine Pikachu
+fresque mystérieuse
+1er étage de l'immeuble de Flotîles
+2e étage de l'immeuble de Flotîles
+3e étage de l'immeuble de Flotîles
+autel braise
+centrale abandonnée
+glacières jumelles
+marmite de curry conviviale
+statue de danse lunaire
+maison majestueuse
+grande maison majestueuse
+sous-marin Sharpedo
+temple de la mer
+tour de l'horloge Lamantine
+parc relaxant
+maison rose
+café élégant
+maison orange
+scène de concert
+maison grise
+petit bureau
+maison jaune
+maison en rondins
+place de la fontaine
+cabane orange
+cabane grise
+cabane rose
+cabane jaune
+maison bleu clair
+laboratoire
+supermarché

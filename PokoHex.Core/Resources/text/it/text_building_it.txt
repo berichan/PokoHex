@@ -1,0 +1,61 @@
+
+Centro Pokémon della Landa
+Centro Pokémon della Costa
+Centro Pokémon dei Monti
+Centro Pokémon delle Isole
+Centro Pokémon del Fondale
+Tana stile bosco
+Casupola stile bosco
+Casetta stile bosco
+Casa stile bosco
+Tana stile spiaggia
+Casupola stile spiaggia
+Casetta stile spiaggia
+Casa stile spiaggia
+Tana stile pietroso
+Casupola stile pietroso
+Casetta stile pietroso
+Casa stile pietroso
+Tana stile urbano
+Casupola stile urbano
+Casetta stile urbano
+Casa stile urbano
+Tenda
+Casetta stile Poké Ball
+Pokémon-Market
+Punto ricarica
+Generatore eolico
+Generatore idrico
+Generatore termico
+Fontana di Pikachu
+Murale misterioso
+Edificio brillantino (1º piano)
+Edificio brillantino (2º piano)
+Edificio brillantino (3º piano)
+Altare delle braci
+Centrale della solitudine
+Ghiacciaie della spuma
+Curry della festa
+Statua danza lunare
+Casetta stile imperiale
+Casa stile imperiale
+Sottomarino Sharpedo
+Tempio dei mari
+Torre dell'orologio Dewgong
+Parchetto della guarigione
+Casa rosa
+Caffetteria elegante
+Casa arancione
+Area concerto
+Casa grigia
+Piccolo ufficio
+Casa gialla
+Casa di tronchi
+Piazza con fontana
+Casupola arancione
+Casupola grigia
+Casupola rosa
+Casupola gialla
+Casa celeste
+Laboratorio
+Supermercato
