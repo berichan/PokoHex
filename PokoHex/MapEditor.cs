@@ -290,7 +290,8 @@ public partial class MapEditor : UserControl
         InteriorTypes["003DAEB800003C00"] = GetBuildingName((ushort)(area * 4 + 8)) + " / " + GetBuildingName(24);          // Cottage / Poke Mart
         InteriorTypes["00005ABC00003C00"] = GetBuildingName((ushort)(area * 4 + 9)) + " (1F)";                              // House (1F)
         InteriorTypes["00005ABC03C00000"] = GetBuildingName((ushort)(area * 4 + 9)) + " (2F)";                              // House (2F)
-        InteriorTypes["008A6B3A000003F0"] = GetBuildingName(22) + " / " + GetBuildingName(23);                              // Poke Ball House / Poke mart
+        InteriorTypes["008A6B3A000003F0"] = GetBuildingName(22) + " / " + GetBuildingName(23);                              // Tent / Poke Ball House
+        InteriorTypes["007B02B4000003C0"] = GetBuildingName(41);                                                            // Sharpedo Submarine
     }
 
     private void LoadInteriors(ushort chunk)
@@ -833,7 +834,7 @@ public partial class MapEditor : UserControl
         {
             var boundaries = GetInteriorBoundaries((ushort)chunk)
                 .Where((c, i) => i % 2 != 1)
-                .Select(s => (s.Floor, InteriorTypes[s.Signature])).ToList();
+                .Select(s => (s.Floor, InteriorTypes.TryGetValue(s.Signature, out var val) ? val : "Unknown interior")).ToList();
             if (boundaries.Count == 0)
                 break;
 
