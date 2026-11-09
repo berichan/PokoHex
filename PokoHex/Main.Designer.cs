@@ -17,6 +17,7 @@ partial class Main
 
     private void InitializeComponent()
     {
+        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
         menu = new MenuStrip();
         file = new ToolStripMenuItem();
         Menu_Open = new ToolStripMenuItem();
@@ -46,9 +47,17 @@ partial class Main
         dataGridViewImageColumn1 = new DataGridViewImageColumn();
         dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
         dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
         inventoryPanel = new Panel();
         inventoryLabel = new Label();
         CB_Inventory = new ComboBox();
+        L_Paints = new Label();
+        NUD_Pattern = new NumericUpDown();
+        chkPattern = new CheckBox();
+        NUD_Paint3 = new NumericUpDown();
+        NUD_Paint2 = new NumericUpDown();
+        NUD_Paint1 = new NumericUpDown();
+        chkPaint = new CheckBox();
         NUD_CustomItemID = new NumericUpDown();
         chk_CustomItem = new CheckBox();
         L_Slot = new Label();
@@ -78,6 +87,10 @@ partial class Main
         split.SuspendLayout();
         ((ISupportInitialize)DGV_Items).BeginInit();
         inventoryPanel.SuspendLayout();
+        ((ISupportInitialize)NUD_Pattern).BeginInit();
+        ((ISupportInitialize)NUD_Paint3).BeginInit();
+        ((ISupportInitialize)NUD_Paint2).BeginInit();
+        ((ISupportInitialize)NUD_Paint1).BeginInit();
         ((ISupportInitialize)NUD_CustomItemID).BeginInit();
         ((ISupportInitialize)NUD_Count).BeginInit();
         villagers.SuspendLayout();
@@ -328,6 +341,7 @@ partial class Main
         // 
         split.Dock = DockStyle.Fill;
         split.FixedPanel = FixedPanel.Panel2;
+        split.IsSplitterFixed = true;
         split.Location = new Point(9, 11);
         split.Margin = new Padding(3, 4, 3, 4);
         split.Name = "split";
@@ -340,6 +354,13 @@ partial class Main
         // split.Panel2
         // 
         split.Panel2.BackColor = SystemColors.Control;
+        split.Panel2.Controls.Add(L_Paints);
+        split.Panel2.Controls.Add(NUD_Pattern);
+        split.Panel2.Controls.Add(chkPattern);
+        split.Panel2.Controls.Add(NUD_Paint3);
+        split.Panel2.Controls.Add(NUD_Paint2);
+        split.Panel2.Controls.Add(NUD_Paint1);
+        split.Panel2.Controls.Add(chkPaint);
         split.Panel2.Controls.Add(NUD_CustomItemID);
         split.Panel2.Controls.Add(chk_CustomItem);
         split.Panel2.Controls.Add(L_Slot);
@@ -362,7 +383,7 @@ partial class Main
         DGV_Items.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         DGV_Items.BackgroundColor = SystemColors.Window;
         DGV_Items.ColumnHeadersHeight = 29;
-        DGV_Items.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewImageColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3 });
+        DGV_Items.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewImageColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
         DGV_Items.Dock = DockStyle.Fill;
         DGV_Items.Location = new Point(0, 36);
         DGV_Items.MultiSelect = false;
@@ -413,6 +434,16 @@ partial class Main
         dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
         dataGridViewTextBoxColumn3.ReadOnly = true;
         // 
+        // dataGridViewTextBoxColumn4
+        // 
+        dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+        dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle1;
+        dataGridViewTextBoxColumn4.HeaderText = "Extras";
+        dataGridViewTextBoxColumn4.MinimumWidth = 6;
+        dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+        dataGridViewTextBoxColumn4.ReadOnly = true;
+        dataGridViewTextBoxColumn4.Resizable = DataGridViewTriState.False;
+        // 
         // inventoryPanel
         // 
         inventoryPanel.Controls.Add(inventoryLabel);
@@ -442,6 +473,75 @@ partial class Main
         CB_Inventory.TabIndex = 1;
         CB_Inventory.SelectedIndexChanged += CB_Inventory_SelectedIndexChanged;
         // 
+        // L_Paints
+        // 
+        L_Paints.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        L_Paints.BorderStyle = BorderStyle.FixedSingle;
+        L_Paints.ForeColor = SystemColors.GrayText;
+        L_Paints.Location = new Point(16, 365);
+        L_Paints.Name = "L_Paints";
+        L_Paints.Size = new Size(254, 141);
+        L_Paints.TabIndex = 19;
+        L_Paints.Text = "Note:\r\n• Paint 1 and Pattern cannot be set at the same time. \r\n• Paint 2 and Pattern can be set at the same time, but it has no effect in the game.";
+        // 
+        // NUD_Pattern
+        // 
+        NUD_Pattern.Enabled = false;
+        NUD_Pattern.Location = new Point(180, 335);
+        NUD_Pattern.Maximum = new decimal(new int[] { 131, 0, 0, 0 });
+        NUD_Pattern.Name = "NUD_Pattern";
+        NUD_Pattern.Size = new Size(90, 27);
+        NUD_Pattern.TabIndex = 18;
+        // 
+        // chkPattern
+        // 
+        chkPattern.AutoSize = true;
+        chkPattern.Location = new Point(16, 335);
+        chkPattern.Name = "chkPattern";
+        chkPattern.Size = new Size(105, 24);
+        chkPattern.TabIndex = 17;
+        chkPattern.Text = "Set Pattern:";
+        chkPattern.UseVisualStyleBackColor = true;
+        chkPattern.CheckedChanged += chkPattern_CheckedChanged;
+        // 
+        // NUD_Paint3
+        // 
+        NUD_Paint3.Enabled = false;
+        NUD_Paint3.Location = new Point(180, 302);
+        NUD_Paint3.Maximum = new decimal(new int[] { 18, 0, 0, 0 });
+        NUD_Paint3.Name = "NUD_Paint3";
+        NUD_Paint3.Size = new Size(90, 27);
+        NUD_Paint3.TabIndex = 16;
+        // 
+        // NUD_Paint2
+        // 
+        NUD_Paint2.Enabled = false;
+        NUD_Paint2.Location = new Point(180, 269);
+        NUD_Paint2.Maximum = new decimal(new int[] { 18, 0, 0, 0 });
+        NUD_Paint2.Name = "NUD_Paint2";
+        NUD_Paint2.Size = new Size(90, 27);
+        NUD_Paint2.TabIndex = 14;
+        // 
+        // NUD_Paint1
+        // 
+        NUD_Paint1.Enabled = false;
+        NUD_Paint1.Location = new Point(180, 236);
+        NUD_Paint1.Maximum = new decimal(new int[] { 18, 0, 0, 0 });
+        NUD_Paint1.Name = "NUD_Paint1";
+        NUD_Paint1.Size = new Size(90, 27);
+        NUD_Paint1.TabIndex = 12;
+        // 
+        // chkPaint
+        // 
+        chkPaint.AutoSize = true;
+        chkPaint.Location = new Point(16, 237);
+        chkPaint.Name = "chkPaint";
+        chkPaint.Size = new Size(91, 24);
+        chkPaint.TabIndex = 11;
+        chkPaint.Text = "Set Paint:";
+        chkPaint.UseVisualStyleBackColor = true;
+        chkPaint.CheckedChanged += chkPaint_CheckedChanged;
+        // 
         // NUD_CustomItemID
         // 
         NUD_CustomItemID.Enabled = false;
@@ -454,7 +554,7 @@ partial class Main
         // chk_CustomItem
         // 
         chk_CustomItem.AutoSize = true;
-        chk_CustomItem.Location = new Point(16, 123);
+        chk_CustomItem.Location = new Point(16, 124);
         chk_CustomItem.Name = "chk_CustomItem";
         chk_CustomItem.Size = new Size(84, 24);
         chk_CustomItem.TabIndex = 9;
@@ -499,7 +599,7 @@ partial class Main
         // amount
         // 
         amount.AutoSize = true;
-        amount.Location = new Point(16, 161);
+        amount.Location = new Point(16, 163);
         amount.Name = "amount";
         amount.Size = new Size(65, 20);
         amount.TabIndex = 3;
@@ -516,7 +616,7 @@ partial class Main
         // B_Set
         // 
         B_Set.Enabled = false;
-        B_Set.Location = new Point(16, 200);
+        B_Set.Location = new Point(19, 538);
         B_Set.Name = "B_Set";
         B_Set.Size = new Size(100, 30);
         B_Set.TabIndex = 5;
@@ -525,7 +625,7 @@ partial class Main
         // 
         // clear
         // 
-        clear.Location = new Point(170, 200);
+        clear.Location = new Point(173, 538);
         clear.Name = "clear";
         clear.Size = new Size(100, 30);
         clear.TabIndex = 6;
@@ -618,6 +718,10 @@ partial class Main
         ((ISupportInitialize)DGV_Items).EndInit();
         inventoryPanel.ResumeLayout(false);
         inventoryPanel.PerformLayout();
+        ((ISupportInitialize)NUD_Pattern).EndInit();
+        ((ISupportInitialize)NUD_Paint3).EndInit();
+        ((ISupportInitialize)NUD_Paint2).EndInit();
+        ((ISupportInitialize)NUD_Paint1).EndInit();
         ((ISupportInitialize)NUD_CustomItemID).EndInit();
         ((ISupportInitialize)NUD_Count).EndInit();
         villagers.ResumeLayout(false);
@@ -658,10 +762,6 @@ partial class Main
     private ToolStripMenuItem Menu_Open;
     private ToolStripMenuItem Menu_Export;
     private ToolStripMenuItem Menu_Exit;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-    private DataGridViewImageColumn dataGridViewImageColumn1;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     private NumericUpDown NUD_CustomItemID;
     private CheckBox chk_CustomItem;
     private AbilityEditor Editor_Reactions;
@@ -672,4 +772,16 @@ partial class Main
     private RadioButton RB_Reactions;
     private Panel playerBody;
     private TableLayoutPanel tableLayoutPanel1;
+    private NumericUpDown NUD_Paint3;
+    private NumericUpDown NUD_Paint2;
+    private NumericUpDown NUD_Paint1;
+    private CheckBox chkPaint;
+    private NumericUpDown NUD_Pattern;
+    private CheckBox chkPattern;
+    private Label L_Paints;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+    private DataGridViewImageColumn dataGridViewImageColumn1;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
 }

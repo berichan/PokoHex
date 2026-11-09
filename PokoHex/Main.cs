@@ -1,9 +1,10 @@
-﻿using System;
+﻿using PokoHex.Core;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using PokoHex.Core;
 
 namespace PokoHex;
 
@@ -41,10 +42,36 @@ public partial class Main : Form
     {
         get
         {
-            if (SAV == null || CB_Item.SelectedItem is not ItemInfo item)
+            if (SAV == null)
                 return false;
+
+            ushort itemId;
+
+            if (chk_CustomItem.Checked)
+            {
+                itemId = (ushort)NUD_CustomItemID.Value;
+            }
+            else if (CB_Item.SelectedItem is ItemInfo item)
+            {
+                itemId = item.Value;
+            }
+            else
+            {
+                return false;
+            }
+
             var slot = SAV.Common.Inventory[SelectedSlot];
-            return slot.ItemId != item.Value || slot.Count != NUD_Count.Value;
+
+            if (slot.ItemId != itemId || slot.Count != NUD_Count.Value)
+                return true;
+
+            if (chkPaint.Checked)
+                return true;
+
+            if (chkPattern.Checked)
+                return true;
+
+            return false;
         }
     }
 
@@ -96,6 +123,31 @@ public partial class Main : Form
         Editor_Reactions.Visible = RB_Reactions.Checked;
     }
 
+    private static string GetItemExtras(Item item)
+    {
+        var extras = new List<string>();
+
+        if (item.HasItemPattern)
+            extras.Add($"Pattern: {item.ItemPattern:000}");
+
+        if (item.ItemPaint1 != 0)
+            extras.Add(Item.ItemPaints.TryGetValue(item.ItemPaint1, out var p1)
+                ? $"Paint 1: {p1.Item1}"
+                : $"Paint 1: Unknown ({item.ItemPaint1})");
+
+        if (item.ItemPaint2 != 0)
+            extras.Add(Item.ItemPaints.TryGetValue(item.ItemPaint2, out var p2)
+                ? $"Paint 2: {p2.Item1}"
+                : $"Paint 2: Unknown ({item.ItemPaint2})");
+
+        if (item.ItemPaint3 != 0)
+            extras.Add(Item.ItemPaints.TryGetValue(item.ItemPaint3, out var p3)
+                ? $"Paint 3: {p3.Item1}"
+                : $"Paint 3: Unknown ({item.ItemPaint3})");
+
+        return string.Join(Environment.NewLine, extras);
+    }
+
     private void LoadInventory()
     {
         if (SAV == null)
@@ -108,7 +160,8 @@ public partial class Main : Form
             for (int i = 0; i < count; i++)
             {
                 var item = SAV.Common.Inventory[InventoryStart + i];
-                int row = DGV_Items.Rows.Add(i + 1, ItemSprite.GetItemSprite(item.ItemId)!, GetItemName(item.ItemId), item.Count);
+
+                int row = DGV_Items.Rows.Add(i + 1, ItemSprite.GetItemSprite(item.ItemId)!, GetItemName(item.ItemId), item.Count, GetItemExtras(item));
                 DGV_Items.Rows[row].Tag = InventoryStart + i;
             }
             SelectedSlot = InventoryStart;
@@ -208,8 +261,19 @@ public partial class Main : Form
             return;
         Loading = true;
         var item = SAV.Common.Inventory[SelectedSlot];
-        CB_Item.SelectedValue = item.ItemId;
+        if (!item.HasCustomId)
+            CB_Item.SelectedValue = item.ItemId;
         NUD_Count.Value = item.Count;
+        NUD_CustomItemID.Value = item.ItemId;
+        if (item.HasItemPattern)
+            NUD_Pattern.Value = item.ItemPattern;
+        else
+            NUD_Paint1.Value = item.ItemPaint1;
+        NUD_Paint2.Value = item.ItemPaint2;
+        NUD_Paint3.Value = item.ItemPaint3;
+        
+        chkPaint.Checked = chkPattern.Checked = false;
+        chk_CustomItem.Checked = item.HasCustomId;
         L_Slot.Text = SelectedSlot < SaveLayout.MainInventoryCount
             ? $"Slot {SelectedSlot + 1} of {SaveLayout.MainInventoryCount}"
             : $"Secondary bar slot {SelectedSlot + 1 - SaveLayout.MainInventoryCount} of {SAV.Common.Inventory.Length - SaveLayout.MainInventoryCount}";
@@ -221,9 +285,18 @@ public partial class Main : Form
         if (Loading || SAV == null)
             return;
 
+        if (chkPaint.Checked)
+        {
+            SAV.Common.Inventory[SelectedSlot].SetPaint((ushort)(chkPattern.Checked ? 0 : NUD_Paint1.Value), (ushort)NUD_Paint2.Value, (ushort)NUD_Paint3.Value);
+        }
+        if (chkPattern.Checked)
+        {
+            SAV.Common.Inventory[SelectedSlot].SetPattern((ushort)NUD_Pattern.Value);
+        }
+
         if (chk_CustomItem.Checked)
         {
-            SAV.Common.Inventory[SelectedSlot].Set((ushort)NUD_CustomItemID.Value, (int)NUD_Count.Value);
+            SAV.Common.Inventory[SelectedSlot].Set((ushort)NUD_CustomItemID.Value, (int)NUD_Count.Value, true);
         }
         else
         {
@@ -250,6 +323,7 @@ public partial class Main : Form
         row.Cells[1].Value = ItemSprite.GetItemSprite(item.ItemId);
         row.Cells[2].Value = GetItemName(item.ItemId);
         row.Cells[3].Value = item.Count;
+        row.Cells[4].Value = GetItemExtras(item);
         UpdateStatus();
     }
 
@@ -513,6 +587,16 @@ public partial class Main : Form
     {
         NUD_CustomItemID.Enabled = chk_CustomItem.Checked;
         CB_Item.Enabled = !chk_CustomItem.Checked;
+    }
+
+    private void chkPaint_CheckedChanged(object sender, EventArgs e)
+    {
+        NUD_Paint1.Enabled = NUD_Paint2.Enabled = NUD_Paint3.Enabled = chkPaint.Checked;
+    }
+
+    private void chkPattern_CheckedChanged(object sender, EventArgs e)
+    {
+        NUD_Pattern.Enabled = chkPattern.Checked;
     }
 }
 
