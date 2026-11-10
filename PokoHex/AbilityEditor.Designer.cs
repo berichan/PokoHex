@@ -19,10 +19,12 @@ partial class AbilityEditor
     {
         split = new SplitContainer();
         DGV_Abilities = new DataGridView();
-        dataGridViewImageColumn1 = new DataGridViewImageColumn();
-        dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-        dataGridViewCheckBoxColumn1 = new DataGridViewCheckBoxColumn();
-        dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+        B_Learn = new Button();
+        B_LearnAll = new Button();
+        B_UnlockDive = new Button();
+        B_UnlockFood = new Button();
+        B_UnlockAbsorption = new Button();
+        L_Count = new Label();
         GB_Wheel = new GroupBox();
         LB_Wheel = new ListBox();
         CB_WheelAbility = new ComboBox();
@@ -86,50 +88,41 @@ partial class AbilityEditor
         DGV_Abilities.Size = new Size(587, 718);
         DGV_Abilities.TabIndex = 0;
         DGV_Abilities.CurrentCellChanged += DGV_Abilities_CurrentCellChanged;
-        // 
-        // dataGridViewImageColumn1
-        // 
-        dataGridViewImageColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-        dataGridViewImageColumn1.FillWeight = 213.903748F;
-        dataGridViewImageColumn1.HeaderText = "Image";
-        dataGridViewImageColumn1.ImageLayout = DataGridViewImageCellLayout.Zoom;
-        dataGridViewImageColumn1.MinimumWidth = 6;
-        dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-        dataGridViewImageColumn1.ReadOnly = true;
-        dataGridViewImageColumn1.Width = 125;
-        // 
-        // dataGridViewTextBoxColumn1
-        // 
-        dataGridViewTextBoxColumn1.FillWeight = 62.03208F;
-        dataGridViewTextBoxColumn1.HeaderText = "dataGridViewTextBoxColumn1";
-        dataGridViewTextBoxColumn1.MinimumWidth = 6;
-        dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-        dataGridViewTextBoxColumn1.ReadOnly = true;
-        // 
-        // dataGridViewCheckBoxColumn1
-        // 
-        dataGridViewCheckBoxColumn1.FillWeight = 62.03208F;
-        dataGridViewCheckBoxColumn1.HeaderText = "Learned";
-        dataGridViewCheckBoxColumn1.MinimumWidth = 6;
-        dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-        dataGridViewCheckBoxColumn1.ReadOnly = true;
-        // 
-        // dataGridViewTextBoxColumn2
-        // 
-        dataGridViewTextBoxColumn2.FillWeight = 62.03208F;
-        dataGridViewTextBoxColumn2.HeaderText = "Uses";
-        dataGridViewTextBoxColumn2.MinimumWidth = 6;
-        dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-        dataGridViewTextBoxColumn2.ReadOnly = true;
-        // 
-        // GB_Wheel
-        // 
-        GB_Wheel.Controls.Add(LB_Wheel);
-        GB_Wheel.Controls.Add(CB_WheelAbility);
-        GB_Wheel.Controls.Add(B_Set);
-        GB_Wheel.Dock = DockStyle.Top;
-        GB_Wheel.Location = new Point(14, 0);
-        GB_Wheel.Margin = new Padding(3, 4, 3, 4);
+        buttons.Dock = DockStyle.Bottom;
+        buttons.Height = 42;
+        buttons.AutoSize = true;
+        buttons.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        buttons.Padding = new Padding(0, 6, 0, 0);
+        B_Learn.Name = "B_Learn";
+        B_Learn.Text = "Learn";
+        B_Learn.Size = new Size(100, 30);
+        B_Learn.Click += B_Learn_Click;
+        B_LearnAll.Name = "B_LearnAll";
+        B_LearnAll.Text = "Learn all";
+        B_LearnAll.Size = new Size(100, 30);
+        B_LearnAll.Click += B_LearnAll_Click;
+        B_UnlockDive.Name = "B_UnlockDive";
+        B_UnlockDive.Text = "Unlock Dive";
+        B_UnlockDive.Size = new Size(160, 30);
+        B_UnlockDive.Visible = false;
+        B_UnlockDive.Click += B_UnlockDive_Click;
+        B_UnlockFood.Name = "B_UnlockFood";
+        B_UnlockFood.Text = "Unlock food boost";
+        B_UnlockFood.Size = new Size(160, 30);
+        B_UnlockFood.Visible = false;
+        B_UnlockFood.Click += B_UnlockFood_Click;
+        B_UnlockAbsorption.Name = "B_UnlockAbsorption";
+        B_UnlockAbsorption.Text = "Unlock absorption";
+        B_UnlockAbsorption.Size = new Size(160, 30);
+        B_UnlockAbsorption.Visible = false;
+        B_UnlockAbsorption.Click += B_UnlockAbsorption_Click;
+        buttons.Controls.AddRange([B_Learn, B_LearnAll, B_UnlockDive, B_UnlockFood, B_UnlockAbsorption]);
+        L_Count.Dock = DockStyle.Bottom;
+        L_Count.Height = 28;
+        L_Count.TextAlign = ContentAlignment.MiddleLeft;
+        split.Panel1.Controls.Add(DGV_Abilities);
+        split.Panel1.Controls.Add(buttons);
+        split.Panel1.Controls.Add(L_Count);
         GB_Wheel.Name = "GB_Wheel";
         GB_Wheel.Padding = new Padding(2, 24, 2, 0);
         GB_Wheel.Size = new Size(409, 586);
@@ -243,6 +236,9 @@ partial class AbilityEditor
     private DataGridView DGV_Abilities = null!;
     private Button B_Learn = null!;
     private Button B_LearnAll = null!;
+    private Button B_UnlockDive = null!;
+    private Button B_UnlockFood = null!;
+    private Button B_UnlockAbsorption = null!;
     private Label L_Count = null!;
     private GroupBox GB_Wheel = null!;
     private ListBox LB_Wheel = null!;
