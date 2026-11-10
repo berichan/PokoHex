@@ -137,31 +137,13 @@ public partial class MapEditor : UserControl
         LoadParts(true);
     }
 
-    private List<(int Floor, string Signature)> GetInteriorBoundaries(ushort chunk)
+    private List<int> GetInteriorBoundaries(ushort chunk)
     {
-        if (Stage == null)
+        if ((Stage?.GetBuildingsForChunk(chunk)?.Count() ?? 0) == 0)
             return [];
 
         int x0 = (chunk & 63) * 32;
         int z0 = (chunk >> 6) * 32;
-
-        // Check whether the initial ground layer at Y=4 exists.
-        bool hasGround = false;
-
-        for (int z = 0; z < 32 && !hasGround; z++)
-        {
-            for (int x = 0; x < 32; x++)
-            {
-                if (Stage.GetCell(x0 + x, 4, z0 + z) != 0)
-                {
-                    hasGround = true;
-                    break;
-                }
-            }
-        }
-
-        if (!hasGround)
-            return [];
 
         var partsByY = new MapPart[128][];
         var groundByY = new HashSet<int>[128];
@@ -195,7 +177,7 @@ public partial class MapEditor : UserControl
             }
         }
 
-        var boundaries = new List<(int Floor, string Signature)>();
+        var boundaries = new List<int>();
 
         for (int y = 4; y < 127; y++)
         {
@@ -212,55 +194,15 @@ public partial class MapEditor : UserControl
             if (groundByY[y].Count != expectedCells)
                 continue;
 
-            string signature = GetGroundSignature(groundByY, y);
-
-            boundaries.Add((y, signature));
+            boundaries.Add(y);
         }
 
         return boundaries;
     }
 
-    private static string GetGroundSignature(HashSet<int>[] groundByY, int floor)
-    {
-        var floorCells = groundByY[floor];
-
-        if (floorCells.Count == 0 || floor + 2 >= groundByY.Length)
-            return string.Empty;
-
-        int minX = floorCells.Min(cell => cell % 32);
-        int maxX = floorCells.Max(cell => cell % 32);
-        int minZ = floorCells.Min(cell => cell / 32);
-        int maxZ = floorCells.Max(cell => cell / 32);
-        int width = maxX - minX + 1;
-        int depth = maxZ - minZ + 1;
-        uint firstRow = 0;
-        uint lastRow = 0;
-
-        foreach (int cell in groundByY[floor + 2])
-        {
-            int x = cell % 32 - minX;
-            int z = cell / 32 - minZ;
-
-            if (x < 0 || x >= width)
-                continue;
-
-            if (z == 0)
-                firstRow |= (ushort)(1 << x);
-            if (z == depth - 1)
-                lastRow |= (ushort)(1 << x);
-        }
-
-        return $"{int.Parse($"{minX:d2}{minZ:d2}{width:d2}{depth:d2}"):X8}{firstRow:X4}{lastRow:X4}";
-    }
-
-
     private bool CheckInterior(ushort chunk)
     {
-#if(DEBUG)
-        Interior = false;
-#else
         Interior = GetInteriorBoundaries(chunk).Count > 0;
-#endif
         interior.Visible = Interior;
         CB_Interior.Visible = Interior;
         btnJumpToInteriors.Visible = CB_Interior.Items.Count > 0;
@@ -277,21 +219,45 @@ public partial class MapEditor : UserControl
         public override string ToString() => Text;
     }
 
-    private readonly Dictionary<string, string> InteriorTypes = new Dictionary<string, string>();
-
+    private Dictionary<ushort, string> InteriorTypes = new Dictionary<ushort, string>();
     private void InitBuildings()
     {
-        var area = Math.Max(SelectedArea, 0);
-        InteriorTypes.Clear();
-        InteriorTypes["001E8F90F000F000"] = "Area Gate";
-        InteriorTypes["001EDDAC0000F000"] = GetBuildingName((ushort)(area + 1));                                            // Pokemon Center
-        InteriorTypes["0099FACE000000F0"] = GetBuildingName((ushort)(area * 4 + 6));                                        // Den
-        InteriorTypes["007B29C2000003C0"] = GetBuildingName((ushort)(area * 4 + 7));                                        // Hut
-        InteriorTypes["003DAEB800003C00"] = GetBuildingName((ushort)(area * 4 + 8)) + " / " + GetBuildingName(24);          // Cottage / Poke Mart
-        InteriorTypes["00005ABC00003C00"] = GetBuildingName((ushort)(area * 4 + 9)) + " (1F)";                              // House (1F)
-        InteriorTypes["00005ABC03C00000"] = GetBuildingName((ushort)(area * 4 + 9)) + " (2F)";                              // House (2F)
-        InteriorTypes["008A6B3A000003F0"] = GetBuildingName(22) + " / " + GetBuildingName(23);                              // Tent / Poke Ball House
-        InteriorTypes["007B02B4000003C0"] = GetBuildingName(41);                                                            // Sharpedo Submarine
+        foreach (var i in (ushort[])[11, 58, 59]) InteriorTypes[i] = "Area Gate";
+        foreach (var i in (ushort[])[61, 62, 67]) InteriorTypes[i] = "Area Gate";
+        foreach (var i in (ushort[])[60, 63]) InteriorTypes[i] = "Area Gate";
+        foreach (var i in (ushort[])[64, 65, 66]) InteriorTypes[i] = "Area Gate";
+        InteriorTypes[2] = GetBuildingName(1);
+        InteriorTypes[4] = GetBuildingName(2);
+        InteriorTypes[6] = GetBuildingName(3);
+        InteriorTypes[8] = GetBuildingName(4);
+        InteriorTypes[10] = GetBuildingName(5);
+        InteriorTypes[12] = GetBuildingName(6);
+        InteriorTypes[13] = GetBuildingName(7);
+        InteriorTypes[14] = GetBuildingName(8);
+        InteriorTypes[15] = GetBuildingName(9) + " (F1)";
+        InteriorTypes[54] = GetBuildingName(9) + " (F2)";
+        InteriorTypes[16] = GetBuildingName(10);
+        InteriorTypes[17] = GetBuildingName(11);
+        InteriorTypes[18] = GetBuildingName(12);
+        InteriorTypes[19] = GetBuildingName(13) + " (F1)";
+        InteriorTypes[55] = GetBuildingName(13) + " (F2)";
+        InteriorTypes[20] = GetBuildingName(14);
+        InteriorTypes[21] = GetBuildingName(15);
+        InteriorTypes[22] = GetBuildingName(16);
+        InteriorTypes[23] = GetBuildingName(17) + " (F1)";
+        InteriorTypes[56] = GetBuildingName(17) + " (F2)";
+        InteriorTypes[24] = GetBuildingName(18);
+        InteriorTypes[25] = GetBuildingName(19);
+        InteriorTypes[26] = GetBuildingName(20);
+        InteriorTypes[27] = GetBuildingName(21) + " (F1)";
+        InteriorTypes[57] = GetBuildingName(21) + " (F2)";
+        InteriorTypes[29] = GetBuildingName(22);
+        InteriorTypes[30] = GetBuildingName(23);
+        InteriorTypes[31] = GetBuildingName(24);
+        InteriorTypes[75] = GetBuildingName(39);
+        InteriorTypes[76] = GetBuildingName(40) + " (F1)";
+        InteriorTypes[79] = GetBuildingName(40) + " (F2)";
+        InteriorTypes[77] = GetBuildingName(41);
     }
 
     private void LoadInteriors(ushort chunk)
@@ -306,17 +272,17 @@ public partial class MapEditor : UserControl
 
         for (int i = 0; i + 1 < boundaries.Count; i += 2)
         {
-            var (floor, signature) = boundaries[i];
-            int ceiling = boundaries[i + 1].Floor;
+            var floor = boundaries[i];
+            int ceiling = boundaries[i + 1];
             var building = buildings.First(x => x.Floor == floor);
 
             if (ceiling <= floor)
                 continue;
 
             string name;
-            if (!InteriorTypes.TryGetValue((signature), out name))
+            if (!InteriorTypes.TryGetValue(building.Type, out name))
                 name = $"Unknown interior {InteriorTypes.Count + 1}";
-            //name += " (" + building.Type + ")";
+            name += " (" + building.Type + ")";
 
             CB_Interior.Items.Add(new InteriorInfo
             {
@@ -829,18 +795,16 @@ public partial class MapEditor : UserControl
 
     private void btnJumpToInteriors_Click(object sender, EventArgs e)
     {
-        var allInteriorMaps = new Dictionary<ushort, List<(int Floor, string Signature)>>();
+        var allInteriorMaps = new Dictionary<ushort, List<(int Floor, string Text)>>();
         foreach (var chunk in Stage!.Chunks.Where(f => f <= 3965).OrderByDescending(f => f))
         {
-            var boundaries = GetInteriorBoundaries((ushort)chunk)
-                .Where((c, i) => i % 2 != 1)
-                .Select(s => (s.Floor, InteriorTypes.TryGetValue(s.Signature, out var val) ? val : "Unknown interior")).ToList();
-            if (boundaries.Count == 0)
+            var boundaries = GetInteriorBoundaries((ushort)chunk).Where((c, i) => i % 2 != 1);
+            var builds = Stage!.GetBuildingsForChunk((ushort)chunk).Where(w => boundaries.Contains(w.Floor)).Select(s => (s.Floor, InteriorTypes.TryGetValue(s.Type, out var type) ? type : $"Invalid building ({s.Type})" )).ToList();
+            if (builds.Count == 0)
                 break;
-
-            allInteriorMaps[(ushort)chunk] = boundaries;
+            allInteriorMaps[(ushort)chunk] = builds;
         }
-        //MessageBox.Show(string.Join(Environment.NewLine, allInteriorMaps.SelectMany(entry => new[] { $"Chunk {entry.Key} (X {(entry.Key & 63) * 32} / Z {(entry.Key >> 6) * 32}):" }.Concat(entry.Value.Select(b => $"  Y={b.Floor}: {b.Signature}")))));
+        MessageBox.Show(string.Join(Environment.NewLine, allInteriorMaps.SelectMany(entry => new[] { $"Chunk {entry.Key} (X {(entry.Key & 63) * 32} / Z {(entry.Key >> 6) * 32}):" }.Concat(entry.Value.Select(b => $"  Y={b.Floor}: {b.Text}")))));
 
         CB_Chunk.SelectedIndex = CB_Chunk.Items.Cast<ItemInfo>().ToList().FindIndex(z => z.Value == allInteriorMaps.Keys.FirstOrDefault());
     }

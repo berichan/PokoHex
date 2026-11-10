@@ -122,9 +122,9 @@ public sealed class StageSave
             throw new ArgumentException("This object's footprint is not supported.");
         var result = new Dictionary<int, uint>();
         for (int y = bounds.Y; y < bounds.Y + bounds.Height; y++)
-        for (int z = bounds.Z; z < bounds.Z + bounds.Depth; z++)
-        for (int x = bounds.X; x < bounds.X + bounds.Width; x++)
-            result.Add(GetCellOffset(x, y, z), GetCell(x, y, z));
+            for (int z = bounds.Z; z < bounds.Z + bounds.Depth; z++)
+                for (int x = bounds.X; x < bounds.X + bounds.Width; x++)
+                    result.Add(GetCellOffset(x, y, z), GetCell(x, y, z));
         return result;
     }
 
@@ -195,46 +195,26 @@ public sealed class StageSave
         return writes;
     }
 
-    public BuildingInfo[] GetBuildingsForChunk(int chunk)
+    public IEnumerable<BuildingInfo> GetBuildingsForChunk(ushort chunk)
     {
-        var buildings = new List<BuildingInfo>();
-
         for (int id = 1; id <= BuildingCount; id++)
         {
             int slot = id - 1;
-            int buildingChunk = 3965 - (slot / 10);
+            int recordOffset = BuildingTable + id * BuildingRecordSize;
+            var record = Raw.AsSpan(recordOffset, BuildingRecordSize);
+
+            if (record[8] == 0xFF)
+                continue;
+
+            int buildingChunk = 3965 - slot / 10;
             int floor = 4 + 12 * (slot % 10);
 
             if (buildingChunk != chunk)
                 continue;
 
-            int offset = BuildingTable + slot * BuildingRecordSize;
-            var record = Raw.AsSpan(offset, BuildingRecordSize);
-
-            // Skip completely empty records without renumbering IDs.
-            bool empty = true;
-
-            foreach (byte value in record)
-            {
-                if (value != 0)
-                {
-                    empty = false;
-                    break;
-                }
-            }
-
-            if (empty)
-                continue;
-
-            buildings.Add(new BuildingInfo(
-                id,
-                record[7],
-                buildingChunk,
-                floor
-            ));
+            yield return new BuildingInfo(id, record[7], buildingChunk, floor
+            );
         }
-
-        return buildings.ToArray();
     }
 
     private static void AddValue(Dictionary<int, byte> writes, int offset, uint value, int size)
