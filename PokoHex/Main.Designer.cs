@@ -72,6 +72,8 @@ partial class Main
         Editor_Villagers = new VillagerEditor();
         map = new TabPage();
         Editor_Map = new MapEditor();
+        flags = new TabPage();
+        Editor_Flags = new FlagEditor();
         menu.SuspendLayout();
         status.SuspendLayout();
         TC_Editor.SuspendLayout();
@@ -95,6 +97,7 @@ partial class Main
         ((ISupportInitialize)NUD_Count).BeginInit();
         villagers.SuspendLayout();
         map.SuspendLayout();
+        flags.SuspendLayout();
         SuspendLayout();
         // 
         // menu
@@ -171,6 +174,7 @@ partial class Main
         TC_Editor.Controls.Add(items);
         TC_Editor.Controls.Add(villagers);
         TC_Editor.Controls.Add(map);
+        TC_Editor.Controls.Add(flags);
         TC_Editor.Dock = DockStyle.Fill;
         TC_Editor.Enabled = false;
         TC_Editor.Location = new Point(0, 32);
@@ -679,6 +683,27 @@ partial class Main
         Editor_Map.Size = new Size(1796, 1420);
         Editor_Map.TabIndex = 0;
         // 
+        // flags
+        // 
+        flags.Controls.Add(Editor_Flags);
+        flags.Location = new Point(4, 29);
+        flags.Name = "flags";
+        flags.Padding = new Padding(3);
+        flags.Size = new Size(1796, 1420);
+        flags.TabIndex = 4;
+        flags.Text = "Flags";
+        flags.UseVisualStyleBackColor = true;
+        // 
+        // Editor_Flags
+        // 
+        Editor_Flags.Dock = DockStyle.Fill;
+        Editor_Flags.Location = new Point(3, 3);
+        Editor_Flags.Margin = new Padding(3, 4, 3, 4);
+        Editor_Flags.Name = "Editor_Flags";
+        Editor_Flags.Padding = new Padding(11, 13, 11, 13);
+        Editor_Flags.Size = new Size(1790, 1414);
+        Editor_Flags.TabIndex = 0;
+        // 
         // Main
         // 
         AllowDrop = true;
@@ -726,6 +751,7 @@ partial class Main
         ((ISupportInitialize)NUD_Count).EndInit();
         villagers.ResumeLayout(false);
         map.ResumeLayout(false);
+        flags.ResumeLayout(false);
         ResumeLayout(false);
         PerformLayout();
     }
@@ -766,6 +792,7 @@ partial class Main
     private CheckBox chk_CustomItem;
     private AbilityEditor Editor_Reactions;
     private AbilityEditor Editor_Skills;
+    private FlagEditor Editor_Flags;
     private Panel playerHeader;
     private FlowLayoutPanel playerSections;
     private RadioButton RB_Skills;
@@ -784,4 +811,5 @@ partial class Main
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+    private TabPage flags;
 }
