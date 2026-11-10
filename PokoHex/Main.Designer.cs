@@ -68,6 +68,10 @@ partial class Main
         B_Set = new Button();
         clear = new Button();
         L_Catalog = new Label();
+        painting = new TabPage();
+        paintingBody = new Panel();
+        label1 = new Label();
+        L_NoPaint = new Label();
         villagers = new TabPage();
         Editor_Villagers = new VillagerEditor();
         map = new TabPage();
@@ -95,6 +99,8 @@ partial class Main
         ((ISupportInitialize)NUD_Paint1).BeginInit();
         ((ISupportInitialize)NUD_CustomItemID).BeginInit();
         ((ISupportInitialize)NUD_Count).BeginInit();
+        painting.SuspendLayout();
+        paintingBody.SuspendLayout();
         villagers.SuspendLayout();
         map.SuspendLayout();
         flags.SuspendLayout();
@@ -172,6 +178,7 @@ partial class Main
         // 
         TC_Editor.Controls.Add(player);
         TC_Editor.Controls.Add(items);
+        TC_Editor.Controls.Add(painting);
         TC_Editor.Controls.Add(villagers);
         TC_Editor.Controls.Add(map);
         TC_Editor.Controls.Add(flags);
@@ -183,6 +190,7 @@ partial class Main
         TC_Editor.SelectedIndex = 0;
         TC_Editor.Size = new Size(1804, 1453);
         TC_Editor.TabIndex = 0;
+        TC_Editor.SelectedIndexChanged += TC_Editor_SelectedIndexChanged;
         // 
         // player
         // 
@@ -645,6 +653,46 @@ partial class Main
         L_Catalog.TabIndex = 7;
         L_Catalog.Text = "Item catalog";
         // 
+        // painting
+        // 
+        painting.Controls.Add(paintingBody);
+        painting.Controls.Add(L_NoPaint);
+        painting.Location = new Point(4, 29);
+        painting.Name = "painting";
+        painting.Padding = new Padding(3);
+        painting.Size = new Size(1796, 1420);
+        painting.TabIndex = 4;
+        painting.Text = "Painting";
+        painting.UseVisualStyleBackColor = true;
+        // 
+        // paintingBody
+        // 
+        paintingBody.Controls.Add(label1);
+        paintingBody.Dock = DockStyle.Fill;
+        paintingBody.Location = new Point(3, 3);
+        paintingBody.Name = "paintingBody";
+        paintingBody.Size = new Size(1790, 1414);
+        paintingBody.TabIndex = 1;
+        // 
+        // label1
+        // 
+        label1.AutoSize = true;
+        label1.Location = new Point(65, 78);
+        label1.Name = "label1";
+        label1.Size = new Size(50, 20);
+        label1.TabIndex = 0;
+        label1.Text = "label1";
+        // 
+        // L_NoPaint
+        // 
+        L_NoPaint.Dock = DockStyle.Fill;
+        L_NoPaint.Location = new Point(3, 3);
+        L_NoPaint.Name = "L_NoPaint";
+        L_NoPaint.Size = new Size(1790, 1414);
+        L_NoPaint.TabIndex = 0;
+        L_NoPaint.Text = "Select an item first";
+        L_NoPaint.TextAlign = ContentAlignment.MiddleCenter;
+        // 
         // villagers
         // 
         villagers.Controls.Add(Editor_Villagers);
@@ -690,7 +738,7 @@ partial class Main
         flags.Name = "flags";
         flags.Padding = new Padding(3);
         flags.Size = new Size(1796, 1420);
-        flags.TabIndex = 4;
+        flags.TabIndex = 5;
         flags.Text = "Flags";
         flags.UseVisualStyleBackColor = true;
         // 
@@ -749,6 +797,9 @@ partial class Main
         ((ISupportInitialize)NUD_Paint1).EndInit();
         ((ISupportInitialize)NUD_CustomItemID).EndInit();
         ((ISupportInitialize)NUD_Count).EndInit();
+        painting.ResumeLayout(false);
+        paintingBody.ResumeLayout(false);
+        paintingBody.PerformLayout();
         villagers.ResumeLayout(false);
         map.ResumeLayout(false);
         flags.ResumeLayout(false);
@@ -812,4 +863,8 @@ partial class Main
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     private TabPage flags;
+    private TabPage painting;
+    private Panel paintingBody;
+    private Label L_NoPaint;
+    private Label label1;
 }

@@ -1,14 +1,22 @@
-﻿using PokoHex.Core;
+﻿using Microsoft.Playwright;
+using PokoHex.Core;
+using PokoHex.Core.Strings;
 using PokoHex.Parsing;
 using System;
+using System.Buffers.Binary;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace PokoHex;
 
@@ -22,6 +30,7 @@ public partial class MapEditor : UserControl
     private int Chunk;
     private bool Interior;
     private sealed record MapEntry(MapPart Part, string Text);
+    private ExteriorBuildingData ExteriorBuildings;
 
     public MapEditor() => InitializeComponent();
 
@@ -41,6 +50,7 @@ public partial class MapEditor : UserControl
         SelectedArea = CB_Area.SelectedIndex;
         Loading = false;
         Interior = false;
+        ExteriorBuildings = ExteriorBuildingData.Load();
         LoadArea();
         InitBuildings();
     }
@@ -224,47 +234,14 @@ public partial class MapEditor : UserControl
     {
         foreach (var i in (ushort[])[11, 58, 59]) InteriorTypes[i] = "Area Gate";
         foreach (var i in (ushort[])[61, 62, 67]) InteriorTypes[i] = "Area Gate";
-        foreach (var i in (ushort[])[60, 63]) InteriorTypes[i] = "Area Gate";
+        foreach (var i in (ushort[])[60, 63])     InteriorTypes[i] = "Area Gate";
         foreach (var i in (ushort[])[64, 65, 66]) InteriorTypes[i] = "Area Gate";
-        InteriorTypes[2] = GetBuildingName(1);
-        InteriorTypes[4] = GetBuildingName(2);
-        InteriorTypes[6] = GetBuildingName(3);
-        InteriorTypes[8] = GetBuildingName(4);
-        InteriorTypes[10] = GetBuildingName(5);
-        InteriorTypes[12] = GetBuildingName(6);
-        InteriorTypes[13] = GetBuildingName(7);
-        InteriorTypes[14] = GetBuildingName(8);
-        InteriorTypes[15] = GetBuildingName(9) + " (F1)";
-        InteriorTypes[54] = GetBuildingName(9) + " (F2)";
-        InteriorTypes[16] = GetBuildingName(10);
-        InteriorTypes[17] = GetBuildingName(11);
-        InteriorTypes[18] = GetBuildingName(12);
-        InteriorTypes[19] = GetBuildingName(13) + " (F1)";
-        InteriorTypes[55] = GetBuildingName(13) + " (F2)";
-        InteriorTypes[20] = GetBuildingName(14);
-        InteriorTypes[21] = GetBuildingName(15);
-        InteriorTypes[22] = GetBuildingName(16);
-        InteriorTypes[23] = GetBuildingName(17) + " (F1)";
-        InteriorTypes[56] = GetBuildingName(17) + " (F2)";
-        InteriorTypes[24] = GetBuildingName(18);
-        InteriorTypes[25] = GetBuildingName(19);
-        InteriorTypes[26] = GetBuildingName(20);
-        InteriorTypes[27] = GetBuildingName(21) + " (F1)";
-        InteriorTypes[57] = GetBuildingName(21) + " (F2)";
-        InteriorTypes[29] = GetBuildingName(22);
-        InteriorTypes[30] = GetBuildingName(23);
-        InteriorTypes[31] = GetBuildingName(24);
-        InteriorTypes[75] = GetBuildingName(39);
-        InteriorTypes[76] = GetBuildingName(40) + " (F1)";
-        InteriorTypes[79] = GetBuildingName(40) + " (F2)";
-        InteriorTypes[77] = GetBuildingName(41);
     }
 
     private void LoadInteriors(ushort chunk)
     {
         if (chunk == 0)
             return;
-        InitBuildings();
         CB_Interior.Items.Clear();
 
         var boundaries = GetInteriorBoundaries(chunk);
@@ -281,7 +258,7 @@ public partial class MapEditor : UserControl
 
             string name;
             if (!InteriorTypes.TryGetValue(building.Type, out name))
-                name = $"Unknown interior {InteriorTypes.Count + 1}";
+                name = ExteriorBuildings.GetItemName(building.Type); 
             name += " (" + building.Type + ")";
 
             CB_Interior.Items.Add(new InteriorInfo
@@ -466,7 +443,7 @@ public partial class MapEditor : UserControl
         if (CB_Chunk.SelectedItem is ItemInfo chunk)
             Chunk = chunk.Value;
 
-        //LoadParts(false);
+        LoadParts(false);
 
         RefreshCounter();
         PB_Map.Invalidate();
@@ -647,7 +624,7 @@ public partial class MapEditor : UserControl
             }
         }
 
-        // text on cell
+        //text on cell
         if (false)
         {
             using var font = new System.Drawing.Font("Consolas", Math.Max(2f, CellSize * 0.13f), FontStyle.Regular);
@@ -769,7 +746,7 @@ public partial class MapEditor : UserControl
 
     private void checkBox1_CheckedChanged(object sender, EventArgs e)
     {
-        //LoadParts(false);
+        LoadParts(false);
         RefreshCounter();
     }
 
@@ -789,7 +766,7 @@ public partial class MapEditor : UserControl
 
     private void button1_Click(object sender, EventArgs e)
     {
-        //LoadParts(false);
+        LoadParts(false);
         RefreshCounter();
     }
 
@@ -799,7 +776,7 @@ public partial class MapEditor : UserControl
         foreach (var chunk in Stage!.Chunks.Where(f => f <= 3965).OrderByDescending(f => f))
         {
             var boundaries = GetInteriorBoundaries((ushort)chunk).Where((c, i) => i % 2 != 1);
-            var builds = Stage!.GetBuildingsForChunk((ushort)chunk).Where(w => boundaries.Contains(w.Floor)).Select(s => (s.Floor, InteriorTypes.TryGetValue(s.Type, out var type) ? type : $"Invalid building ({s.Type})" )).ToList();
+            var builds = Stage!.GetBuildingsForChunk((ushort)chunk).Where(w => boundaries.Contains(w.Floor)).Select(s => (s.Floor, InteriorTypes.TryGetValue(s.Type, out var type) ? type : $"Invalid building ({s.Type})")).ToList();
             if (builds.Count == 0)
                 break;
             allInteriorMaps[(ushort)chunk] = builds;

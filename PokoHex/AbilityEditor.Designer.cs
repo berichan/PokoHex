@@ -157,8 +157,6 @@ partial class AbilityEditor
         CB_WheelAbility.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
         CB_WheelAbility.AutoCompleteSource = AutoCompleteSource.ListItems;
         CB_WheelAbility.DropDownStyle = ComboBoxStyle.DropDownList;
-        CB_WheelAbility.AutoCompleteSource = AutoCompleteSource.ListItems;
-        CB_WheelAbility.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
         CB_WheelAbility.DropDownWidth = 400;
         CB_WheelAbility.Location = new Point(13, 541);
         CB_WheelAbility.Margin = new Padding(3, 4, 3, 4);
@@ -170,15 +168,12 @@ partial class AbilityEditor
         // B_Set
         // 
         B_Set.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-        B_Set.Location = new Point(287, 534);
+        B_Set.Location = new Point(16, 480);
         B_Set.Margin = new Padding(3, 4, 3, 4);
         B_Set.Name = "B_Set";
-        B_Set.Size = new Size(114, 40);
+        B_Set.Size = new Size(100, 30);
         B_Set.TabIndex = 2;
         B_Set.Text = "Set";
-        B_Set.Location = new Point(16, 480);
-        B_Set.Size = new Size(100, 30);
-        B_Set.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
         B_Set.Click += B_Set_Click;
         // 
         // buttons
@@ -213,8 +208,12 @@ partial class AbilityEditor
         B_LearnAll.TabIndex = 1;
         B_LearnAll.Text = "Learn all";
         B_LearnAll.Click += B_LearnAll_Click;
-
+        // 
+        // B_UnlockDive
+        // 
+        B_UnlockDive.Location = new Point(0, 0);
         B_UnlockDive.Name = "B_UnlockDive";
+        B_UnlockDive.TabIndex = 0;
         B_UnlockDive.Text = "Unlock Dive";
         B_UnlockDive.Size = new Size(160, 30);
         B_UnlockDive.Visible = false;
@@ -228,6 +227,20 @@ partial class AbilityEditor
         L_Count.Size = new Size(601, 37);
         L_Count.TabIndex = 2;
         L_Count.TextAlign = ContentAlignment.MiddleLeft;
+        // 
+        // B_UnlockFood
+        // 
+        B_UnlockFood.Location = new Point(0, 0);
+        B_UnlockFood.Name = "B_UnlockFood";
+        B_UnlockFood.Size = new Size(75, 23);
+        B_UnlockFood.TabIndex = 0;
+        // 
+        // B_UnlockAbsorption
+        // 
+        B_UnlockAbsorption.Location = new Point(0, 0);
+        B_UnlockAbsorption.Name = "B_UnlockAbsorption";
+        B_UnlockAbsorption.Size = new Size(75, 23);
+        B_UnlockAbsorption.TabIndex = 0;
         // 
         // AbilityEditor
         // 

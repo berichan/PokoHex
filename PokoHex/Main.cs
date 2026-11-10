@@ -1,4 +1,5 @@
 ﻿using PokoHex.Core;
+using PokoHex.Core.Strings;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -15,6 +16,7 @@ public partial class Main : Form
     private bool Loading;
     private int SelectedSlot;
     private int InventoryStart;
+    private int SelectedPaintableItemSlot;
     private ToolStripDropDown? ItemDropDown;
     private DataGridView? ItemGrid;
     private ComboBoxMouseHook? ItemMouseHook;
@@ -98,6 +100,7 @@ public partial class Main : Form
             TC_Editor.Enabled = true;
             Menu_Export.Enabled = true;
             SelectedSlot = 0;
+            SelectedPaintableItemSlot = -1;
             Loading = false;
             BindItems();
             LoadInventory();
@@ -253,6 +256,7 @@ public partial class Main : Form
         {
             SaveSlot();
             SelectedSlot = (int)DGV_Items.CurrentRow.Tag!;
+            SelectedPaintableItemSlot = SelectedSlot;
             LoadSlot();
         }
         catch (ArgumentException ex) { ShowError(ex.Message); }
@@ -274,7 +278,7 @@ public partial class Main : Form
             NUD_Paint1.Value = item.ItemPaint1;
         NUD_Paint2.Value = item.ItemPaint2;
         NUD_Paint3.Value = item.ItemPaint3;
-        
+
         chkPaint.Checked = chkPattern.Checked = false;
         chk_CustomItem.Checked = item.HasCustomId;
         L_Slot.Text = SelectedSlot < SaveLayout.MainInventoryCount
@@ -414,6 +418,19 @@ public partial class Main : Form
     {
         if (Loading || SAV == null)
             return;
+        if (TC_Editor.SelectedTab == items && SelectedPaintableItemSlot < 0)
+            SelectedPaintableItemSlot = SelectedSlot;
+        if (TC_Editor.SelectedTab == painting)
+            paintingBody.Visible = (SelectedPaintableItemSlot >= 0);
+
+        if (SelectedPaintableItemSlot >= 0)
+        {
+            var selected = SAV.Common.Inventory[SelectedPaintableItemSlot];
+            label1.Text = $@"selected slot: {SelectedPaintableItemSlot}
+Item can be painted: {(selected.PaintSlots == 0 ? "False" : $"True ({selected.PaintSlots} paint slots)")}
+Item can have pattern: {selected.AllowsPattern}";
+        }
+
         Editor_Flags.RefreshValues();
         Editor_Skills.RefreshValues();
         Editor_Reactions.RefreshValues();
