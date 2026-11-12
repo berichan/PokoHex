@@ -34,13 +34,13 @@ partial class Main
         Editor_Reactions = new AbilityEditor();
         playerHeader = new Panel();
         tableLayoutPanel1 = new TableLayoutPanel();
+        NUD_LifeCoins = new NumericUpDown();
+        L_Coins = new Label();
         playerSections = new FlowLayoutPanel();
         RB_Skills = new RadioButton();
         RB_Reactions = new RadioButton();
         name = new Label();
         TB_Name = new TextBox();
-        nameHint = new Label();
-        splitContainer1 = new SplitContainer();
         items = new TabPage();
         split = new SplitContainer();
         DGV_Items = new DataGridView();
@@ -80,9 +80,8 @@ partial class Main
         playerBody.SuspendLayout();
         playerHeader.SuspendLayout();
         tableLayoutPanel1.SuspendLayout();
+        ((ISupportInitialize)NUD_LifeCoins).BeginInit();
         playerSections.SuspendLayout();
-        ((ISupportInitialize)splitContainer1).BeginInit();
-        splitContainer1.SuspendLayout();
         items.SuspendLayout();
         ((ISupportInitialize)split).BeginInit();
         split.Panel1.SuspendLayout();
@@ -241,18 +240,20 @@ partial class Main
         // tableLayoutPanel1
         // 
         tableLayoutPanel1.BackColor = SystemColors.Control;
-        tableLayoutPanel1.ColumnCount = 6;
+        tableLayoutPanel1.ColumnCount = 7;
         tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
         tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
-        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 180F));
+        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
+        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
         tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
         tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 300F));
         tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90F));
-        tableLayoutPanel1.Controls.Add(playerSections, 4, 0);
+        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+        tableLayoutPanel1.Controls.Add(NUD_LifeCoins, 3, 0);
+        tableLayoutPanel1.Controls.Add(L_Coins, 2, 0);
+        tableLayoutPanel1.Controls.Add(playerSections, 5, 0);
         tableLayoutPanel1.Controls.Add(name, 0, 0);
         tableLayoutPanel1.Controls.Add(TB_Name, 1, 0);
-        tableLayoutPanel1.Controls.Add(nameHint, 2, 0);
-        tableLayoutPanel1.Controls.Add(splitContainer1, 3, 0);
         tableLayoutPanel1.Dock = DockStyle.Fill;
         tableLayoutPanel1.Location = new Point(0, 0);
         tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -261,12 +262,31 @@ partial class Main
         tableLayoutPanel1.Size = new Size(1796, 51);
         tableLayoutPanel1.TabIndex = 3;
         // 
+        // NUD_LifeCoins
+        // 
+        NUD_LifeCoins.Anchor = AnchorStyles.None;
+        NUD_LifeCoins.Location = new Point(445, 12);
+        NUD_LifeCoins.Maximum = new decimal(new int[] { int.MaxValue, 0, 0, 0 });
+        NUD_LifeCoins.Name = "NUD_LifeCoins";
+        NUD_LifeCoins.Size = new Size(110, 27);
+        NUD_LifeCoins.TabIndex = 1;
+        // 
+        // L_Coins
+        // 
+        L_Coins.Anchor = AnchorStyles.None;
+        L_Coins.AutoSize = true;
+        L_Coins.Location = new Point(342, 15);
+        L_Coins.Name = "L_Coins";
+        L_Coins.Size = new Size(76, 20);
+        L_Coins.TabIndex = 0;
+        L_Coins.Text = "Life Coins:";
+        // 
         // playerSections
         // 
         playerSections.Anchor = AnchorStyles.Top;
         playerSections.Controls.Add(RB_Skills);
         playerSections.Controls.Add(RB_Reactions);
-        playerSections.Location = new Point(613, 4);
+        playerSections.Location = new Point(667, 4);
         playerSections.Margin = new Padding(3, 4, 3, 4);
         playerSections.Name = "playerSections";
         playerSections.Size = new Size(271, 43);
@@ -319,25 +339,6 @@ partial class Main
         TB_Name.Name = "TB_Name";
         TB_Name.Size = new Size(194, 27);
         TB_Name.TabIndex = 1;
-        // 
-        // nameHint
-        // 
-        nameHint.AutoSize = true;
-        nameHint.Dock = DockStyle.Fill;
-        nameHint.Location = new Point(323, 0);
-        nameHint.Name = "nameHint";
-        nameHint.Padding = new Padding(0, 14, 0, 0);
-        nameHint.Size = new Size(174, 51);
-        nameHint.TabIndex = 2;
-        nameHint.Text = "Up to 24 UTF-8 bytes.";
-        // 
-        // splitContainer1
-        // 
-        splitContainer1.Location = new Point(503, 3);
-        splitContainer1.Name = "splitContainer1";
-        splitContainer1.Size = new Size(54, 8);
-        splitContainer1.SplitterDistance = 25;
-        splitContainer1.TabIndex = 3;
         // 
         // items
         // 
@@ -720,9 +721,8 @@ partial class Main
         playerHeader.ResumeLayout(false);
         tableLayoutPanel1.ResumeLayout(false);
         tableLayoutPanel1.PerformLayout();
+        ((ISupportInitialize)NUD_LifeCoins).EndInit();
         playerSections.ResumeLayout(false);
-        ((ISupportInitialize)splitContainer1).EndInit();
-        splitContainer1.ResumeLayout(false);
         items.ResumeLayout(false);
         split.Panel1.ResumeLayout(false);
         split.Panel2.ResumeLayout(false);
@@ -762,7 +762,6 @@ partial class Main
     private StatusStrip status;
     private TabPage player;
     private Label name;
-    private Label nameHint;
     private TabPage items;
     private SplitContainer split;
     private Panel inventoryPanel;
@@ -795,7 +794,8 @@ partial class Main
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     private TabPage flags;
     private TabPage painting;
-    private SplitContainer splitContainer1;
     private Label L_Paintable;
     private Label label1;
+    private Label L_Coins = null!;
+    private NumericUpDown NUD_LifeCoins;
 }
