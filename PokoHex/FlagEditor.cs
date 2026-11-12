@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Windows.Forms;
 using PokoHex.Core;
@@ -114,4 +114,15 @@ public partial class FlagEditor : UserControl
     }
 
     private void B_Set_Click(object sender, EventArgs e) => SaveChanges();
+
+    private void DGV_Flags_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (DGV_Flags.Rows[e.RowIndex].Cells[e.ColumnIndex] is not DataGridViewCheckBoxCell)
+            return;
+        SelectedFlag = (int)DGV_Flags.Rows[e.RowIndex].Tag!;
+        bool val = (bool)((DataGridViewCheckBoxCell)DGV_Flags.Rows[e.RowIndex].Cells[e.ColumnIndex]).Value!;
+        ((DataGridViewCheckBoxCell)DGV_Flags.Rows[e.RowIndex].Cells[e.ColumnIndex]).Value = !val;
+        CHK_Enabled.Checked = !val;
+        SaveChanges();
+    }
 }

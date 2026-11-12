@@ -1,8 +1,0 @@
-Input folder: C:\Users\Blair\source\repos\Marak95-PokoHex\PokoHex.Core\Resources\building_reference_entries.txt
-
-========== ENTRY 40 ==========
-FILE NOT FOUND: C:\Users\Blair\source\repos\Marak95-PokoHex\PokoHex.Core\Resources\building_reference_entries.txt\entry_40.bin
-
-========== ENTRY 43 ==========
-FILE NOT FOUND: C:\Users\Blair\source\repos\Marak95-PokoHex\PokoHex.Core\Resources\building_reference_entries.txt\entry_43.bin
-

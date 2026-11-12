@@ -75,16 +75,23 @@ public sealed class SaveFolder
 
     public void Export(string destination)
     {
-        destination = Path.GetFullPath(destination).TrimEnd(Path.DirectorySeparatorChar);
-        var source = Folder.TrimEnd(Path.DirectorySeparatorChar);
-        if (destination.Equals(source, StringComparison.OrdinalIgnoreCase) ||
-            destination.StartsWith(source + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
-            throw new IOException("Choose a new folder outside the opened save.");
-        if (File.Exists(destination) || (Directory.Exists(destination) && Directory.EnumerateFileSystemEntries(destination).Any()))
-            throw new IOException("The export folder must be empty.");
+        destination = Path.GetFullPath(destination);
+
+        if (Directory.Exists(destination))
+        {
+            foreach (var file in Directory.GetFiles(destination))
+                File.Delete(file);
+
+            foreach (var directory in Directory.GetDirectories(destination))
+                Directory.Delete(directory, true);
+        }
+        else
+        {
+            Directory.CreateDirectory(destination);
+        }
 
         var files = ExportFiles();
-        Directory.CreateDirectory(destination);
+
         foreach (var (relative, data) in files)
         {
             var target = Path.Combine(destination, relative);

@@ -40,6 +40,7 @@ partial class Main
         name = new Label();
         TB_Name = new TextBox();
         nameHint = new Label();
+        splitContainer1 = new SplitContainer();
         items = new TabPage();
         split = new SplitContainer();
         DGV_Items = new DataGridView();
@@ -51,13 +52,8 @@ partial class Main
         inventoryPanel = new Panel();
         inventoryLabel = new Label();
         CB_Inventory = new ComboBox();
-        L_Paints = new Label();
-        NUD_Pattern = new NumericUpDown();
-        chkPattern = new CheckBox();
-        NUD_Paint3 = new NumericUpDown();
-        NUD_Paint2 = new NumericUpDown();
-        NUD_Paint1 = new NumericUpDown();
-        chkPaint = new CheckBox();
+        L_Paintable = new Label();
+        L_PaintableCaption = new Label();
         NUD_CustomItemID = new NumericUpDown();
         chk_CustomItem = new CheckBox();
         L_Slot = new Label();
@@ -69,9 +65,7 @@ partial class Main
         clear = new Button();
         L_Catalog = new Label();
         painting = new TabPage();
-        paintingBody = new Panel();
-        label1 = new Label();
-        L_NoPaint = new Label();
+        Editor_ItemPaint = new ItemPaintEditor();
         villagers = new TabPage();
         Editor_Villagers = new VillagerEditor();
         map = new TabPage();
@@ -86,6 +80,8 @@ partial class Main
         playerHeader.SuspendLayout();
         tableLayoutPanel1.SuspendLayout();
         playerSections.SuspendLayout();
+        ((ISupportInitialize)splitContainer1).BeginInit();
+        splitContainer1.SuspendLayout();
         items.SuspendLayout();
         ((ISupportInitialize)split).BeginInit();
         split.Panel1.SuspendLayout();
@@ -93,14 +89,9 @@ partial class Main
         split.SuspendLayout();
         ((ISupportInitialize)DGV_Items).BeginInit();
         inventoryPanel.SuspendLayout();
-        ((ISupportInitialize)NUD_Pattern).BeginInit();
-        ((ISupportInitialize)NUD_Paint3).BeginInit();
-        ((ISupportInitialize)NUD_Paint2).BeginInit();
-        ((ISupportInitialize)NUD_Paint1).BeginInit();
         ((ISupportInitialize)NUD_CustomItemID).BeginInit();
         ((ISupportInitialize)NUD_Count).BeginInit();
         painting.SuspendLayout();
-        paintingBody.SuspendLayout();
         villagers.SuspendLayout();
         map.SuspendLayout();
         flags.SuspendLayout();
@@ -163,7 +154,7 @@ partial class Main
         // 
         status.ImageScalingSize = new Size(20, 20);
         status.Items.AddRange(new ToolStripItem[] { L_Status });
-        status.Location = new Point(0, 1485);
+        status.Location = new Point(0, 1256);
         status.Name = "status";
         status.Size = new Size(1804, 26);
         status.TabIndex = 1;
@@ -188,7 +179,7 @@ partial class Main
         TC_Editor.Margin = new Padding(3, 4, 3, 4);
         TC_Editor.Name = "TC_Editor";
         TC_Editor.SelectedIndex = 0;
-        TC_Editor.Size = new Size(1804, 1453);
+        TC_Editor.Size = new Size(1804, 1224);
         TC_Editor.TabIndex = 0;
         TC_Editor.SelectedIndexChanged += TC_Editor_SelectedIndexChanged;
         // 
@@ -200,7 +191,7 @@ partial class Main
         player.Margin = new Padding(3, 4, 3, 4);
         player.Name = "player";
         player.Padding = new Padding(0, 5, 0, 0);
-        player.Size = new Size(1796, 1420);
+        player.Size = new Size(1796, 1191);
         player.TabIndex = 0;
         player.Text = "Player";
         // 
@@ -211,7 +202,7 @@ partial class Main
         playerBody.Dock = DockStyle.Fill;
         playerBody.Location = new Point(0, 56);
         playerBody.Name = "playerBody";
-        playerBody.Size = new Size(1796, 1364);
+        playerBody.Size = new Size(1796, 1135);
         playerBody.TabIndex = 3;
         // 
         // Editor_Skills
@@ -222,7 +213,7 @@ partial class Main
         Editor_Skills.Name = "Editor_Skills";
         Editor_Skills.Padding = new Padding(11, 0, 0, 0);
         Editor_Skills.Reactions = false;
-        Editor_Skills.Size = new Size(1796, 1364);
+        Editor_Skills.Size = new Size(1796, 1135);
         Editor_Skills.TabIndex = 1;
         // 
         // Editor_Reactions
@@ -233,7 +224,7 @@ partial class Main
         Editor_Reactions.Name = "Editor_Reactions";
         Editor_Reactions.Padding = new Padding(11, 0, 0, 0);
         Editor_Reactions.Reactions = true;
-        Editor_Reactions.Size = new Size(1796, 1364);
+        Editor_Reactions.Size = new Size(1796, 1135);
         Editor_Reactions.TabIndex = 0;
         // 
         // playerHeader
@@ -260,6 +251,7 @@ partial class Main
         tableLayoutPanel1.Controls.Add(name, 0, 0);
         tableLayoutPanel1.Controls.Add(TB_Name, 1, 0);
         tableLayoutPanel1.Controls.Add(nameHint, 2, 0);
+        tableLayoutPanel1.Controls.Add(splitContainer1, 3, 0);
         tableLayoutPanel1.Dock = DockStyle.Fill;
         tableLayoutPanel1.Location = new Point(0, 0);
         tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -338,6 +330,14 @@ partial class Main
         nameHint.TabIndex = 2;
         nameHint.Text = "Up to 24 UTF-8 bytes.";
         // 
+        // splitContainer1
+        // 
+        splitContainer1.Location = new Point(503, 3);
+        splitContainer1.Name = "splitContainer1";
+        splitContainer1.Size = new Size(54, 8);
+        splitContainer1.SplitterDistance = 25;
+        splitContainer1.TabIndex = 3;
+        // 
         // items
         // 
         items.Controls.Add(split);
@@ -345,7 +345,7 @@ partial class Main
         items.Margin = new Padding(3, 4, 3, 4);
         items.Name = "items";
         items.Padding = new Padding(9, 11, 9, 11);
-        items.Size = new Size(1796, 1420);
+        items.Size = new Size(1796, 1191);
         items.TabIndex = 1;
         items.Text = "Items";
         // 
@@ -366,13 +366,8 @@ partial class Main
         // split.Panel2
         // 
         split.Panel2.BackColor = SystemColors.Control;
-        split.Panel2.Controls.Add(L_Paints);
-        split.Panel2.Controls.Add(NUD_Pattern);
-        split.Panel2.Controls.Add(chkPattern);
-        split.Panel2.Controls.Add(NUD_Paint3);
-        split.Panel2.Controls.Add(NUD_Paint2);
-        split.Panel2.Controls.Add(NUD_Paint1);
-        split.Panel2.Controls.Add(chkPaint);
+        split.Panel2.Controls.Add(L_Paintable);
+        split.Panel2.Controls.Add(L_PaintableCaption);
         split.Panel2.Controls.Add(NUD_CustomItemID);
         split.Panel2.Controls.Add(chk_CustomItem);
         split.Panel2.Controls.Add(L_Slot);
@@ -383,7 +378,7 @@ partial class Main
         split.Panel2.Controls.Add(B_Set);
         split.Panel2.Controls.Add(clear);
         split.Panel2.Controls.Add(L_Catalog);
-        split.Size = new Size(1778, 1398);
+        split.Size = new Size(1778, 1169);
         split.SplitterDistance = 1501;
         split.TabIndex = 0;
         // 
@@ -407,7 +402,7 @@ partial class Main
         DGV_Items.RowTemplate.ReadOnly = true;
         DGV_Items.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         DGV_Items.ShowEditingIcon = false;
-        DGV_Items.Size = new Size(1501, 1362);
+        DGV_Items.Size = new Size(1501, 1133);
         DGV_Items.TabIndex = 0;
         DGV_Items.CurrentCellChanged += DGV_Items_CurrentCellChanged;
         // 
@@ -485,74 +480,27 @@ partial class Main
         CB_Inventory.TabIndex = 1;
         CB_Inventory.SelectedIndexChanged += CB_Inventory_SelectedIndexChanged;
         // 
-        // L_Paints
+        // L_Paintable
         // 
-        L_Paints.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        L_Paints.BorderStyle = BorderStyle.FixedSingle;
-        L_Paints.ForeColor = SystemColors.GrayText;
-        L_Paints.Location = new Point(16, 365);
-        L_Paints.Name = "L_Paints";
-        L_Paints.Size = new Size(254, 141);
-        L_Paints.TabIndex = 19;
-        L_Paints.Text = "Note:\r\n• Paint 1 and Pattern cannot be set at the same time. \r\n• Paint 2 and Pattern can be set at the same time, but it has no effect in the game.";
+        L_Paintable.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        L_Paintable.ForeColor = SystemColors.ControlText;
+        L_Paintable.Location = new Point(180, 202);
+        L_Paintable.Name = "L_Paintable";
+        L_Paintable.Size = new Size(90, 20);
+        L_Paintable.TabIndex = 20;
+        L_Paintable.Text = "No";
+        L_Paintable.TextAlign = ContentAlignment.TopRight;
         // 
-        // NUD_Pattern
+        // L_PaintableCaption
         // 
-        NUD_Pattern.Enabled = false;
-        NUD_Pattern.Location = new Point(180, 335);
-        NUD_Pattern.Maximum = new decimal(new int[] { 131, 0, 0, 0 });
-        NUD_Pattern.Name = "NUD_Pattern";
-        NUD_Pattern.Size = new Size(90, 27);
-        NUD_Pattern.TabIndex = 18;
-        // 
-        // chkPattern
-        // 
-        chkPattern.AutoSize = true;
-        chkPattern.Location = new Point(16, 335);
-        chkPattern.Name = "chkPattern";
-        chkPattern.Size = new Size(105, 24);
-        chkPattern.TabIndex = 17;
-        chkPattern.Text = "Set Pattern:";
-        chkPattern.UseVisualStyleBackColor = true;
-        chkPattern.CheckedChanged += chkPattern_CheckedChanged;
-        // 
-        // NUD_Paint3
-        // 
-        NUD_Paint3.Enabled = false;
-        NUD_Paint3.Location = new Point(180, 302);
-        NUD_Paint3.Maximum = new decimal(new int[] { 18, 0, 0, 0 });
-        NUD_Paint3.Name = "NUD_Paint3";
-        NUD_Paint3.Size = new Size(90, 27);
-        NUD_Paint3.TabIndex = 16;
-        // 
-        // NUD_Paint2
-        // 
-        NUD_Paint2.Enabled = false;
-        NUD_Paint2.Location = new Point(180, 269);
-        NUD_Paint2.Maximum = new decimal(new int[] { 18, 0, 0, 0 });
-        NUD_Paint2.Name = "NUD_Paint2";
-        NUD_Paint2.Size = new Size(90, 27);
-        NUD_Paint2.TabIndex = 14;
-        // 
-        // NUD_Paint1
-        // 
-        NUD_Paint1.Enabled = false;
-        NUD_Paint1.Location = new Point(180, 236);
-        NUD_Paint1.Maximum = new decimal(new int[] { 18, 0, 0, 0 });
-        NUD_Paint1.Name = "NUD_Paint1";
-        NUD_Paint1.Size = new Size(90, 27);
-        NUD_Paint1.TabIndex = 12;
-        // 
-        // chkPaint
-        // 
-        chkPaint.AutoSize = true;
-        chkPaint.Location = new Point(16, 237);
-        chkPaint.Name = "chkPaint";
-        chkPaint.Size = new Size(91, 24);
-        chkPaint.TabIndex = 11;
-        chkPaint.Text = "Set Paint:";
-        chkPaint.UseVisualStyleBackColor = true;
-        chkPaint.CheckedChanged += chkPaint_CheckedChanged;
+        L_PaintableCaption.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        L_PaintableCaption.AutoSize = true;
+        L_PaintableCaption.ForeColor = SystemColors.ControlText;
+        L_PaintableCaption.Location = new Point(16, 202);
+        L_PaintableCaption.Name = "L_PaintableCaption";
+        L_PaintableCaption.Size = new Size(117, 20);
+        L_PaintableCaption.TabIndex = 19;
+        L_PaintableCaption.Text = "Can be painted: ";
         // 
         // NUD_CustomItemID
         // 
@@ -628,7 +576,7 @@ partial class Main
         // B_Set
         // 
         B_Set.Enabled = false;
-        B_Set.Location = new Point(19, 538);
+        B_Set.Location = new Point(16, 269);
         B_Set.Name = "B_Set";
         B_Set.Size = new Size(100, 30);
         B_Set.TabIndex = 5;
@@ -637,7 +585,7 @@ partial class Main
         // 
         // clear
         // 
-        clear.Location = new Point(173, 538);
+        clear.Location = new Point(170, 269);
         clear.Name = "clear";
         clear.Size = new Size(100, 30);
         clear.TabIndex = 6;
@@ -655,50 +603,29 @@ partial class Main
         // 
         // painting
         // 
-        painting.Controls.Add(paintingBody);
-        painting.Controls.Add(L_NoPaint);
+        painting.Controls.Add(Editor_ItemPaint);
         painting.Location = new Point(4, 29);
         painting.Name = "painting";
         painting.Padding = new Padding(3);
-        painting.Size = new Size(1796, 1420);
+        painting.Size = new Size(1796, 1191);
         painting.TabIndex = 4;
         painting.Text = "Painting";
         painting.UseVisualStyleBackColor = true;
         // 
-        // paintingBody
+        // Editor_ItemPaint
         // 
-        paintingBody.Controls.Add(label1);
-        paintingBody.Dock = DockStyle.Fill;
-        paintingBody.Location = new Point(3, 3);
-        paintingBody.Name = "paintingBody";
-        paintingBody.Size = new Size(1790, 1414);
-        paintingBody.TabIndex = 1;
-        // 
-        // label1
-        // 
-        label1.AutoSize = true;
-        label1.Location = new Point(65, 78);
-        label1.Name = "label1";
-        label1.Size = new Size(50, 20);
-        label1.TabIndex = 0;
-        label1.Text = "label1";
-        // 
-        // L_NoPaint
-        // 
-        L_NoPaint.Dock = DockStyle.Fill;
-        L_NoPaint.Location = new Point(3, 3);
-        L_NoPaint.Name = "L_NoPaint";
-        L_NoPaint.Size = new Size(1790, 1414);
-        L_NoPaint.TabIndex = 0;
-        L_NoPaint.Text = "Select an item first";
-        L_NoPaint.TextAlign = ContentAlignment.MiddleCenter;
+        Editor_ItemPaint.Dock = DockStyle.Fill;
+        Editor_ItemPaint.Location = new Point(3, 3);
+        Editor_ItemPaint.Name = "Editor_ItemPaint";
+        Editor_ItemPaint.Size = new Size(1790, 1185);
+        Editor_ItemPaint.TabIndex = 0;
         // 
         // villagers
         // 
         villagers.Controls.Add(Editor_Villagers);
         villagers.Location = new Point(4, 29);
         villagers.Name = "villagers";
-        villagers.Size = new Size(1796, 1420);
+        villagers.Size = new Size(1796, 1191);
         villagers.TabIndex = 2;
         villagers.Text = "Villagers";
         // 
@@ -709,7 +636,7 @@ partial class Main
         Editor_Villagers.Margin = new Padding(3, 4, 3, 4);
         Editor_Villagers.Name = "Editor_Villagers";
         Editor_Villagers.Padding = new Padding(9, 11, 9, 11);
-        Editor_Villagers.Size = new Size(1796, 1420);
+        Editor_Villagers.Size = new Size(1796, 1191);
         Editor_Villagers.TabIndex = 0;
         // 
         // map
@@ -717,7 +644,7 @@ partial class Main
         map.Controls.Add(Editor_Map);
         map.Location = new Point(4, 29);
         map.Name = "map";
-        map.Size = new Size(1796, 1420);
+        map.Size = new Size(1796, 1191);
         map.TabIndex = 3;
         map.Text = "Map";
         // 
@@ -728,7 +655,7 @@ partial class Main
         Editor_Map.Margin = new Padding(3, 4, 3, 4);
         Editor_Map.Name = "Editor_Map";
         Editor_Map.Padding = new Padding(7, 8, 7, 8);
-        Editor_Map.Size = new Size(1796, 1420);
+        Editor_Map.Size = new Size(1796, 1191);
         Editor_Map.TabIndex = 0;
         // 
         // flags
@@ -737,7 +664,7 @@ partial class Main
         flags.Location = new Point(4, 29);
         flags.Name = "flags";
         flags.Padding = new Padding(3);
-        flags.Size = new Size(1796, 1420);
+        flags.Size = new Size(1796, 1191);
         flags.TabIndex = 5;
         flags.Text = "Flags";
         flags.UseVisualStyleBackColor = true;
@@ -749,7 +676,7 @@ partial class Main
         Editor_Flags.Margin = new Padding(3, 4, 3, 4);
         Editor_Flags.Name = "Editor_Flags";
         Editor_Flags.Padding = new Padding(11, 13, 11, 13);
-        Editor_Flags.Size = new Size(1790, 1414);
+        Editor_Flags.Size = new Size(1790, 1185);
         Editor_Flags.TabIndex = 0;
         // 
         // Main
@@ -757,7 +684,7 @@ partial class Main
         AllowDrop = true;
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(1804, 1511);
+        ClientSize = new Size(1804, 1282);
         Controls.Add(TC_Editor);
         Controls.Add(status);
         Controls.Add(menu);
@@ -782,6 +709,8 @@ partial class Main
         tableLayoutPanel1.ResumeLayout(false);
         tableLayoutPanel1.PerformLayout();
         playerSections.ResumeLayout(false);
+        ((ISupportInitialize)splitContainer1).EndInit();
+        splitContainer1.ResumeLayout(false);
         items.ResumeLayout(false);
         split.Panel1.ResumeLayout(false);
         split.Panel2.ResumeLayout(false);
@@ -791,15 +720,9 @@ partial class Main
         ((ISupportInitialize)DGV_Items).EndInit();
         inventoryPanel.ResumeLayout(false);
         inventoryPanel.PerformLayout();
-        ((ISupportInitialize)NUD_Pattern).EndInit();
-        ((ISupportInitialize)NUD_Paint3).EndInit();
-        ((ISupportInitialize)NUD_Paint2).EndInit();
-        ((ISupportInitialize)NUD_Paint1).EndInit();
         ((ISupportInitialize)NUD_CustomItemID).EndInit();
         ((ISupportInitialize)NUD_Count).EndInit();
         painting.ResumeLayout(false);
-        paintingBody.ResumeLayout(false);
-        paintingBody.PerformLayout();
         villagers.ResumeLayout(false);
         map.ResumeLayout(false);
         flags.ResumeLayout(false);
@@ -843,6 +766,7 @@ partial class Main
     private CheckBox chk_CustomItem;
     private AbilityEditor Editor_Reactions;
     private AbilityEditor Editor_Skills;
+    private ItemPaintEditor Editor_ItemPaint;
     private FlagEditor Editor_Flags;
     private Panel playerHeader;
     private FlowLayoutPanel playerSections;
@@ -850,13 +774,7 @@ partial class Main
     private RadioButton RB_Reactions;
     private Panel playerBody;
     private TableLayoutPanel tableLayoutPanel1;
-    private NumericUpDown NUD_Paint3;
-    private NumericUpDown NUD_Paint2;
-    private NumericUpDown NUD_Paint1;
-    private CheckBox chkPaint;
-    private NumericUpDown NUD_Pattern;
-    private CheckBox chkPattern;
-    private Label L_Paints;
+    private Label L_PaintableCaption;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     private DataGridViewImageColumn dataGridViewImageColumn1;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -864,7 +782,6 @@ partial class Main
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     private TabPage flags;
     private TabPage painting;
-    private Panel paintingBody;
-    private Label L_NoPaint;
-    private Label label1;
+    private SplitContainer splitContainer1;
+    private Label L_Paintable;
 }

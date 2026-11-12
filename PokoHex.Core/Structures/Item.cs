@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using PokoHex.Core.Structures;
 using static System.Buffers.Binary.BinaryPrimitives;
 
 namespace PokoHex.Core;
@@ -20,6 +21,9 @@ public sealed class Item(Memory<byte> raw)
 
     public const int MaxCount = byte.MaxValue;
     public bool HasCustomId = false;
+    private (ushort, bool) Args => ItemPaintInfo.PaintArgs.TryGetValue(ItemId, out var paintable) ? paintable : ((ushort)0, false);
+    public bool AllowsPattern => Args.Item2;
+    public int PaintSlots => Args.Item1;
 
     private Span<byte> Data => raw.Span;
 
@@ -68,7 +72,7 @@ public sealed class Item(Memory<byte> raw)
         get => (ushort)((RawValue & ItemPaint3Mask) >> 26);
         private set
         {
-            if (value >= ItemPaints.Count)
+            if (value >= ItemPaintInfo.ItemPaints.Count)
                 throw new ArgumentOutOfRangeException(nameof(value));
 
             RawValue = (RawValue & ~ItemPaint3Mask) | ((uint)value << 26);
@@ -92,7 +96,7 @@ public sealed class Item(Memory<byte> raw)
 
     public bool HasItemPattern => (RawValue & ItemPatternDiscriminatorMask) != 0;
 
-    public bool HasItemPainted => !HasItemPattern && (RawValue & (ItemPaint1Mask | ItemPaint2Mask | ItemPaint3Mask)) != 0;   
+    public bool HasPaint => !HasItemPattern && (RawValue & (ItemPaint1Mask | ItemPaint2Mask | ItemPaint3Mask)) != 0;   
 
     public byte Count
     {
@@ -102,12 +106,12 @@ public sealed class Item(Memory<byte> raw)
 
     public bool IsEmpty => ItemId == 0;
 
-    public void SetPaint(ushort paint1, ushort paint2, ushort paint3)
+    public void SetPaint(params ushort[] paints)
     {
-        if (!HasItemPattern || paint1 != 0)
-            ItemPaint1 = paint1;
-        ItemPaint2 = paint2;
-        ItemPaint3 = paint3;
+        if (!HasItemPattern || paints[0] != 0)
+            ItemPaint1 = paints[0];
+        ItemPaint2 = paints[1];
+        ItemPaint3 = paints[2];
     }
     public void SetPattern(ushort pattern)
     {
@@ -137,26 +141,4 @@ public sealed class Item(Memory<byte> raw)
         ItemId = itemId;
         Count = (byte)count;
     }
-
-    public static Dictionary<uint, (string, Color)> ItemPaints = new()
-    {
-        { 0b00001, ("white", Color.White) },
-        { 0b00010, ("red", Color.Red) },
-        { 0b00011, ("blue", Color.Blue) },
-        { 0b00100, ("yellow", Color.Yellow) },
-        { 0b00101, ("green", Color.Green) },
-        { 0b00110, ("aquamarine", Color.Aquamarine) },
-        { 0b00111, ("orange", Color.Orange) },
-        { 0b01000, ("purple", Color.Purple) },
-        { 0b01001, ("brown", Color.Brown) },
-        { 0b01010, ("cyan", Color.Cyan) },
-        { 0b01011, ("rose", Color.HotPink) },
-        { 0b01100, ("lime", Color.Lime) },
-        { 0b01101, ("beige", Color.Beige) },
-        { 0b01110, ("plum", Color.Plum) },
-        { 0b01111, ("navy", Color.Navy) },
-        { 0b10000, ("black", Color.Black) },
-        { 0b10001, ("gray", Color.Gray) },
-        { 0b10010, ("pink", Color.LightPink) }
-    };
 }

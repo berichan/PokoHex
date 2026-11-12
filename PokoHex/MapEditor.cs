@@ -52,7 +52,6 @@ public partial class MapEditor : UserControl
         Interior = false;
         ExteriorBuildings = ExteriorBuildingData.Load();
         LoadArea();
-        InitBuildings();
     }
 
     private static string GetAreaName(int area)
@@ -229,15 +228,6 @@ public partial class MapEditor : UserControl
         public override string ToString() => Text;
     }
 
-    private Dictionary<ushort, string> InteriorTypes = new Dictionary<ushort, string>();
-    private void InitBuildings()
-    {
-        foreach (var i in (ushort[])[11, 58, 59]) InteriorTypes[i] = "Area Gate";
-        foreach (var i in (ushort[])[61, 62, 67]) InteriorTypes[i] = "Area Gate";
-        foreach (var i in (ushort[])[60, 63])     InteriorTypes[i] = "Area Gate";
-        foreach (var i in (ushort[])[64, 65, 66]) InteriorTypes[i] = "Area Gate";
-    }
-
     private void LoadInteriors(ushort chunk)
     {
         if (chunk == 0)
@@ -248,7 +238,7 @@ public partial class MapEditor : UserControl
         var buildings = Stage.GetBuildingsForChunk(chunk);
 
         for (int i = 0; i + 1 < boundaries.Count; i += 2)
-        {
+        { 
             var floor = boundaries[i];
             int ceiling = boundaries[i + 1];
             var building = buildings.First(x => x.Floor == floor);
@@ -256,9 +246,7 @@ public partial class MapEditor : UserControl
             if (ceiling <= floor)
                 continue;
 
-            string name;
-            if (!InteriorTypes.TryGetValue(building.Type, out name))
-                name = ExteriorBuildings.GetItemName(building.Type); 
+            string name = ExteriorBuildings.GetItemName(building.Type); 
             name += " (" + building.Type + ")";
 
             CB_Interior.Items.Add(new InteriorInfo
@@ -776,12 +764,12 @@ public partial class MapEditor : UserControl
         foreach (var chunk in Stage!.Chunks.Where(f => f <= 3965).OrderByDescending(f => f))
         {
             var boundaries = GetInteriorBoundaries((ushort)chunk).Where((c, i) => i % 2 != 1);
-            var builds = Stage!.GetBuildingsForChunk((ushort)chunk).Where(w => boundaries.Contains(w.Floor)).Select(s => (s.Floor, InteriorTypes.TryGetValue(s.Type, out var type) ? type : $"Invalid building ({s.Type})")).ToList();
+            var builds = Stage!.GetBuildingsForChunk((ushort)chunk).Where(w => boundaries.Contains(w.Floor)).Select(s => (  s.Floor, ExteriorBuildings.GetItemName(s.Type))).ToList();
             if (builds.Count == 0)
                 break;
             allInteriorMaps[(ushort)chunk] = builds;
         }
-        MessageBox.Show(string.Join(Environment.NewLine, allInteriorMaps.SelectMany(entry => new[] { $"Chunk {entry.Key} (X {(entry.Key & 63) * 32} / Z {(entry.Key >> 6) * 32}):" }.Concat(entry.Value.Select(b => $"  Y={b.Floor}: {b.Text}")))));
+        //MessageBox.Show(string.Join(Environment.NewLine, allInteriorMaps.SelectMany(entry => new[] { $"Chunk {entry.Key} (X {(entry.Key & 63) * 32} / Z {(entry.Key >> 6) * 32}):" }.Concat(entry.Value.Select(b => $"  Y={b.Floor}: {b.Text}")))));
 
         CB_Chunk.SelectedIndex = CB_Chunk.Items.Cast<ItemInfo>().ToList().FindIndex(z => z.Value == allInteriorMaps.Keys.FirstOrDefault());
     }

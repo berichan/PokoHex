@@ -29,3 +29,4 @@ PokoHex/Properties/launchSettings.json
 /PokoHex.Core/Save/StageSave.cs
 /PokoHex.Parsing/GameArchive.cs
 /PokoHex.Parsing/GameMapDumper.cs
+/PokoHex/VillagerEditor.resx
