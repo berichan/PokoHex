@@ -48,8 +48,14 @@ public partial class ItemPaintEditor : UserControl
     {
         SelectedPaintableItemSlot = itemIndex;
         paintingBody.Visible = (SelectedPaintableItemSlot >= 0);
-        if (SelectedPaintableItemSlot < 0)
+        if (SelectedPaintableItemSlot < 0 || SelectedItem.PaintSlots == 0)
+        {
+            Visible = false;
             return;
+        }
+
+        Visible = true;
+        Dock = DockStyle.Fill;
 
         L_Item.Text = $"Selected item: (slot {itemIndex + 1})";
 

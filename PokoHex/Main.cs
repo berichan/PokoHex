@@ -404,7 +404,7 @@ public partial class Main : Form
             return;
         if (TC_Editor.SelectedTab == items)
             ItemSelected = true;
-        if (TC_Editor.SelectedTab == painting)
+        if (TC_Editor.SelectedTab == painting && ItemSelected)
             Editor_ItemPaint.ShowForItem(SelectedSlot);
 
         Editor_Flags.RefreshValues();

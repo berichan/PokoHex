@@ -66,6 +66,7 @@ partial class Main
         L_Catalog = new Label();
         painting = new TabPage();
         Editor_ItemPaint = new ItemPaintEditor();
+        label1 = new Label();
         villagers = new TabPage();
         Editor_Villagers = new VillagerEditor();
         map = new TabPage();
@@ -604,6 +605,7 @@ partial class Main
         // painting
         // 
         painting.Controls.Add(Editor_ItemPaint);
+        painting.Controls.Add(label1);
         painting.Location = new Point(4, 29);
         painting.Name = "painting";
         painting.Padding = new Padding(3);
@@ -614,11 +616,21 @@ partial class Main
         // 
         // Editor_ItemPaint
         // 
-        Editor_ItemPaint.Dock = DockStyle.Fill;
         Editor_ItemPaint.Location = new Point(3, 3);
         Editor_ItemPaint.Name = "Editor_ItemPaint";
-        Editor_ItemPaint.Size = new Size(1790, 1185);
+        Editor_ItemPaint.Size = new Size(896, 595);
         Editor_ItemPaint.TabIndex = 0;
+        Editor_ItemPaint.Visible = false;
+        // 
+        // label1
+        // 
+        label1.Anchor = AnchorStyles.None;
+        label1.AutoSize = true;
+        label1.Location = new Point(803, 563);
+        label1.Name = "label1";
+        label1.Size = new Size(191, 20);
+        label1.TabIndex = 1;
+        label1.Text = "Select a paintable item first";
         // 
         // villagers
         // 
@@ -723,6 +735,7 @@ partial class Main
         ((ISupportInitialize)NUD_CustomItemID).EndInit();
         ((ISupportInitialize)NUD_Count).EndInit();
         painting.ResumeLayout(false);
+        painting.PerformLayout();
         villagers.ResumeLayout(false);
         map.ResumeLayout(false);
         flags.ResumeLayout(false);
@@ -784,4 +797,5 @@ partial class Main
     private TabPage painting;
     private SplitContainer splitContainer1;
     private Label L_Paintable;
+    private Label label1;
 }
