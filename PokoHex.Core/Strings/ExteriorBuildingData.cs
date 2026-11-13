@@ -18,7 +18,7 @@ namespace PokoHex.Core.Strings
 {
     public sealed class ExteriorBuildingData
     {
-        private static ushort[] HouseTypes = [ 15, 19, 23, 27 ];
+        private static ushort[] HouseTypes = [ 15, 19, 23, 27, 76 ];
         public static Dictionary<ushort, string> InteriorTypes = new Dictionary<ushort, string>();
         private static void InitBuildings()
         {
