@@ -48,7 +48,7 @@ public sealed class Item(Memory<byte> raw)
         get => (ushort)(HasItemPattern ? 0 : (RawValue & ItemPaint1Mask) >> 13);
         private set
         {
-            if (value > 18)
+            if (value > ItemPaintInfo.ItemPaints.Count)
                 throw new ArgumentOutOfRangeException(nameof(value));
 
             RawValue = (RawValue & ~(ItemPaint1Mask | ItemPatternDiscriminatorMask)) | ((uint)value << 13);
@@ -60,7 +60,7 @@ public sealed class Item(Memory<byte> raw)
         get => (ushort)((RawValue & ItemPaint2Mask) >> 21);
         private set
         {
-            if (value > 18)
+            if (value > ItemPaintInfo.ItemPaints.Count)
                 throw new ArgumentOutOfRangeException(nameof(value));
 
             RawValue = (RawValue & ~ItemPaint2Mask) | ((uint)value << 21);
@@ -72,14 +72,14 @@ public sealed class Item(Memory<byte> raw)
         get => (ushort)((RawValue & ItemPaint3Mask) >> 26);
         private set
         {
-            if (value >= ItemPaintInfo.ItemPaints.Count)
+            if (value > ItemPaintInfo.ItemPaints.Count)
                 throw new ArgumentOutOfRangeException(nameof(value));
 
             RawValue = (RawValue & ~ItemPaint3Mask) | ((uint)value << 26);
         }
     }
 
-    // TODO color 4
+    /// TODO color 4 for houses
 
     public ushort ItemPattern => (ushort)(_ItemPattern == 0 ? 0 : _ItemPattern - 31);
     private ushort _ItemPattern

@@ -50,6 +50,7 @@ public partial class ItemPaintEditor : UserControl
         paintingBody.Visible = (SelectedPaintableItemSlot >= 0);
         if (SelectedPaintableItemSlot < 0 || SelectedItem.PaintSlots == 0)
         {
+            SelectedPaintableItemSlot = -1;
             Visible = false;
             return;
         }
@@ -92,10 +93,10 @@ public partial class ItemPaintEditor : UserControl
         Loading = true;
         SelectedPaintableItemSlot = -1;
         SelectedPaintSlot = 0;
-        // load stuff here
         Outline = CreateImageOutline((Image)Resources.GetObject($"color_aquamarine"), Color.Black);
         InitSwatches();
         LoadSwatches();
+        ShowForItem(-1);
         Loading = false;
     }
 
@@ -142,6 +143,12 @@ public partial class ItemPaintEditor : UserControl
 
     public void SaveChanges()
     {
+        if (Loading || SAV == null || SelectedPaintableItemSlot < 0)
+            return;
+
+        SelectedItem.SetPaint(SelectedPaint);
+        if (PatternSet)
+            SelectedItem.SetPattern(SelectedPattern);
     }
 
     private void Slot_Selected(object sender, EventArgs e)
@@ -315,9 +322,7 @@ public partial class ItemPaintEditor : UserControl
 
     private void B_Apply_Click(object sender, EventArgs e)
     {
-        SelectedItem.SetPaint(SelectedPaint);
-        if (PatternSet)
-            SelectedItem.SetPattern(SelectedPattern);
+        SaveChanges();
         OnApplyPaint?.Invoke(this, EventArgs.Empty);
     }
 

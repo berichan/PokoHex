@@ -13,13 +13,14 @@ public static class FunctionFlagInfo
         [56] = null,
         [57] = null,
         [71] = null,
-        [72] =  null,
+        [72] = null,
         [73] = null,
         [74] = null,
         [125] = null,
         [153] = null,
-        [3] = "Workbench unlocked",
+        [3] = "Workbench unlocked (text: \"Inspect\")",
         [7] = "Poké Center PC unlocked",
+        [18] = "Wake up inside home when loading save (remember last location if disabled)",
         [27] = "PC: Challenges function unlocked",
         [28] = "PC: Link Play function unlocked",
         [30] = "PC: Shop function unlocked",
@@ -38,7 +39,9 @@ public static class FunctionFlagInfo
         [105] = "PP Up (increases max PP to 2333)",
         [107] = "Handy Bag (hot bar) unlocked",
         [108] = "PC: Stamp function unlocked",
+        [114] = "PC: Appraise function unlocked",
         [133] = "PC: Environment Level function unlocked",
+        [135] = "Workbench text changes to \"Craft\"",
     };
     public static bool IsKnown(int index) => Names.Keys.Contains(index);
 

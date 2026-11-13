@@ -378,7 +378,7 @@ namespace PokoHex.Core.Structures
             [1042] = (1, false),   // Wooden Wall (Block)
             [1164] = (1, false),   // Woven Carpeting (Block)
 
-            // TODO: add houses
+            /// TODO: add houses
         };
     }
 }

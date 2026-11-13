@@ -380,6 +380,7 @@ public partial class Main : Form
             Editor_Skills.SaveChanges();
             Editor_Reactions.SaveChanges();
             Editor_Flags.SaveChanges();
+            Editor_ItemPaint.SaveChanges();
             if (SAV.Common.LifeCoinsEditable && NUD_LifeCoins.Value != SAV.Common.LifeCoins)
                 SAV.Common.LifeCoins = (int)NUD_LifeCoins.Value;
             if (TB_Name.Text != SAV.Common.PlayerName)
@@ -394,6 +395,7 @@ public partial class Main : Form
             Editor_Skills.LoadSave(SAV.Common);
             Editor_Reactions.LoadSave(SAV.Common);
             Editor_Flags.LoadSave(SAV.Common);
+            Editor_ItemPaint.LoadSave(SAV.Common);
             Text = $"PokoHex / {Path.GetFileName(SAV.Folder)}";
             LoadSlot();
             L_Status.Text = $"Exported to {dialog.SelectedPath}";
