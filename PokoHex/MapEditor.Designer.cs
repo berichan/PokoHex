@@ -52,7 +52,12 @@ partial class MapEditor
         B_Set = new Button();
         B_Undo = new Button();
         B_Redo = new Button();
+        interior = new Label();
+        CB_Interior = new ComboBox();
+        btnJumpToInteriors = new Button();
+        checkBox1 = new CheckBox();
         SuspendLayout();
+        Width = 1000;
         filters.Dock = DockStyle.Top;
         filters.Height = 92;
         area.Text = "Area:";
@@ -85,7 +90,7 @@ partial class MapEditor
         CHK_AllHeights.Checked = true;
         CHK_AllHeights.Location = new Point(150, 38);
         CHK_AllHeights.Size = new Size(140, 24);
-        CHK_AllHeights.CheckedChanged += View_Changed;
+        CHK_AllHeights.CheckedChanged += checkBox1_CheckedChanged;
         search.Text = "Search:";
         search.Location = new Point(306, 42);
         search.Size = new Size(54, 20);
@@ -94,9 +99,30 @@ partial class MapEditor
         TB_Search.Size = new Size(220, 23);
         TB_Search.TextChanged += TB_Search_TextChanged;
         L_Count.Location = new Point(4, 69);
-        L_Count.Size = new Size(880, 20);
+        L_Count.Size = new Size(50, 20);
         L_Count.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
-        filters.Controls.AddRange([area, CB_Area, chunk, CB_Chunk, height, NUD_Height, CHK_AllHeights, search, TB_Search, L_Count]);
+        interior.Location = new Point(600, 10);
+        interior.Name = "interior";
+        interior.AutoSize = true;
+        interior.TabIndex = 11;
+        interior.Text = "Interior:";
+        CB_Interior.DropDownStyle = ComboBoxStyle.DropDownList;
+        CB_Interior.Location = new Point(660, 6);
+        CB_Interior.Name = "CB_Interior";
+        CB_Interior.Size = new Size(230, 28);
+        CB_Interior.SelectedIndexChanged += CB_Interior_SelectedIndexChanged;
+        btnJumpToInteriors.Location = new Point(660, 40);
+        btnJumpToInteriors.Name = "btnJumpToInteriors";
+        btnJumpToInteriors.Size = new Size(230, 29);
+        btnJumpToInteriors.Text = "Jump to main interiors";
+        btnJumpToInteriors.Click += btnJumpToInteriors_Click;
+        checkBox1.AutoSize = true;
+        checkBox1.Location = new Point(100, 74);
+        checkBox1.Name = "checkBox1";
+        checkBox1.Text = "Only in this region";
+        checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+        checkBox1.Anchor = AnchorStyles.Right | AnchorStyles.Top;
+        filters.Controls.AddRange(new Control[] { area, CB_Area, chunk, CB_Chunk, height, NUD_Height, CHK_AllHeights, search, TB_Search, L_Count, interior, CB_Interior, btnJumpToInteriors, checkBox1});
         split.Dock = DockStyle.Fill;
         split.Size = new Size(920, 550);
         split.SplitterDistance = 550;
@@ -108,7 +134,6 @@ partial class MapEditor
         PB_Map.Paint += PB_Map_Paint;
         PB_Map.MouseMove += PB_Map_MouseMove;
         PB_Map.MouseDown += PB_Map_MouseDown;
-        PB_Map.Resize += View_Changed;
         split.Panel1.Controls.Add(PB_Map);
         LB_Parts.Name = "LB_Parts";
         LB_Parts.Dock = DockStyle.Top;
@@ -157,15 +182,20 @@ partial class MapEditor
         x.Location = new Point(12, 166);
         y.Location = new Point(122, 166);
         z.Location = new Point(232, 166);
-        x.Size = y.Size = z.Size = new Size(24, 20);
+        x.Size = new Size(24, 20);
+        y.Size = new Size(24, 20);
+        z.Size = new Size(24, 20);
         NUD_X.Name = "NUD_X";
         NUD_Y.Name = "NUD_Y";
         NUD_Z.Name = "NUD_Z";
         NUD_X.Location = new Point(12, 186);
         NUD_Y.Location = new Point(122, 186);
         NUD_Z.Location = new Point(232, 186);
-        NUD_X.Size = NUD_Y.Size = NUD_Z.Size = new Size(98, 23);
-        NUD_X.Maximum = NUD_Z.Maximum = 2047;
+        NUD_X.Size = new Size(98, 23);
+        NUD_Y.Size = new Size(98, 23);
+        NUD_Z.Size = new Size(98, 23);
+        NUD_X.Maximum = 2047;
+        NUD_Z.Maximum = 2047;
         NUD_Y.Maximum = 127;
         NUD_X.ValueChanged += Placement_Changed;
         NUD_Y.ValueChanged += Placement_Changed;
@@ -177,7 +207,7 @@ partial class MapEditor
         CB_Direction.Location = new Point(12, 244);
         CB_Direction.Size = new Size(160, 23);
         CB_Direction.DropDownStyle = ComboBoxStyle.DropDownList;
-        CB_Direction.Items.AddRange(["0", "1", "2", "3"]);
+        CB_Direction.Items.AddRange(new string[] { "0", "1", "2", "3" });
         CB_Direction.SelectedIndexChanged += Placement_Changed;
         B_Set.Name = "B_Set";
         B_Set.Text = "Set";
@@ -198,8 +228,8 @@ partial class MapEditor
         L_EditStatus.Location = new Point(12, 324);
         L_EditStatus.Size = new Size(318, 72);
         L_EditStatus.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        GB_Details.Controls.AddRange([PB_Item, L_Item, L_Details, replacement, CB_Item, x, y, z, NUD_X, NUD_Y, NUD_Z,
-            direction, CB_Direction, B_Set, B_Undo, B_Redo, L_EditStatus]);
+        GB_Details.Controls.AddRange(new Control[]{PB_Item, L_Item, L_Details, replacement, CB_Item, x, y, z, NUD_X, NUD_Y, NUD_Z,
+            direction, CB_Direction, B_Set, B_Undo, B_Redo, L_EditStatus });
         details.Controls.Add(GB_Details);
         split.Panel2.Controls.Add(details);
         split.Panel2.Controls.Add(LB_Parts);
@@ -235,7 +265,11 @@ partial class MapEditor
     private NumericUpDown NUD_Y = null!;
     private NumericUpDown NUD_Z = null!;
     private ComboBox CB_Direction = null!;
+    private CheckBox checkBox1;
     private Button B_Set = null!;
     private Button B_Undo = null!;
     private Button B_Redo = null!;
+    private Label interior;
+    private ComboBox CB_Interior;
+    private Button btnJumpToInteriors;
 }
