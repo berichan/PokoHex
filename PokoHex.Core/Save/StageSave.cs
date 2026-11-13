@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
@@ -20,6 +20,9 @@ public sealed class StageSave
     private const int Points = 0x1207723;
     private const int Grid = 0x23FFEDC;
     private const int ChunkCells = 0x20000;
+    private const int BuildingTable = 0x4C6418;
+    private const int BuildingRecordSize = 0x12;
+    private const int BuildingCount = 50;
     private readonly byte[] Original;
     private readonly byte[] Raw;
     private readonly Dictionary<int, byte> Changed = [];
@@ -33,6 +36,8 @@ public sealed class StageSave
     public bool IsEdited => Changed.Count != 0;
     public bool CanUndo => Undo.Count != 0;
     public bool CanRedo => Redo.Count != 0;
+    public readonly record struct BuildingInfo(int Id, byte Type, int Chunk, int Floor
+    );
 
     private StageSave(byte[] original, byte[] raw)
     {
@@ -165,6 +170,28 @@ public sealed class StageSave
             }
         }
         return writes;
+    }
+
+    public IEnumerable<BuildingInfo> GetBuildingsForChunk(ushort chunk)
+    {
+        for (int id = 1; id <= BuildingCount; id++)
+        {
+            int slot = id - 1;
+            int recordOffset = BuildingTable + id * BuildingRecordSize;
+            var record = Raw.AsSpan(recordOffset, BuildingRecordSize);
+
+            if (record[8] == 0xFF)
+                continue;
+
+            int buildingChunk = 3965 - slot / 10;
+            int floor = 4 + 12 * (slot % 10);
+
+            if (buildingChunk != chunk)
+                continue;
+
+            yield return new BuildingInfo(id, record[7], buildingChunk, floor
+            );
+        }
     }
 
     private static void AddValue(Dictionary<int, byte> writes, int offset, uint value, int size)
