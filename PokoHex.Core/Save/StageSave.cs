@@ -36,11 +36,7 @@ public sealed class StageSave
     public bool IsEdited => Changed.Count != 0;
     public bool CanUndo => Undo.Count != 0;
     public bool CanRedo => Redo.Count != 0;
-    public readonly record struct BuildingInfo(
-        int Id,
-        byte Type,
-        int Chunk,
-        int Floor
+    public readonly record struct BuildingInfo(int Id, byte Type, int Chunk, int Floor
     );
 
     private StageSave(byte[] original, byte[] raw)
@@ -56,45 +52,26 @@ public sealed class StageSave
             throw new InvalidDataException("The map chunks are invalid.");
 
         var parts = new List<MapPart>();
-
-        for (int i = 0; i < PartCapacity; i++)
+        for (int i = 0; i < count; i++)
         {
             var offset = PartPool + i * MapPart.SIZE;
-
-            var location = ReadUInt32LittleEndian(raw.AsSpan(offset + 4));
-            if ((location & 0xFFF) == 0)
-                continue;
-
             var state = ReadUInt32LittleEndian(raw.AsSpan(offset + 8));
             var handle = (int)((state >> 4) & 0xFFFFF);
-
             if (handle >= PartCapacity)
                 throw new InvalidDataException("The map point reference is invalid.");
-
-            var pointOffset = Points + handle * 4;
-            var point = ReadUInt32LittleEndian(raw.AsSpan(pointOffset));
-
+            var point = ReadUInt32LittleEndian(raw.AsSpan(Points + handle * 4));
+            var part = new MapPart(i, raw.AsMemory(offset, MapPart.SIZE), raw.AsMemory(Points + handle * 4, 4));
             if ((point >> 12) != i)
                 throw new InvalidDataException("The map part reference is invalid.");
-
-            var part = new MapPart(i,
-                raw.AsMemory(offset, MapPart.SIZE),
-                raw.AsMemory(pointOffset, 4));
-
+            if (part.Variation == 0)
+                continue;
             if (GetSlot(part.Chunk) == 0xFFFF)
                 throw new InvalidDataException("A map part is outside the allocated map.");
-
             parts.Add(part);
         }
         Parts = parts.ToArray();
-        var byIndex = Parts.ToDictionary(z => z.Index);
-        foreach (var part in Parts)
-        {
-            if (part.Link != uint.MaxValue &&
-                (!byIndex.TryGetValue((int)part.Link, out var link) ||
-                 link.Chunk != part.Chunk))
-                throw new InvalidDataException("The map part chain is invalid.");
-        }
+        // Saved links can be stale after pool compaction. The native loader rebuilds
+        // them from point references; preserve them without following them here.
     }
 
     private int GetSlot(int chunk) => ReadUInt16LittleEndian(Raw.AsSpan(ChunkMap + chunk * 2));
@@ -122,9 +99,9 @@ public sealed class StageSave
             throw new ArgumentException("This object's footprint is not supported.");
         var result = new Dictionary<int, uint>();
         for (int y = bounds.Y; y < bounds.Y + bounds.Height; y++)
-            for (int z = bounds.Z; z < bounds.Z + bounds.Depth; z++)
-                for (int x = bounds.X; x < bounds.X + bounds.Width; x++)
-                    result.Add(GetCellOffset(x, y, z), GetCell(x, y, z));
+        for (int z = bounds.Z; z < bounds.Z + bounds.Depth; z++)
+        for (int x = bounds.X; x < bounds.X + bounds.Width; x++)
+            result.Add(GetCellOffset(x, y, z), GetCell(x, y, z));
         return result;
     }
 
