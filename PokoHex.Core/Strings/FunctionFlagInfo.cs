@@ -1,13 +1,52 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+
 namespace PokoHex.Core;
 
 public static class FunctionFlagInfo
 {
     // These labels describe known behavior; the game stores numeric flag IDs.
-    public static bool IsKnown(int index) => index is 54 or 56 or 57 or 71 or 72 or 73 or 74 or 125 or 148 or 153;
+    public static Dictionary<int, string?> Names = new Dictionary<int, string?>()
+    {
+        [54] = "Liquid absorption",
+        [148] = "Dive unlocked",
+        [56] = null,
+        [57] = null,
+        [71] = null,
+        [72] = null,
+        [73] = null,
+        [74] = null,
+        [125] = null,
+        [153] = null,
+        [3] = "Workbench unlocked (text: \"Inspect\")",
+        [7] = "Poké Center PC unlocked",
+        [18] = "Wake up inside home when loading save (remember last location if disabled)",
+        [27] = "PC: Challenges function unlocked",
+        [28] = "PC: Link Play function unlocked",
+        [30] = "PC: Shop function unlocked",
+        [63] = "Rookie Packing Tips (Inventory upgrade 1)",
+        [64] = "Intermediate Packing Tips (Inventory upgrade 2)",
+        [65] = "Pro Packing Tips (Inventory upgrade 3)",
+        [66] = "Expert Packing Tips (Inventory upgrade 4)",
+        [76] = "Pause menu unlocked",
+        [77] = "Smeargle: Pattern function unlocked (requires #79)",
+        [78] = "Smeargle: Multi-Part Paint function unlocked (requires #79)",
+        [79] = "Smeargle: Paint function unlocked",
+        [82] = "Jump unlocked",
+        [102] = "PP Up (increases max PP to 1333)",
+        [103] = "PP Up (increases max PP to 1666)",
+        [104] = "PP Up (increases max PP to 2000)",
+        [105] = "PP Up (increases max PP to 2333)",
+        [107] = "Handy Bag (hot bar) unlocked",
+        [108] = "PC: Stamp function unlocked",
+        [114] = "PC: Appraise function unlocked",
+        [133] = "PC: Environment Level function unlocked",
+        [135] = "Workbench text changes to \"Craft\"",
+    };
+    public static bool IsKnown(int index) => Names.Keys.Contains(index);
 
     public static string GetName(int index) => index switch
     {
-        54 => "Liquid absorption",
         56 => $"{GameInfo.Strings.skilllist[10]} unlocked",
         57 => $"{GameInfo.Strings.skilllist[11]} unlocked",
         71 => $"{GameInfo.Strings.skilllist[1]} food boost",
@@ -15,8 +54,8 @@ public static class FunctionFlagInfo
         73 => $"{GameInfo.Strings.skilllist[3]} food boost",
         74 => $"{GameInfo.Strings.skilllist[4]} food boost",
         125 => $"{GameInfo.Strings.skilllist[4]} extra food effect",
-        148 => "Dive unlocked",
         153 => $"{GameInfo.Strings.skilllist[10]} food boost",
-        _ => $"function_{index}",
+
+        _ => Names.TryGetValue(index, out var name) ? name! : $"function_{index}",
     };
 }
