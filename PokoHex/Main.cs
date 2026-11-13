@@ -1,9 +1,11 @@
-﻿using System;
+﻿using PokoHex.Core;
+using PokoHex.Core.Structures;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using PokoHex.Core;
 
 namespace PokoHex;
 
@@ -14,6 +16,7 @@ public partial class Main : Form
     private bool Loading;
     private int SelectedSlot;
     private int InventoryStart;
+    private bool ItemSelected = false;
 
     public Main()
     {
@@ -75,6 +78,12 @@ public partial class Main : Form
             Editor_Skills.LoadSave(save.Common);
             Editor_Reactions.LoadSave(save.Common);
             Editor_Flags.LoadSave(save.Common);
+            Editor_ItemPaint.LoadSave(save.Common);
+            Editor_ItemPaint.OnApplyPaint += (sender, e) =>
+            {
+                TC_Editor.SelectedTab = items;
+                RefreshSlot();
+            };
             RB_Skills.Checked = true;
             Text = $"PokoHex / {Path.GetFileName(save.Folder)}";
             UpdateStatus();
@@ -94,6 +103,21 @@ public partial class Main : Form
         Editor_Reactions.Visible = RB_Reactions.Checked;
     }
 
+    private static string GetItemExtras(Item item)
+    {
+        var extras = new List<string>();
+        if (item.HasItemPattern)
+            extras.Add($"Pattern: {item.ItemPattern:000}");
+        if (item.ItemPaint1 != 0)
+            extras.Add(ItemPaintInfo.ItemPaints.TryGetValue(item.ItemPaint1, out var p1) ? $"Paint 1: {p1.Item1}" : $"Paint 1: Unknown ({item.ItemPaint1})");
+        if (item.ItemPaint2 != 0)
+            extras.Add(ItemPaintInfo.ItemPaints.TryGetValue(item.ItemPaint2, out var p2) ? $"Paint 2: {p2.Item1}" : $"Paint 2: Unknown ({item.ItemPaint2})");
+        if (item.ItemPaint3 != 0)
+            extras.Add(ItemPaintInfo.ItemPaints.TryGetValue(item.ItemPaint3, out var p3) ? $"Paint 3: {p3.Item1}" : $"Paint 3: Unknown ({item.ItemPaint3})");
+        return string.Join(Environment.NewLine, extras);
+    }
+
+
     private void LoadInventory()
     {
         if (SAV == null)
@@ -106,7 +130,9 @@ public partial class Main : Form
             for (int i = 0; i < count; i++)
             {
                 var item = SAV.Common.Inventory[InventoryStart + i];
-                DGV_Items.Rows.Add(i + 1, ItemSprite.GetItemSprite(item.ItemId)!, GetItemName(item.ItemId), item.Count);
+
+                int row = DGV_Items.Rows.Add(i + 1, ItemSprite.GetItemSprite(item.ItemId)!, GetItemName(item.ItemId), item.Count, GetItemExtras(item));
+                DGV_Items.Rows[row].Tag = InventoryStart + i;
             }
             SelectedSlot = InventoryStart;
             DGV_Items.CurrentCell = DGV_Items.Rows[0].Cells[2];
@@ -191,7 +217,8 @@ public partial class Main : Form
         try
         {
             SaveSlot();
-            SelectedSlot = InventoryStart + DGV_Items.CurrentRow.Index;
+            SelectedSlot = (int)DGV_Items.CurrentRow.Tag!;
+            L_Paintable.Text = SAV.Common.Inventory[SelectedSlot].PaintSlots > 0 ? "Yes" : "No";
             LoadSlot();
         }
         catch (ArgumentException ex) { ShowError(ex.Message); }
@@ -222,16 +249,19 @@ public partial class Main : Form
         SAV.Common.Inventory[SelectedSlot].Set(item.Value, (int)NUD_Count.Value);
         RefreshSlot();
     }
-
     private void RefreshSlot()
     {
         if (SAV == null)
             return;
+
+        var row = DGV_Items.Rows.Cast<DataGridViewRow>()
+            .First(z => (int)z.Tag! == SelectedSlot);
+
         var item = SAV.Common.Inventory[SelectedSlot];
-        var row = DGV_Items.Rows[SelectedSlot - InventoryStart];
         row.Cells[1].Value = ItemSprite.GetItemSprite(item.ItemId);
         row.Cells[2].Value = GetItemName(item.ItemId);
         row.Cells[3].Value = item.Count;
+        row.Cells[4].Value = GetItemExtras(item);
         UpdateStatus();
     }
 
@@ -292,6 +322,7 @@ public partial class Main : Form
             Editor_Skills.SaveChanges();
             Editor_Reactions.SaveChanges();
             Editor_Flags.SaveChanges();
+            Editor_ItemPaint.SaveChanges();
             if (SAV.Common.LifeCoinsEditable && NUD_LifeCoins.Value != SAV.Common.LifeCoins)
                 SAV.Common.LifeCoins = (int)NUD_LifeCoins.Value;
             if (TB_Name.Text != SAV.Common.PlayerName)
@@ -306,6 +337,7 @@ public partial class Main : Form
             Editor_Skills.LoadSave(SAV.Common);
             Editor_Reactions.LoadSave(SAV.Common);
             Editor_Flags.LoadSave(SAV.Common);
+            Editor_ItemPaint.LoadSave(SAV.Common);
             Text = $"PokoHex / {Path.GetFileName(SAV.Folder)}";
             LoadSlot();
             L_Status.Text = $"Exported to {dialog.SelectedPath}";
@@ -321,6 +353,11 @@ public partial class Main : Form
     {
         if (Loading || SAV == null)
             return;
+        if (TC_Editor.SelectedTab == items)
+            ItemSelected = true;
+        if (TC_Editor.SelectedTab == painting && ItemSelected)
+            Editor_ItemPaint.ShowForItem(SelectedSlot);
+
         Editor_Flags.RefreshValues();
         Editor_Skills.RefreshValues();
         Editor_Reactions.RefreshValues();

@@ -1,6 +1,9 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
 
 namespace PokoHex;
 
@@ -29,7 +32,8 @@ partial class Main
         L_Status = new ToolStripStatusLabel();
         TC_Editor = new TabControl();
         var player = new TabPage("Player");
-        var items = new TabPage("Items");
+        items = new TabPage("Items");
+        painting = new TabPage("Painting");
         var villagers = new TabPage("Villagers");
         var map = new TabPage("Map");
         var flags = new TabPage("Flags");
@@ -42,6 +46,7 @@ partial class Main
         Editor_Flags = new FlagEditor { Dock = DockStyle.Fill };
         Editor_Skills = new AbilityEditor { Dock = DockStyle.Fill };
         Editor_Reactions = new AbilityEditor { Reactions = true, Dock = DockStyle.Fill, Visible = false };
+        Editor_ItemPaint = new ItemPaintEditor { Dock = DockStyle.Fill };
         L_Coins = new Label();
         NUD_LifeCoins = new NumericUpDown();
         var name = new Label();
@@ -60,6 +65,8 @@ partial class Main
         var amount = new Label();
         var itemLabel = new Label();
         var hint = new Label();
+        L_Paintable = new Label();
+        var L_PaintableCaption = new Label();
         SuspendLayout();
         menu.Items.Add(file);
         menu.Items.Add(language);
@@ -75,7 +82,7 @@ partial class Main
         L_Status.Text = "Open a save folder to begin.";
         TC_Editor.Dock = DockStyle.Fill;
         TC_Editor.Enabled = false;
-        TC_Editor.TabPages.AddRange([player, items, villagers, map, flags]);
+        TC_Editor.TabPages.AddRange([player, items, painting, villagers, map, flags]);
         TC_Editor.SelectedIndexChanged += TC_Editor_SelectedIndexChanged;
         flags.Controls.Add(Editor_Flags);
         villagers.Controls.Add(Editor_Villagers);
@@ -135,10 +142,14 @@ partial class Main
         DGV_Items.BackgroundColor = SystemColors.Window;
         DGV_Items.RowTemplate.Height = 36;
         DGV_Items.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-        DGV_Items.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Slot", FillWeight = 15, SortMode = DataGridViewColumnSortMode.NotSortable });
-        DGV_Items.Columns.Add(new DataGridViewImageColumn { HeaderText = "", Width = 40, AutoSizeMode = DataGridViewAutoSizeColumnMode.None, ImageLayout = DataGridViewImageCellLayout.Zoom, DefaultCellStyle = new DataGridViewCellStyle { NullValue = null } });
-        DGV_Items.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Item", FillWeight = 65, SortMode = DataGridViewColumnSortMode.NotSortable });
-        DGV_Items.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Amount", FillWeight = 20, SortMode = DataGridViewColumnSortMode.NotSortable });
+        DGV_Items.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Slot", FillWeight = 10, SortMode = DataGridViewColumnSortMode.NotSortable });
+        DGV_Items.Columns.Add(new DataGridViewImageColumn { HeaderText = "", Width = 60, AutoSizeMode = DataGridViewAutoSizeColumnMode.None, ImageLayout = DataGridViewImageCellLayout.Zoom, DefaultCellStyle = new DataGridViewCellStyle { NullValue = null } });
+        DGV_Items.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Item", FillWeight = 40, SortMode = DataGridViewColumnSortMode.NotSortable });
+        DGV_Items.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Amount", FillWeight = 10, SortMode = DataGridViewColumnSortMode.NotSortable });
+        DGV_Items.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Extras", FillWeight = 20, SortMode = DataGridViewColumnSortMode.NotSortable });
+        DGV_Items.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+        DGV_Items.Columns[1].Width = 100;
+        DGV_Items.RowTemplate.Height = 80;
         DGV_Items.CurrentCellChanged += DGV_Items_CurrentCellChanged;
         split.Panel1.Controls.Add(DGV_Items);
         inventoryPanel.Dock = DockStyle.Top;
@@ -174,6 +185,20 @@ partial class Main
         amount.AutoSize = true;
         amount.Text = "Amount:";
         amount.Location = new Point(16, 135);
+        painting.Controls.Add(Editor_ItemPaint);
+        painting.Size = new Size(1796, 1191);
+        Editor_ItemPaint.Name = "Editor_ItemPaint";
+        L_Paintable.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        L_Paintable.Location = new Point(180, 212);
+        L_Paintable.Name = "L_Paintable";
+        L_Paintable.Size = new Size(90, 20);
+        L_Paintable.Text = "No";
+        L_Paintable.TextAlign = ContentAlignment.TopRight;
+        L_PaintableCaption.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        L_PaintableCaption.AutoSize = true;
+        L_PaintableCaption.Location = new Point(16, 212);
+        L_PaintableCaption.Name = "L_PaintableCaption";
+        L_PaintableCaption.Text = "Can be painted: ";
         NUD_Count.Location = new Point(94, 132);
         NUD_Count.Maximum = 255;
         NUD_Count.Size = new Size(90, 23);
@@ -194,7 +219,7 @@ partial class Main
         hint.Size = new Size(352, 100);
         hint.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
         hint.Text = "Type an item name to search.\r\n\r\nSet applies the selected item and amount.\r\nZero clears the slot.\r\n\r\nExport saves your changes to a new folder.";
-        split.Panel2.Controls.AddRange([L_Slot, itemLabel, CB_Item, amount, NUD_Count, B_Set, clear, L_Catalog, hint]);
+        split.Panel2.Controls.AddRange([L_Slot, itemLabel, CB_Item, amount, NUD_Count, B_Set, clear, L_Catalog, hint, L_Paintable, L_PaintableCaption]);
         items.Controls.Add(split);
         Controls.Add(TC_Editor);
         Controls.Add(status);
@@ -233,6 +258,10 @@ partial class Main
     private FlagEditor Editor_Flags = null!;
     private AbilityEditor Editor_Skills = null!;
     private AbilityEditor Editor_Reactions = null!;
+    private ItemPaintEditor Editor_ItemPaint = null;
     private RadioButton RB_Skills = null!;
     private RadioButton RB_Reactions = null!;
+    private Label L_Paintable = null!;
+    private TabPage items = null!;
+    private TabPage painting = null!;
 }
